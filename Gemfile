@@ -34,7 +34,9 @@ gem 'jbuilder', '~> 2.5'
 #### <----------------------I added those --------------------> ###
 gem 'bootstrap-sass', '~> 3.3.7'
 gem 'bcrypt', '~> 3.1.7'
+gem 'devise'
 gem 'omniauth-facebook'
+gem 'figaro'
 
 
 # Use Capistrano for deployment
