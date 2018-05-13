@@ -8,7 +8,6 @@ end
 
 #----for Heroku----#
 ruby "2.4.1"
-gem 'rails_12factor', group: :production
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.1.6'
@@ -38,9 +37,7 @@ gem 'jbuilder', '~> 2.5'
 #### <----------------------I added those --------------------> ###
 gem 'bootstrap-sass', '~> 3.3.7'
 gem 'bcrypt', '~> 3.1.7'
-gem 'devise'
-gem 'omniauth-facebook'
-gem 'figaro'
+
 
 
 # Use Capistrano for deployment
