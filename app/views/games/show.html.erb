@@ -1,4 +1,7 @@
-<p id="notice"><%= notice %></p>
+<h1> Τα στοιχεία του παιχνιδιού σου είναι τα εξής </h1>
 
-<%= link_to 'Edit', edit_game_path(@game) %> |
-<%= link_to 'Back', games_path %>
+<p> Ημερομηνία <%= @game.starts_at %> </p>
+
+<p> Γήπεδο <%= @game.stadium %> </p>
+
+<%= link_to " Πίσω " , games_path %>

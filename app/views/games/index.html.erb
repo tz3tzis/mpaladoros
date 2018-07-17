@@ -1,25 +1,23 @@
-<p id="notice"><%= notice %></p>
+<h1> Ολα τα διαθεσιμα παιχνίδια κοντά σου </h1>
 
-<h1>Games</h1>
+	<p> 
+		<%= link_to "Νέο Παιχνίδι" , new_game_path %>
+	</p>
 
 <table>
-  <thead>
-    <tr>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
 
-  <tbody>
-    <% @games.each do |game| %>
-      <tr>
-        <td><%= link_to 'Show', game %></td>
-        <td><%= link_to 'Edit', edit_game_path(game) %></td>
-        <td><%= link_to 'Destroy', game, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
+	<tr>
+		<th>Ημερομηνία και ώρα </th>
+		<th>  Γήπεδο </th>
+	</tr>
+
+	<% @games.each do |game| %>
+		<tr>
+			<td> <%= game.starts_at %> </td>
+			<td> <%= game.stadium %> </td>
+			<td> <%= link_to 'Show', game_path(game) %>
+		</tr>
+	<% end %>
+
 </table>
 
-<br>
-
-<%= link_to 'New Game', new_game_path %>

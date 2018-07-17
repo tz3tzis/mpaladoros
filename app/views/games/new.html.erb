@@ -1,5 +1,31 @@
 <h1>New Game</h1>
 
-<%= render 'form', game: @game %>
+<% if @game.errors.any? %>
+	<h2>Παρακαλώ συμπληρώστε τα κενα πεδία και συνεχίστε</h2>
+	<ul>
+	<% @game.errors.full_messages.each do |msg| %>
+		<li><%= msg %></li>
+	<% end %>
+	</ul>
+<% end %>
 
-<%= link_to 'Back', games_path %>
+	
+
+<%= form_for @game do |f| %>
+
+	<p>
+		<%= f.label :Ημερομηνία_και_ωρα%>
+		<%= f.datetime_field :starts_at %>
+	</p>
+
+	<p>
+		<%= f.label :Γήπεδο%>
+		<%= f.text_field :stadium%>
+	</p>
+
+	<p>
+		<%= f.submit %>
+	</p>
+
+<% end %>
+
