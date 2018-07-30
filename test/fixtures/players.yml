@@ -1,0 +1,23 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  longitude: 1.5
+  latitude: 1.5
+  points: 1
+  mail: MyString
+  MVP: 1
+  photos: MyString
+  carma: 1.5
+  username: MyString
+  games_played: 1
+
+two:
+  longitude: 1.5
+  latitude: 1.5
+  points: 1
+  mail: MyString
+  MVP: 1
+  photos: MyString
+  carma: 1.5
+  username: MyString
+  games_played: 1

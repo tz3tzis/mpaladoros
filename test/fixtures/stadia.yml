@@ -1,0 +1,21 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  longitude: 1.5
+  latitude: 1.5
+  open_at: 1
+  max_players: 1
+  stars: 1
+  price: 1.5
+  photos: MyText
+  stadium_name: MyString
+
+two:
+  longitude: 1.5
+  latitude: 1.5
+  open_at: 1
+  max_players: 1
+  stars: 1
+  price: 1.5
+  photos: MyText
+  stadium_name: MyString

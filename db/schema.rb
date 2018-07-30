@@ -10,18 +10,65 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180716122229) do
+ActiveRecord::Schema.define(version: 20180730115312) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "games", force: :cascade do |t|
-    t.string "stadium"
-    t.datetime "starts_at"
-    t.string "team_a"
-    t.string "team_b"
+  create_table "admins", force: :cascade do |t|
+    t.string "username"
+    t.string "password"
+    t.string "telephone"
+    t.string "IBAN"
+    t.string "stadium_name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "games", force: :cascade do |t|
+    t.datetime "starts_at"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "stadium_name"
+    t.string "team_name"
+  end
+
+  create_table "players", force: :cascade do |t|
+    t.float "longitude"
+    t.float "latitude"
+    t.integer "points"
+    t.string "mail"
+    t.integer "MVP"
+    t.string "photos"
+    t.float "carma"
+    t.string "username"
+    t.integer "games_played"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "stadia", force: :cascade do |t|
+    t.float "longitude"
+    t.float "latitude"
+    t.integer "open_at"
+    t.integer "max_players"
+    t.integer "stars"
+    t.float "price"
+    t.string "stadium_name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer "stadium_id"
+    t.string "photos"
+    t.index ["stadium_name"], name: "index_stadia_on_stadium_name"
+  end
+
+  create_table "teams", force: :cascade do |t|
+    t.string "name"
+    t.integer "capacity"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer "player_id"
+    t.integer "team_id"
   end
 
 end

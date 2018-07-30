@@ -1,4 +1,6 @@
 class GamesController < ApplicationController
+
+	before_action :set_games, only:[:show, :destroy]
 	
 	def index
 		@games = Game.all 
@@ -19,10 +21,21 @@ class GamesController < ApplicationController
 	end
 
 	def show
-		@game = Game.find(params[:id])
+		
+	end
+
+	def destroy
+		
+		@game.destroy
+		flash[:notice] = "Το παιχνίδι διαγράφηκε επιτυχώς"
+		redirect_to games_path
+
 	end
 
 	private 
+		def set_games
+			@game = Game.find(params[:id])
+		end
 		def game_params
 			params.require(:game).permit(:starts_at, :stadium)
 		end

@@ -8,14 +8,14 @@
 
 	<tr>
 		<th>Ημερομηνία και ώρα </th>
-		<th>  Γήπεδο </th>
 	</tr>
 
 	<% @games.each do |game| %>
 		<tr>
 			<td> <%= game.starts_at %> </td>
-			<td> <%= game.stadium %> </td>
+		
 			<td> <%= link_to 'Show', game_path(game) %>
+			<td> <%= link_to 'Delete', game_path(game), method: :delete, data: {confirm: 'Εισαι σίγουρος?'} %> </td>
 		</tr>
 	<% end %>
 
