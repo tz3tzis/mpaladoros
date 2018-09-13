@@ -1,3 +1,24 @@
 <h1> Εδω θα εμφανίζονται οι πληροφοριες για τους παικτες </h1>
 
+	<table>
+
+	<tr>
+
+		<th> ΙD </th> &nbsp; <th>  Username </th> &nbsp; <th>  E-mail  </th>
+		
+
+	</tr>
+
+	<% @players.each do |player| %>
+		<tr>
+			<td> <%= player.id %> </td>
+			<td> <%= player.username %> </td>
+			<td> <%= player.mail%> </td>
+		
+			
+			<td> <%= link_to 'Delete', player_path(player), method: :delete, data: {confirm: 'Εισαι σίγουρος?'} %> </td>
+		</tr>
+	<% end %>
+
+</table>
 	

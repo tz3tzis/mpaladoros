@@ -4,5 +4,7 @@ Rails.application.routes.draw do
   get 'login', to: 'pages#home'
 
   resources :games
+  resources :players
+  resources :admins
 
 end
