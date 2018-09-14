@@ -44,6 +44,8 @@ gem 'bootstrap3-datetimepicker-rails', '~> 4.17.47'
 gem 'carrierwave', '~> 1.0'
 gem 'mini_magick', '~> 4.3'
 
+gem 'npm-rails', '~> 0.2.1'
+
 
 
 # Use Capistrano for deployment

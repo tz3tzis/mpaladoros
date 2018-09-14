@@ -20,3 +20,5 @@
 
 # Ignore application configuration
 /config/application.yml
+# Added by npm-rails
+/node_modules
