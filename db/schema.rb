@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180731134653) do
+ActiveRecord::Schema.define(version: 20180916102302) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -29,7 +29,8 @@ ActiveRecord::Schema.define(version: 20180731134653) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "stadium_name"
-    t.string "team_name"
+    t.string "awayteam_name"
+    t.string "hometeam_name"
   end
 
   create_table "players", force: :cascade do |t|
@@ -44,8 +45,6 @@ ActiveRecord::Schema.define(version: 20180731134653) do
     t.integer "games_played"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.bigint "teams_id"
-    t.index ["teams_id"], name: "index_players_on_teams_id"
   end
 
   create_table "stadia", force: :cascade do |t|
@@ -60,11 +59,6 @@ ActiveRecord::Schema.define(version: 20180731134653) do
     t.datetime "updated_at", null: false
     t.integer "stadium_id"
     t.string "photos"
-    t.bigint "admin_id"
-    t.bigint "game_id"
-    t.index ["admin_id"], name: "index_stadia_on_admin_id"
-    t.index ["game_id"], name: "index_stadia_on_game_id"
-    t.index ["stadium_name"], name: "index_stadia_on_stadium_name"
   end
 
   create_table "teams", force: :cascade do |t|
@@ -72,14 +66,6 @@ ActiveRecord::Schema.define(version: 20180731134653) do
     t.integer "capacity"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "player_id"
-    t.integer "team_id"
-    t.bigint "game_id"
-    t.index ["game_id"], name: "index_teams_on_game_id"
   end
 
-  add_foreign_key "players", "teams", column: "teams_id"
-  add_foreign_key "stadia", "admins"
-  add_foreign_key "stadia", "games"
-  add_foreign_key "teams", "games"
 end

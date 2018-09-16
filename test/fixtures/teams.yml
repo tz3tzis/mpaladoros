@@ -4,10 +4,10 @@ one:
   id: 1
   name: MyString
   capacity: 1
-  players: MyString
+ 
 
 two:
-  id: 1
+  id: 2
   name: MyString
-  capacity: 1
-  players: MyString
+  capacity: 
+ 

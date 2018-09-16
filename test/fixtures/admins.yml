@@ -2,14 +2,14 @@
 
 one:
   username: MyString
-  password: MyString
+  password_digest: MyString
   telephone: MyString
   IBAN: MyString
-  stadium_name: MyString
+
 
 two:
   username: MyString
-  password: MyString
+  password_digest: MyString
   telephone: MyString
   IBAN: MyString
-  stadium_name: MyString
+
