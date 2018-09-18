@@ -1,32 +1,33 @@
-<h1> Ολα τα διαθεσιμα παιχνίδια κοντά σου </h1>
 
-	<p> 
-		<%= link_to "Νέο Παιχνίδι" , new_game_path %>
-	</p>
+<body>
+		<p> 
+			<%= link_to "Νέο Παιχνίδι" , new_game_path %>
+		</p>
 
-<table>
+	<table>
 
-	<tr>
-		<th>Ημερομηνία και ώρα </th>
-				<th> Γηπεδο </th>
-
-	</tr>
-
-	<% @games.each do |game| %>
 		<tr>
-			<td> <%= game.starts_at %> </td>
-			<td> <%= game.stadium_name %> </td>
-		
-			<td> <%= link_to 'Show', game_path(game) %>
-			<td> <%= link_to 'Delete', game_path(game), method: :delete, data: {confirm: 'Εισαι σίγουρος?'} %> </td>
+			<th>Ημερομηνία και ώρα </th>
+					<th> Γηπεδο </th>
+
 		</tr>
-	<% end %>
+
+		<% @games.each do |game| %>
+			<tr>
+				<td> <%= game.starts_at %> </td>
+				<td> <%= game.stadium_name %> </td>
+			
+				<td> <%= link_to 'Show', game_path(game) %> </td>
+				<td> <%= link_to 'Delete', game_path(game), method: :delete, data: {confirm: 'Εισαι σίγουρος?'} %> </td>
+			</tr>
+		<% end %>
 
 
 
-	<p> 
-		<%= link_to "Δειξε μου τους παικτες" , players_path %>
-	</p>
+		<p> 
+			<%= link_to "Δειξε μου τους παικτες" , players_path %>
+		</p>
 
-</table>
+	</table>
+</body>
 
