@@ -2,7 +2,7 @@
 <div class = "center jumbotron">
     <div class="container">  
 
-            <h1 class="title"> Καλωσήρθες στο mpaladoros.gr</h1>
+            <h1 class="title"> mpaladoros.gr</h1>
             <h4>
                 Την πρώτη εφαρμογή στην Ελλάδα που σε βοηθάει να ανακαλύψεις
                 τα αθλήματα που γίνονται κοντά σου, να γνωρίσεις καινούργια άτομα 
@@ -42,45 +42,12 @@
             <div class="panel-body" >
 
 
-
-            <h4>
-              Αν είσαι ιδιοκτήτης συνδέσου εδω!
-            </h4>
+            <div class = "adminlogin">
+              Αν είσαι ιδιοκτήτης συνδέσου <%= link_to "Εδώ" , login_path %> 
+            </div>
                   
-            <div  class="input-group">
-                <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-                <input id="login-username" type="text" class="form-control" name="username" value="" placeholder="username ">                                        
-            </div>
-            <br> 
-
-            <div  class="input-group">
-                <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
-                <input id="login-password" type="password" class="form-control" name="password" placeholder="password">
-            </div>
-            <br>
            
-                                    
-     
-             <div class="checkbox">
-                <label>
-                     <input id="login-remember" type="checkbox" name="remember" value="1"> Να με θυμάσαι
-                </label>
-            </div>
-           
-
-
-            <div  class="admin-group">
-            <!-- Button -->
-                
-                   <a id="adminlogin" href="" class="btn btn-primary active">Σύνδεση </a> 
-
-            </div>
-
-            <div class="games">
-            <%= link_to 'Ενεργά παιχνίδια',games_path %>
-            </div>
-
-            
+            <br>   
            
         </div>                                              
     </div>

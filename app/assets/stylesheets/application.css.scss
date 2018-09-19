@@ -14,6 +14,49 @@
  *= require_self
 
  *= require bootstrap-datetimepicker
-
+ *= require simple_calendar
 
  */
+
+.calendar-heading{
+		font-size: 25px;
+		text-align: center;
+		height: 35px;
+		width: 50%;
+		color: black;
+		font-style : serif;
+}
+ .simple-calendar {
+
+			  .day {
+			  	font-size: 14px;
+			  }
+
+
+			.thead-dark{
+				 background-color: #202020;
+				 color: white;
+
+			}
+
+			.day.wday-3.today.current-month{
+				color: blue;
+				background-color: lightblue;
+
+			}
+
+			.tablecells{
+				height: 50px;
+			}
+
+			.tcells{
+				height: 120px;
+			}
+			  
+
+
+			  .prev-month {
+			  	color: black;
+			  }
+			 
+}

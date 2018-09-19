@@ -10,15 +10,17 @@
 
 
   </head>
-
+  
   <body>
 
    
     <div class="container">
 
-      <%= render partial: 'layouts/navigator' unless current_page?(root_url) %>
+      <%= render partial: 'layouts/navigator' unless (current_page?(root_url) || current_page?(login_url)) %>
       
       <%= render 'layouts/messages' %>
+
+
       <%= yield %>
       <%= render 'layouts/footer' %>
 

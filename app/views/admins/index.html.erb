@@ -1,6 +1,12 @@
-<h1> Εδω θα εμφανίζονται τα γήπεδα σου και οι αγωνες σου! </h1>
-
 	
+<%= month_calendar events: @games do |date, games| %>
+  <%= date %>
 
-
+  <% games.each do |game| %>
+    <div>
+      <%= game.name %>
+      
+    </div>
+  <% end %>
+<% end %>
 
