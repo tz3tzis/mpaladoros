@@ -1,0 +1,15 @@
+<h2> Games !</h2>
+
+<%= form_for :game, url: games_path do |f| %>
+  <div>
+    <%= f.label :start_time %>
+    <%= f.date_field :start_time, autofocus: true %>
+  </div>
+  <div>
+    <%= f.label :end_time %>
+    <%= f.date_field :end_time %>
+  </div>
+  <div>
+    <%= f.submit "New Game" %>
+  </div>
+<% end %>
