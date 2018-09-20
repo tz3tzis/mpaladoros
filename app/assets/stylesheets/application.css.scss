@@ -26,6 +26,12 @@
 		color: black;
 		font-style : serif;
 }
+
+.day.today.current-month{
+				color: blue;
+				background-color: lightblue;
+}
+
  .simple-calendar {
 
 			  .day {
@@ -39,11 +45,7 @@
 
 			}
 
-			.day.wday-3.today.current-month{
-				color: blue;
-				background-color: lightblue;
-
-			}
+			
 
 			.tablecells{
 				height: 50px;

@@ -1,8 +1,5 @@
 class AdminsController < ApplicationController
 
-
-	
-
   def index
     @games = Game.all
   end
