@@ -5,8 +5,8 @@
   <% games.each do |game| %>
     <div>
       <%= game.name %>
-      <%= game.start_time %>
-      <%= game.end_time %>
+      <%= game.start_time.strftime("%I:%M - ") %>
+      <%= game.end_time.strftime("%I:%M") %>
       
     </div>
   <% end %>

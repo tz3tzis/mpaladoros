@@ -8,6 +8,10 @@ class AdminsController < ApplicationController
     @admin = Admin.new
   end
 
+  def show
+    @admin = Admin.find( params[:id] )
+  end
+
   def create
     @admin = Admin.new(admin_params)
     
@@ -25,6 +29,17 @@ class AdminsController < ApplicationController
     end
   end
 
+
+
+
+  def update 
+   
+
+  end
+
+ 
+
+
 private
 
   def admin_params
@@ -33,6 +48,5 @@ private
     params.require(:admin).permit(:name, :email, :password, :telephone, :IBAN)
   end
   
-# ----- end of added lines -----
 	
 end

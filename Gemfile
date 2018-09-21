@@ -45,6 +45,12 @@ gem 'npm-rails', '~> 0.2.1'
 
 gem "simple_calendar", "~> 2.0"
 
+gem 'devise'
+
+gem 'therubyracer'
+
+
+
 
 
 

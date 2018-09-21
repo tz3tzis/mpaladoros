@@ -6,14 +6,14 @@ class SessionsController < ApplicationController
   end
 
   def create
-    # Look up User in db by the email address submitted to the login form and
+    # Look up Admon in db by the email address submitted to the login form and
     # convert to lowercase to match email in db in case they had caps lock on:
     admin = Admin.find_by(email: params[:login][:email].downcase)
     
-    # Verify user exists in db and run has_secure_password's .authenticate() 
+    # Verify Admin exists in db and run has_secure_password's .authenticate() 
     # method to see if the password submitted on the login form was correct: 
     if admin && admin.authenticate(params[:login][:password]) 
-      # Save the user.id in that user's session cookie:
+      # Save the admin.id in that admin's session cookie:
       session[:admin_id] = admin.id.to_s
       redirect_to admins_path, notice: 'Εχεις συνδεθεί με επιτυχία!'
     else
@@ -25,7 +25,7 @@ class SessionsController < ApplicationController
 
   def destroy
     # delete the saved user_id key/value from the cookie:
-    session.delete(:admins_id)
+    session.delete(:admin_id)
     redirect_to login_path, notice: "Αποσυνδεθήκατε επιτυχώς!"
   end
   

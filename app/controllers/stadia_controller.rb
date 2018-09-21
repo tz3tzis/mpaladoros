@@ -1,0 +1,2 @@
+class StadiaController < ApplicationController
+end

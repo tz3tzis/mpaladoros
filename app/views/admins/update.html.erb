@@ -1,0 +1,28 @@
+<h2> Άλλαξε τον κωδικο σου εδω!</h2>
+
+<%= form_for @admin do |f| %>
+ 
+  <div>
+    <%= f.label :email %>
+    <%= f.text_field :email %>
+  </div>
+
+
+  <div>
+    <%= f.label :old_password %>
+    <%= f.password_field :old_password %>
+  </div> 
+
+  <div>
+    <%= f.label :password %>
+    <%= f.password_field :password %>
+  </div> 
+
+  <div>
+    <%= f.label :password_confirmation %>
+    <%= f.password_field :password_confirmation %>
+  </div>
+  <div>
+    <%= f.submit "Επικύρωσε τις αλλαγές" %>
+  </div>
+<% end %>

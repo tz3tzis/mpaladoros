@@ -16,6 +16,7 @@ Rails.application.routes.draw do
 
   get 'static_pages/help'
 
+  get '/update' => 'admins#update'
  
   resources :admins
   resources :games
