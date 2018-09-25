@@ -1,0 +1,23 @@
+<h2> Αλλαγη κωδικου! </h2>
+
+<%= form_for  @admin do |t| %>
+	<div>
+		<%= t.label :email %>
+		<%= t.text_field :email , :required => true %> 
+  </div>
+
+  <div>
+		<%= t.label :Καινούργιος_κωδικός %>
+		<%= t.password_field :new_password , :required => true %> 
+  </div>
+
+  <div>
+		<%= t.label :Επιβεβαίωση_κωδικου %>
+		<%= t.password_field :confirm_password  , :required => true%> 
+  </div>
+  <br>
+  <div>
+		<%= t.submit 'Αλλαγη στοιχείων', method: :post %>
+	</div>
+
+<% end %>

@@ -1,51 +1,38 @@
 class AdminsController < ApplicationController
 
-  def index
-    @games = Game.all
-  end
-
-   def new
-    @admin = Admin.new
-  end
 
   def show
-    @admin = Admin.find( params[:id] )
+  	@games = Game.all
+    @admin = current_admin
   end
 
-  def create
-    @admin = Admin.new(admin_params)
-    
-    # store all emails in lowercase to avoid duplicates and case-sensitive login errors:
-    @admin.email.downcase!
-    
-    if @admin.save
-      # If user saves in the db successfully:
-      flash[:notice] = "Account created successfully!"
-      redirect_to root_path
-    else
-      # If user fails model validation - probably a bad password or duplicate email:
-      flash.now.alert = "Oops, couldn't create account. Please make sure you are using a valid email and password and try again."
-      render :new
-    end
-  end
+ def edit
+ 		@admins = current_admin
+		@admin = Admin.find(params[:id])
+ end
 
+	def update
 
+		@admin = current_admin 
 
-
-  def update 
-   
-
-  end
-
- 
-
+	
+		if params[:admin][:confirm_password] != params[:admin][:new_password ]
+			flash[:notice] = "Οι κωδικοί που έβαλες είναι διαφορετικοί!"
+			redirect_to edit_admin_path
+		else
+			@admin.password = params[:admin][:new_password]
+			@admin.save!
+			redirect_to show_path
+			flash[:notice] = "Τα στοιχεία σου άλλαξαν επιτυχώς"
+		end
+	end
 
 private
 
   def admin_params
     # strong parameters - whitelist of allowed fields #=> permit(:name, :email, ...)
     # that can be submitted by a form to the user model #=> require(:user)
-    params.require(:admin).permit(:name, :email, :password, :telephone, :IBAN)
+    params.require(:admin).permit(:id, :name, :email, :password)
   end
   
 	

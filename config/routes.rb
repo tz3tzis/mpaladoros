@@ -9,16 +9,16 @@ Rails.application.routes.draw do
 	post '/login'    => 'sessions#create'
 	
 	# delete action to log out:
-	delete '/logout' => 'sessions#destroy'  
+	delete '/logout' => 'sessions#destroy' 
 
+	#get '/admins/:id/edit' => 'admins#edit'
 
-	get 'static_pages/home'
+ 	get '/admins/:id' => 'admins#show' , :as => 'show'
+ 	get '/admins/:id/edit' => 'admins#edit' , :as => 'edit_admin'
 
-  get 'static_pages/help'
+	post '/admins/:id' => 'admins#update' , :as => 'update'
 
-  get '/update' => 'admins#update'
- 
-  resources :admins
-  resources :games
+	resources :games 
 
+  resources :admins , :except => [:new,:index]
 end

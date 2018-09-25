@@ -7,21 +7,26 @@
     <%= csrf_meta_tags %>
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-
-
   </head>
   
   <body>
 
-
-   
     <div class="container">
 
-      <%= render partial: 'layouts/navigatorAdmin' unless (current_page?(root_url) || current_page?(login_url)) %>
-    
-      
-      <%= render 'layouts/messages' %>
+     <% if !current_admin.nil? %>
 
+      <% if current_page?(show_path(current_admin)) %>
+         <%= render partial: 'layouts/navigatorAdmin'  %>
+      <% else %>
+          <%= render partial: 'layouts/navigator'  %>
+      <% end %>
+
+    <% end %>
+
+
+    
+      <%= notice %>
+      <%= alert %>
 
       <%= yield %>
       <%= render 'layouts/footer' %>
