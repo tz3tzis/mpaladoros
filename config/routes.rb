@@ -21,6 +21,8 @@ Rails.application.routes.draw do
  	#post changes of the password
 	post '/admins/:id' => 'admins#update' , :as => 'update'
 
+	get '//admins/:id/stadia' => 'stadia#index' , :as => 'stadia'
+
 	resources :games 
 
   resources :admins , :except => [:new,:index]

@@ -1,0 +1,8 @@
+<h2> Αυτα είναι τα γήπεδα σου </h2>
+	
+	<% @stadia.each do |t| %>
+		<table>
+			<td><%= t.stadium_name %> </td>
+			<td><%= t.inspect %> </td>
+		</table>
+	<% end %>

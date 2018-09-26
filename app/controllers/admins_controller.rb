@@ -27,6 +27,11 @@ class AdminsController < ApplicationController
 		end
 	end
 
+	def stadia
+		@admin = Admin.find(params[:id])
+		@stadia = @admin.stadia
+	end
+
 private
 
   def admin_params
