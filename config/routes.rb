@@ -7,7 +7,10 @@ Rails.application.routes.draw do
 	
 	# create (post) action for when log in form is submitted:
 	post '/login'    => 'sessions#create'
-	
+
+	#for facebook login
+	get '/auth/:provider/callback', to: 'sessions#createPlayer'
+
 	# delete action to log out:
 	delete '/logout' => 'sessions#destroy' 
 
@@ -21,7 +24,10 @@ Rails.application.routes.draw do
  	#post changes of the password
 	post '/admins/:id' => 'admins#update' , :as => 'update'
 
-	get '//admins/:id/stadia' => 'stadia#index' , :as => 'stadia'
+	get '/admins/:id/stadia' => 'stadia#index' , :as => 'stadia'
+
+	get '/admins/:id/stadia/new' => 'stadia#new' 
+
 
 	resources :games 
 

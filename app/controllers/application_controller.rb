@@ -13,7 +13,9 @@ class ApplicationController < ActionController::Base
 
 	# authroize method redirects admin to login page if not logged in:
 	def authorize
-	  edirect_to login_path, alert: 'You must be logged in to access this page.' if current_admin.nil?
+	  redirect_to login_path, alert: 'You must be logged in to access this page.' if current_admin.nil?
 	end
+
+
 
 end

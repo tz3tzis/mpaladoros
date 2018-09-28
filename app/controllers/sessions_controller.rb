@@ -22,6 +22,15 @@ class SessionsController < ApplicationController
       render :new
     end
   end
+
+
+  def createPlayer
+
+    @player = Player.find_or_create_from_auth_hash(auth_hash)
+    self.current_player = @player
+    redirect_to '/'
+
+  end
   
 
   def destroy
@@ -29,6 +38,12 @@ class SessionsController < ApplicationController
     session.delete(current_admin)
     redirect_to login_path, notice: "Αποσυνδεθήκατε επιτυχώς!"
   end
-  
+
+  protected
+
+  def auth_hash
+    request.env['omniauth.auth']
+  end
+
 # ----- end of added lines -----
 end
