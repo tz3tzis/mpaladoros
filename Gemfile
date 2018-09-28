@@ -54,6 +54,9 @@ gem 'carrierwave' , '~> 1.0'
 
 gem 'jquery-rails', '~> 4.3', '>= 4.3.1'
 
+gem 'omniauth-facebook'
+
+
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development

@@ -10,6 +10,11 @@ class ApplicationController < ActionController::Base
 	    @current_admin ||= Admin.find(session[:admin_id]) if session[:admin_id]
 	end
 
+	def current_player
+		 # Look up the current player based on player_id in the session cookie:
+	    @current_player ||= Player.find(session[:player_id]) if session[:player_id]
+	end
+
 
 	# authroize method redirects admin to login page if not logged in:
 	def authorize

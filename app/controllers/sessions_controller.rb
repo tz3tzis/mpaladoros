@@ -25,10 +25,10 @@ class SessionsController < ApplicationController
 
 
   def createPlayer
-
-    @player = Player.find_or_create_from_auth_hash(auth_hash)
+    auth = request.env['omniauth.auth']
+    @player = Player.find_or_create_by(auth_hash)
     self.current_player = @player
-    redirect_to '/'
+    redirect_to '/games'
 
   end
   

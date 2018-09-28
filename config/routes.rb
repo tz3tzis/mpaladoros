@@ -8,11 +8,13 @@ Rails.application.routes.draw do
 	# create (post) action for when log in form is submitted:
 	post '/login'    => 'sessions#create'
 
-	#for facebook login
-	get '/auth/:provider/callback', to: 'sessions#createPlayer'
 
 	# delete action to log out:
 	delete '/logout' => 'sessions#destroy' 
+
+	#for facebook login
+	get '/auth/facebook/callback', to: 'sessions#createPlayer' , :as => 'fblogin'
+
 
 
 	#get admin distinct program
