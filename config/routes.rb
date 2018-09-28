@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  devise_for :users ,:controllers => { :omniauth_callbacks => "users/omniauth_callbacks" }
+
 	root "pages#home"
 
   # log in page with form:
@@ -13,7 +15,7 @@ Rails.application.routes.draw do
 	delete '/logout' => 'sessions#destroy' 
 
 	#for facebook login
-	get '/auth/facebook/callback', to: 'sessions#createPlayer' , :as => 'fblogin'
+	get '/auth/facebook/callback', to: 'sessions#createPlayer' 
 
 
 

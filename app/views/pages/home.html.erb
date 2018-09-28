@@ -19,40 +19,8 @@
             </h4>
 
 
-            <div class="fb-login-button" data-max-rows="1" data-size="large" data-button-type="login_with" data-show-faces="true" data-auto-logout-link="false" data-use-continue-as="true"></div>
-
-            <fb:login-button 
-              scope="public_profile,email"
-              onlogin="checkLoginState();">
-            </fb:login-button>
-
-           <script> FB.login() </script>
-
-            <div id="fb-root"></div>
-                <script>
-                  window.fbAsyncInit = function() {
-                    FB.init({
-                      appId      : '<%= ENV["FACEBOOK_APP_ID"] %>',
-                      cookie     : true,
-                      xfbml      : true,
-                      version    : '<%= ENV["FACEBOOK_APP_SECRET"] %>'
-                    });
-                      
-                    FB.AppEvents.logPageView();   
-                      
-                  };
-
-                   (function(d, s, id) {
-                      var js, fjs = d.getElementsByTagName(s)[0];
-                      if (d.getElementById(id)) return;
-                      js = d.createElement(s); js.id = id;
-                      js.src = 'https://connect.facebook.net/el_GR/sdk.js#xfbml=1&version=v3.1&appId=213485926125142&autoLogAppEvents=1';
-                      fjs.parentNode.insertBefore(js, fjs);
-                    }(document, 'script', 'facebook-jssdk'));
-
-                </script>
+           <%= link_to "Facebook login" , user_facebook_omniauth_authorize_path %>
             
-
           
         </div>
 
