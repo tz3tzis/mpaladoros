@@ -1,21 +1,21 @@
 Rails.application.routes.draw do
 
-  devise_for :users ,:controllers => { :omniauth_callbacks => "users/omniauth_callbacks" }
-
 	root "pages#home"
 
   # log in page with form:
 	get '/login'     => 'sessions#new' 
 	
 	# create (post) action for when log in form is submitted:
-	post '/login'    => 'sessions#create'
+	post '/login'    => 'sessions#createAdmin'
 
 
 	# delete action to log out:
-	delete '/logout' => 'sessions#destroy' 
+	delete '/logout' => 'sessions#destroyAdmin' 
 
-	#for facebook login
-	get '/auth/facebook/callback', to: 'sessions#createPlayer' 
+	
+	match 'auth/facebook/callback' , to: 'sessions#create', as: 'fblogin', via: [:get, :post]
+	match 'auth/failure', to: redirect('/'), via: [:get, :post]
+	match 'signout', to: 'sessions#destroy', as: 'signout', via: [:get, :post]
 
 
 

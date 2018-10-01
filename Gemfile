@@ -54,8 +54,15 @@ gem 'carrierwave' , '~> 1.0'
 
 gem 'jquery-rails', '~> 4.3', '>= 4.3.1'
 
-gem 'omniauth-facebook'
 gem 'devise'
+
+gem 'omniauth'
+gem 'omniauth-facebook' 
+
+
+#gem gia to javascript
+gem 'therubyracer'
+
 
 
 

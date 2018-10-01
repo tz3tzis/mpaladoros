@@ -5,7 +5,7 @@ class SessionsController < ApplicationController
     # new.html.erb AKA the login page
   end
 
-  def create
+  def createAdmin
     # Look up Admon in db by the email address submitted to the login form and
     # convert to lowercase to match email in db in case they had caps lock on:
     admin = Admin.find_by(email: params[:login][:email].downcase)
@@ -23,30 +23,30 @@ class SessionsController < ApplicationController
     end
   end
 
-
-  def createPlayer
-   if auth_hash = request.env[‘omniauth.auth’]
-     @player = Player.find_or_create_by_omniauth(auth_hash)
-   else
-     @player = Player.find_by(email: params[:@player][:email])
-   end
-   session[:player_id] = @player.id
+  #arxikopoihsh tou user me ta stoixeia apo to omniauth
+  #dhmiourgia tou cookie ths efarmoghs
+  #anakateuthinsh sthn selida twn games
+  def create
+   user = User.from_omniauth(env["omniauth.auth"])
+   session[:user_id] = user_id
    redirect_to games_path
+  end
 
+  #thetoume to cookie tou xrhsth sthn timh nil
+  #anakateuthinsh sthn arxikh selida
+  def destroy
+    session.delete(current_user)
+    redirect_to root_url, notice: "#{current_user.inspect}"
   end
   
 
-  def destroy
+  def destroyAdmin
     # delete the saved user_id key/value from the cookie:
     session.delete(current_admin)
     redirect_to login_path, notice: "Αποσυνδεθήκατε επιτυχώς!"
   end
 
-  protected
+  
 
-  def auth_hash
-    request.env['omniauth.auth']
-  end
 
-# ----- end of added lines -----
 end
