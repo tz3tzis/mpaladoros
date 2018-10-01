@@ -54,7 +54,8 @@ gem 'carrierwave' , '~> 1.0'
 
 gem 'jquery-rails', '~> 4.3', '>= 4.3.1'
 
-gem 'omniauth-facebook'
+gem 'omniauth'
+gem 'omniauth-facebook', '1.4.0'
 
 
 
