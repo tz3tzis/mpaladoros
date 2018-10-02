@@ -4,7 +4,7 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable ,
          :omniauthable, :omniauth_providers => [:facebook]
-  require 'omniauth-facebook'
+
 
   def self.new_with_session(params,session)
   	super.tap do |user|
@@ -21,6 +21,7 @@ class User < ApplicationRecord
 	    user.password = Devise.friendly_token[0,20]
 	    user.name = auth.info.name
 	    user.image = auth.info.avatar
+      user.save!
   	end  	
   end
 end
