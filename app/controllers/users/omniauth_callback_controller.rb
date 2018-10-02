@@ -13,6 +13,6 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
 
   def failure
     redirect_to games_path
-    print request.ENV["omniauth.auth"]
+    print request.env["omniauth.auth"]
   end
 end
