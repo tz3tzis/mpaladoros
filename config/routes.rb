@@ -10,18 +10,16 @@ Rails.application.routes.draw do
 
 
 	# delete action to log out:
-	delete '/logout', :to => 'sessions#destroy' 
+	delete '/logout', :to => 'sessions#destroyAdmin' 
 
 
 
- 	delete '/sign_out', :to => 'devise/sessions#destroyUser', :as => :destroy_user_session
+	#to devise_for mas ftiaxnei kapoia dika tou routes 
+	#analoga me ta paidia poy exoume valei sto modelo mas
+	devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks" },
+						:except => [:destroy]
 
 
-
-	#dieuthinsh gia thn eksodo toy xrhsth
-	devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks" }
-
-	#
 
 
 
@@ -36,11 +34,12 @@ Rails.application.routes.draw do
 
 	get '/admins/:id/stadia' => 'stadia#index' , :as => 'stadia'
 
-	get '/admins/:id/stadia/new' => 'stadia#new' 
+	#get '/admins/:id/stadia/new' => 'stadia#new' 
 
 
-	resources :games 
+	resources :games , only: [:index,:show]
+	resources :admins , only: [:index,:show]
 
-  resources :admins , :except => [:new,:index]
+  
   
 end
