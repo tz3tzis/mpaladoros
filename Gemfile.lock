@@ -256,7 +256,7 @@ DEPENDENCIES
   momentjs-rails (>= 2.9.0)
   npm-rails (~> 0.2.1)
   omniauth
-  omniauth-facebook (~> 4.0.0)
+  omniauth-facebook
   pg (>= 0.18, < 2.0)
   puma (~> 3.7)
   rails (~> 5.1.6)
