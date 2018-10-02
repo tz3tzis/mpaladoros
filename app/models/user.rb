@@ -4,7 +4,7 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable ,
          :omniauthable, :omniauth_providers => [:facebook]
-
+  require 'omniauth-facebook'
 
   def self.new_with_session(params,session)
   	super.tap do |user|
@@ -13,7 +13,7 @@ class User < ApplicationRecord
   		end
   	end
   end
-  
+
   #Saving new user to the database 
   def self.from_omniauth(auth)
   	where(provider: auth.provider, uid: auth.uid).first_or_create do |user|
