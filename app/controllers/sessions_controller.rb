@@ -40,7 +40,7 @@ class SessionsController < ApplicationController
   #end
   
 
-  def destroyAdmin
+  def destroy
     # delete the saved user_id key/value from the cookie:
     session.delete(current_admin)
     redirect_to login_path, notice: "Αποσυνδεθήκατε επιτυχώς!"
