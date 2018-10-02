@@ -10,7 +10,7 @@ Rails.application.routes.draw do
 
 
 	# delete action to log out:
-	get '/logout' => 'sessions#destroy' 
+	get '/logout' => 'sessions#destroyAdmin' 
 
 
 	devise_scope :user do

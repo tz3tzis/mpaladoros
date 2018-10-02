@@ -23,22 +23,7 @@ class SessionsController < ApplicationController
     end
   end
 
-  #arxikopoihsh tou user me ta stoixeia apo to omniauth
-  #dhmiourgia tou cookie ths efarmoghs
-  #anakateuthinsh sthn selida twn games
-  #def create
-   #user = User.from_omniauth(env["omniauth.auth"])
-   #session[:user_id] = user_id
-  # redirect_to games_path
- # end
-
-  #thetoume to cookie tou xrhsth sthn timh nil
-  #anakateuthinsh sthn arxikh selida
-  #def destroy
-  #  session.delete(current_user)
-  #  redirect_to root_url, notice: "#{current_user.inspect}"
-  #end
-  
+ 
 
   def destroy
     # delete the saved user_id key/value from the cookie:
