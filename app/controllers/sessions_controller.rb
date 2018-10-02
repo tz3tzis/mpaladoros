@@ -28,7 +28,6 @@ class SessionsController < ApplicationController
   #anakateuthinsh sthn selida twn games
   def create
    user = User.from_omniauth(ENV["omniauth.auth"])
-   print current_user
    session[:user_id] = user_id
    redirect_to games_path
   end
