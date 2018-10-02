@@ -56,8 +56,7 @@ gem 'jquery-rails', '~> 4.3', '>= 4.3.1'
 
 gem 'devise'
 
-gem 'omniauth'
-gem 'omniauth-facebook' 
+gem 'omniauth-facebook', '~> 4.0.0' 
 
 
 #gem gia to javascript
