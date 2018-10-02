@@ -3,6 +3,7 @@ class ApplicationController < ActionController::Base
 
 	#make the current admin method available to views also , not just controllers:
 	helper_method :current_admin
+	helper_method :current_user
 	  
 	#define the current_admin
 	def current_admin
@@ -10,10 +11,12 @@ class ApplicationController < ActionController::Base
 	    @current_admin ||= Admin.find(session[:admin_id]) if session[:admin_id]
 	end
 
-	def current_player
-		 # Look up the current player based on player_id in the session cookie:
-	    @current_player ||= Player.find(session[:player_id]) if session[:player_id]
+
+
+	def current_user 
+		@current_user ||= User.find(session[:user_id]) if session[:user_id]
 	end
+
 
 
 	# authroize method redirects admin to login page if not logged in:
