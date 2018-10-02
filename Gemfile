@@ -47,9 +47,6 @@ gem 'npm-rails', '~> 0.2.1'
 gem "simple_calendar", "~> 2.0"
 
 
-gem 'therubyracer'
-
-
 gem 'carrierwave' , '~> 1.0'
 
 gem 'jquery-rails', '~> 4.3', '>= 4.3.1'
