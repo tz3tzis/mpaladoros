@@ -13,9 +13,9 @@ Rails.application.routes.draw do
 	delete '/logout', :to => 'sessions#destroy' 
 
 
-	devise_scope :user do
- 		delete 'sign_out', :to => 'devise/sessions#destroyUser', :as => :destroy_user_session
-	end
+
+ 	delete '/sign_out', :to => 'devise/sessions#destroyUser', :as => :destroy_user_session
+
 
 
 	#dieuthinsh gia thn eksodo toy xrhsth
