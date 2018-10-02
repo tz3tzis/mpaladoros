@@ -1,4 +1,5 @@
 class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
+  
   def facebook
     @user = User.from_omniauth(request.env["omniauth.auth"])
 
@@ -13,6 +14,6 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
 
   def failure
     redirect_to games_path
-    print request.env["omniauth.auth"]
+    print @user
   end
 end
