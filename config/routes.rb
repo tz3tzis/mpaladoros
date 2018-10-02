@@ -10,20 +10,18 @@ Rails.application.routes.draw do
 
 
 	# delete action to log out:
-	get '/logout' => 'sessions#destroyAdmin' 
+	delete '/logout', :to => 'sessions#destroy' 
 
 
 	devise_scope :user do
- 		delete 'sign_out', :to => 'devise/sessions#destroy', :as => :destroy_user_session
+ 		delete 'sign_out', :to => 'devise/sessions#destroyUser', :as => :destroy_user_session
 	end
 
 
 	#dieuthinsh gia thn eksodo toy xrhsth
 	devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks" }
 
-	#match 'auth/facebook/callback' , to: 'sessions#create', as: 'fblogin', via: [:get, :post]
-	#match 'auth/failure', to: redirect('/'), via: [:get, :post]
-	#match 'signout', to: 'sessions#destroy', as: 'signout', via: [:get, :post]
+	#
 
 
 
