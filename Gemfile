@@ -58,7 +58,7 @@ gem 'devise'
 
 gem 'omniauth'
 
-gem 'omniauth-facebook'
+gem 'omniauth-facebook', '1.4.0'
 
 
 #gem gia to javascript
