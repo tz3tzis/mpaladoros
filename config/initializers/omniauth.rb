@@ -4,7 +4,7 @@ Rails.application.config.middleware.use OmniAuth::Builder do
 	scope:  'email',
   display: 'popup',
   client_options: {
-      site: 'https://graph.facebook.com/v3.0',  # this is the example API version
-      authorize_url: "https://www.facebook.com/v3.0/dialog/oauth"
+      site: 'https://graph.facebook.com/v3.1',  # this is the example API version
+      authorize_url: "https://www.facebook.com/v3.1/dialog/oauth"
     }
 end
