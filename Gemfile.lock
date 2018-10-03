@@ -261,7 +261,7 @@ DEPENDENCIES
   pg (>= 0.18, < 2.0)
   puma (~> 3.7)
   rails (~> 5.1.6)
-  rails-ujs (~> 5.1.0.beta1)
+  rails-ujs
   rails_12factor
   sass-rails (~> 5.0)
   selenium-webdriver

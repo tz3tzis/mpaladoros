@@ -58,7 +58,7 @@ gem 'omniauth-facebook'
 
 #gem gia to javascript
 gem 'therubyracer'
-gem 'rails-ujs', '~> 5.1.0.beta1'
+gem 'rails-ujs'
 
 
 
