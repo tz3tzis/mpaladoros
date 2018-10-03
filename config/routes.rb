@@ -2,6 +2,8 @@ Rails.application.routes.draw do
 
 	root "pages#home"
 
+	delete '/users/sign_out' => 'devise/sessions#destroy'
+
 	#to devise_for mas ftiaxnei kapoia dika tou routes 
 	#analoga me ta paidia poy exoume valei sto modelo mas
 	devise_for :users ,:except => [:destroy], :controllers => { :omniauth_callbacks => "users/omniauth_callbacks" },
