@@ -1,7 +1,9 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
   
-
+  def after_sign_in_path_for(resource)
+  	games_path
+	end
 	#make the current admin method available to views also , not just controllers:
 	helper_method :current_admin
 	  

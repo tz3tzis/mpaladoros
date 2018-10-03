@@ -3,7 +3,13 @@
   <% unless current_user %> 
     <%= link_to "Sign in with Facebook", user_facebook_omniauth_authorize_path %>
   <% else %>
-     <%= current_user[:name] %>
+     <%= current_user.inspect %>
      <%= button_to "Logout", destroy_user_session_path, method: :delete %>
   <% end %>
 </div>
+
+<%= @games.each do |g| %>
+	<%= t.name %>
+	<%= t.start_time %>
+	<%= t.end_time %>
+<% end %>
