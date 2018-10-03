@@ -17,4 +17,14 @@ class ApplicationController < ActionController::Base
 	  redirect_to login_path, alert: 'You must be logged in to access this page.' if current_admin.nil?
 	end
 
+
+	def after_sign_in_path_for(resource)
+     stored_location_for(resource) ||
+    if resource.is_a?(User)
+      games_url
+    else
+      super
+    end
+  end
+
 end
