@@ -11,27 +11,19 @@
   
   <body>
 
+    <%= render  'navigator' %>
+
     <div class="container">
-
-     <% if !current_admin.nil? %>
-
-      <% if current_page?(show_path(current_admin)) %>
-         <%= render partial: 'layouts/navigatorAdmin'  %>
-      <% else %>
-          <%= render partial: 'layouts/navigator'  %>
-      <% end %>
-
-    <% end %>
-
-
-    
+   
       <%= notice %>
       <%= alert %>
 
       <%= yield %>
+
       <%= render 'layouts/footer' %>
 
       <%= debug(params) if Rails.env.development? %>
+
     </div>
 
   </body>

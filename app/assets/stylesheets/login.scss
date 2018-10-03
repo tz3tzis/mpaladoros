@@ -2,12 +2,16 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";  
 
+
+.body { 
+  background-image: url(background.jpg); 
+}
+
 h1.title{
 	text-align: center;
 	color: red;
 	font-style: italic;
 	font-size: 50px;
-
 
 }
 
@@ -16,19 +20,8 @@ h2,h4{
 	color: black;
 	text-align: center;
 	font-style: oblique;
+
 	
-}
-
-#signin{		
-	width : 215px;
-	color : #fff;
-	    align: center;
-
-}
-
-#signup{	
-	width : 215px;
-	color : #fff;
 }
 
 .fbbutton{
@@ -37,21 +30,26 @@ h2,h4{
    padding: 15px 32px;
    text-align: center;
    font-size: 16px;width: 50%;
-   margin: auto;
-
-   
+   margin: auto;   
 }
 
 #fbb{
 	color: white;
 }
 
-#adminlogin{
+.adminlogin{
 	
-	width : 200px;
-	height: 50px;
-	color : #fff;
-	text-align: center;	
+   text-color: red;
+   padding: 15px 32px;
+   text-align: center;
+   font-size: 16px;width: 50%;
+   margin: auto; 
+   line-height: 30px;
+}
+
+#edw{
+	
+   text-color: red;
 }
 
 .input-group{
@@ -62,13 +60,14 @@ h2,h4{
 
 .adminlogin{
 	
-	  margin-left: auto;
-    margin-right: auto;
+	  margin: auto;
     font-size: 20px;
-    width: 400px;
+    text-color: red;
     
 }
-
+.footer{
+	color: white;
+}
 .navbar{
 	background-color: green;
 	text-color: #fff;
