@@ -29,7 +29,7 @@ class AdminsController < ApplicationController
 
 	def stadia
 		@admin = Admin.find(params[:id])
-		@stadia = @admin.stadia
+		@stadia = current_admin.stadia
 	end
 
 private

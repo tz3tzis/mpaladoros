@@ -2,19 +2,22 @@ Rails.application.routes.draw do
 
 	root "pages#home"
 
+	get '/users/sign_out' => 'devise/sessions#destroy'
+
+	#to devise_for mas ftiaxnei kapoia dika tou routes 
+	#analoga me ta paidia poy exoume valei sto modelo mas
+	devise_for :users , :controllers => { :omniauth_callbacks => "users/omniauth_callbacks" },:except => [:destroy]
+	
+
   # log in page with form:
 	get '/login'     => 'sessions#new' 
 	
 	# create (post) action for when log in form is submitted:
-	post '/login'    => 'sessions#create'
+	post '/login'    => 'sessions#createAdmin'
 
 
 	# delete action to log out:
-	delete '/logout' => 'sessions#destroy' 
-
-	#for facebook login
-	get '/auth/facebook/callback', to: 'sessions#createPlayer' , :as => 'fblogin'
-
+	delete '/logout' => 'sessions#destroyAdmin' 
 
 
 	#get admin distinct program
@@ -28,11 +31,12 @@ Rails.application.routes.draw do
 
 	get '/admins/:id/stadia' => 'stadia#index' , :as => 'stadia'
 
-	get '/admins/:id/stadia/new' => 'stadia#new' 
+	#get '/admins/:id/stadia/new' => 'stadia#new' 
 
 
-	resources :games 
+	resources :games , only: [:index,:show,:new]
+	resources :admins , only: [:index,:show]
 
-  resources :admins , :except => [:new,:index]
+  
   
 end

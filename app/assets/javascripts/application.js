@@ -11,12 +11,12 @@
 // about supported directives.
 //
 //----------i added those---------------
-//= require bootstrap
-//= require moment
 //= require jquery
 //= require jquery_ujs
 //= require rails-ujs
 //= require turbolinks
+//= require bootstrap
+//= require moment
 //= require_tree .
 
 

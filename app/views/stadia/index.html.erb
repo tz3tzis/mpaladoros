@@ -1,7 +1,9 @@
 <h2> Αυτα είναι τα γήπεδα σου </h2>
 <table>
   <ul style="list-style-type:none">
-	<% @stadia.each do |t| %>
+
+    
+	<% current_admin.stadia.each do |t| %>
 		
 		<br>
       <div id="myCarousel" class="carousel slide" data-ride="carousel" style = "width:500px; height: 400px; ">
