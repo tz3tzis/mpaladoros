@@ -4,11 +4,11 @@
     <%= link_to "Sign in with Facebook", user_facebook_omniauth_authorize_path %>
   <% else %>
   	<ul>
-  	<td><%= current_user.uid %></td>
-     <td><%= current_user.name %></td>
-     <td><%= current_user.email %></td>
-     <td><%= current_user.created_at %></td>
-     <td><%= button_to "Logout", destroy_user_session_path, method: :delete %></td>
+  	<li><%= current_user.uid %></li>
+     <li><%= current_user.name %></li>
+     <li><%= current_user.email %></li>
+     <li><%= current_user.created_at %></li>
+     <li><%= button_to "Logout", destroy_user_session_path, method: :delete %></td>
     </ul>
   <% end %>
 </div>

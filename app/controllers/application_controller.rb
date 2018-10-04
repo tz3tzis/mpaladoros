@@ -1,9 +1,6 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
-  
-  def after_sign_in_path_for(resource)
-  	games_path
-	end
+ 
 	#make the current admin method available to views also , not just controllers:
 	helper_method :current_admin
 	  
@@ -13,6 +10,10 @@ class ApplicationController < ActionController::Base
 	    @current_admin ||= Admin.find(session[:admin_id]) if session[:admin_id]
 	end
 
+	#redifines the redirect path after fblogin
+  def after_sign_in_path_for(resource)
+  	games_path
+	end
 
 	# authroize method redirects admin to login page if not logged in:
 	def authorize
