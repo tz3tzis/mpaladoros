@@ -52,9 +52,6 @@ gem 'carrierwave' , '~> 1.0'
 gem 'jquery-rails', '~> 4.3', '>= 4.3.1'
 
 
-gem 'omniauth'
-gem 'omniauth-facebook', '1.4.0'
-
 #gia to fb login
 gem 'devise'
 gem 'omniauth-facebook'
