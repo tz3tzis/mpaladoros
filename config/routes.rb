@@ -34,7 +34,7 @@ Rails.application.routes.draw do
 	#get '/admins/:id/stadia/new' => 'stadia#new' 
 
 
-	resources :games , only: [:index,:show]
+	resources :games , only: [:index,:show,:new]
 	resources :admins , only: [:index,:show]
 
   
