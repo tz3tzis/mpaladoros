@@ -10,6 +10,11 @@ class ApplicationController < ActionController::Base
 	    @current_admin ||= Admin.find(session[:admin_id]) if session[:admin_id]
 	end
 
+	#helper method for current_game based on game id
+	def current_game
+			@current_game ||= Game.find(params[:id])
+	end
+
 	#redifines the redirect path after fblogin
   def after_sign_in_path_for(resource)
   	games_path

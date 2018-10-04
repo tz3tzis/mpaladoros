@@ -11,6 +11,7 @@ class GamesController < ApplicationController
 
 	def show
 		@game = Game.find(params[:id])
+		@stadia = Stadium.all
 	end
 
 
@@ -27,6 +28,11 @@ class GamesController < ApplicationController
 		end
 
 	end
+
+	#def stadia
+		#@games = Game.find(params[:id])
+		#@stadia = Stadium.all
+	#end
 
 
 	private
