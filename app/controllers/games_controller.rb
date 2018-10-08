@@ -27,7 +27,7 @@ class GamesController < ApplicationController
 		@stadium = Stadium.find_by(stadium_name: "#{@game.name}")
 		@stadium.game_id = @game.id
 		@game.admin_id = @stadium.admin_id 
-		#@game.end_time = @game.start_time + 90.minutes
+		@game.end_time = @game.start_time + 90.minutes
 		
 		
 		if @game.save
@@ -50,7 +50,7 @@ class GamesController < ApplicationController
 	private
 
 		def game_params
-			params.require(:game).permit(:start_time, :end_time, :name ,:admin_id)
+			params.require(:game).permit(:start_time, :end_time, ,:game_id, :name ,:admin_id)
 		end
 
 end
