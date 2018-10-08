@@ -12,7 +12,7 @@ class ApplicationController < ActionController::Base
 
 	#helper method for current_game based on game id
 	def current_game
-			@current_game ||= Game.find(params[:id])
+			@current_game ||= Game.find(params[:admin_id]) if params[:admin_id]
 	end
 
 	#redifines the redirect path after fblogin

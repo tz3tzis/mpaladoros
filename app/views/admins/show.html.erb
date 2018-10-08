@@ -1,15 +1,18 @@
 <div>
 	<%= month_calendar events: @games do |date, games| %>
 	  <%= date %>
-
-	  <% games.each do |game| %>
-	    <div>
-	      <%= game.name %>
-	      <%= game.start_time.strftime("%I:%M - ") %>
-	      <%= game.end_time.strftime("%I:%M") %>
-	      
-	    </div>
-	  <% end %>
+	 
+		  <% games.each do |game| %>
+		    <div>
+		    <% if game.admin_id == current_admin.id %>
+		    		<%= game.name %>
+			      <%= game.start_time.strftime("%I:%M - ") %>
+			      <% game.end_time = game.start_time + 90.minutes %>
+			      <%= game.end_time.strftime("%I:%M - ") %>
+		     <% end %>
+		    </div>
+		  <% end %>
+	
 	<% end %>
 
 </div>

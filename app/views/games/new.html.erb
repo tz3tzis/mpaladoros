@@ -1,29 +1,68 @@
-<h2> Games !</h2>
+<h2 style="color:white;"> Stadiums !</h2>
 
-
-  <container>
-  <ul>
-    <%= @stadia.each do |g| %>
-      <td><%= g.name %></td>
-    <% end %>
-  </ul>
-</container>
 
 <%= form_for :game, url: games_path do |f| %>
-  <div>
-    <%= f.label :start_time %>
-    <%= f.date_field :start_time, autofocus: true %>
+
+
+  <div style="overflow-x:auto;">
+  <table align="center">
+    <% @stadia.each do |t| %>
+      <th style = "width:100px; height: 150px;" >
+          <%=image_tag "#{t.stadium_name}/2.jpg" %>
+          <h3><%= t.stadium_name %></h3>
+          <h3><%= t.admin_id.to_s %></h3>
+          <p><%= "Χωρητικότητα : " + t.max_players.to_s %></p>
+          <p><%= "Τιμή : " + t.price.to_s + "/άτομο"%></p>
+
+          <div>
+            
+          <%= f.label :Παίξε_εδώ %>
+          <%= f.radio_button  :name, t.stadium_name   %>
+
+          </div>
+      </th> 
+    <% end %>
+  </table>
+  </div>
+  <br>
+  
+
+
+  <%= f.label :Πια_ώρα_θές_να_παίξεις? %>
+  <%= f.date_field :start_time  %>
+  
+  <br>
+
+
+
+  <div class="input-group clockpicker" data-placement="right" data-align="top" data-autoclose="true">
+    <input id ="time1" type="text" class="form-control" value="ώρα..">
+    <span class="input-group-addon">
+        <span class="glyphicon glyphicon-time"></span>
+        
+    </span>
   </div>
 
 
+       
 
-  <div>
-    <%= f.label :end_time %>
-    <%= f.date_field :end_time %>
-  </div>
-  <div>
+    
+  <br>
+
+  <div id="newgame">
     <%= f.submit "New Game" %>
   </div>
+
 <% end %>
+
+<br>
+<br>
+
+<script type="text/javascript" src="dist/bootstrap-clockpicker.min.js"></script>
+<script type="text/javascript">
+    $('.clockpicker').clockpicker();
+</script>
+
+  
 
 

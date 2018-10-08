@@ -13,14 +13,14 @@
   <% end %>
 </div>
 
-<%= link_to 'Δημιούργησε Παιχνίδι', new_game_url %>
-<container>
-	<ul>
+<div>
+  <% @games.each do |g| %>
+    <%= g.start_time %>
+    <%= g.end_time %>
+    <%= g.admin_id %>
+    <%= g.name %>
+    <br>
+  <% end %>
+</div>
 
-		<%= @games.each do |g| %>
-			<td><%= t.name %></td>
-			<td><%= t.start_time %></td>
-			<td><%= t.end_time %></td>
-		<% end %>
-	</ul>
-</container>
+<%= link_to 'Δημιούργησε Παιχνίδι', new_game_url %>

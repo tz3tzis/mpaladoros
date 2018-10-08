@@ -2,6 +2,33 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+table, th, td {
+   border: 3px solid white;
+}
+
+p{ color:white; text-align: center;}
+
+h3{ color:white; text-align: center;}
 
 
+input.radiob{ 
+	margin-left: auto;
+  margin-right: auto;
+  width: 20%;
+}
 
+label{
+	color:white;
+}
+
+#datetimepicker1{
+	margin-left: auto;
+  margin-right: auto;
+  width: 60%;
+}
+
+#time{
+	margin-left: auto;
+  margin-right: auto;
+  width: 30%;
+}
