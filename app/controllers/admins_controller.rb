@@ -35,7 +35,7 @@ class AdminsController < ApplicationController
 private
 
   def admin_params
-    # strong parameters - whitelist of allowed fields #=> permit(:name, :email, ...)
+    # strong parameters - whitelist of allowed fields #=> permit(:name, :email, .sddsd..)
     # that can be submitted by a form to the user model #=> require(:user)
     params.require(:admin).permit(:id, :name, :email, :password)
   end
