@@ -3,7 +3,6 @@ class GamesController < ApplicationController
 	def index
 		@games = Game.all
 		@admin=Admin.all.find_by(@game.admin_id) if !current_game.nil?
-
 	end
 
 	def new
@@ -20,8 +19,6 @@ class GamesController < ApplicationController
 
 
 	def create
-
-
 		@game = Game.new(game_params)
 
 		@stadium = Stadium.find_by(stadium_name: "#{@game.name}")
@@ -50,7 +47,7 @@ class GamesController < ApplicationController
 	private
 
 		def game_params
-			params.require(:game).permit(:start_time, :end_time, ,:game_id, :name ,:admin_id)
+			params.require(:game).permit(:start_time, :end_time, :game_id, :name ,:admin_id)
 		end
 
 end
