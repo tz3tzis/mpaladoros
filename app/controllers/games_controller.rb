@@ -15,10 +15,12 @@ class GamesController < ApplicationController
 	def show
 		@game = Game.find(params[:id])
 		#@stadia = Stadium.all
+		
 	end
 
 
 	def create
+
 		@game = Game.new(game_params)
 
 		@stadium = Stadium.find_by(stadium_name: "#{@game.name}")
