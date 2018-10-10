@@ -1,7 +1,6 @@
 class Stadium < ApplicationRecord
-	
-	belongs_to :admin
-	belongs_to :game
 
+	belongs_to :admin
+	has_many :games
 
 end

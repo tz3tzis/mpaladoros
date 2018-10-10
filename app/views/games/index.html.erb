@@ -13,14 +13,25 @@
   <% end %>
 </div>
 
-<div>
-  <% @games.each do |g| %>
-    <%= g.start_time %>
-    <%= g.end_time %>
-    <%= g.admin_id %>
-    <%= g.name %>
-    <br>
-  <% end %>
+<div id='gametable'>
+
+  <table border="1" id='gametable' >
+    
+    <% @games.each do |g| %>
+      <tr>
+        <ul style="list-style-type:none">
+          <li id='white'><%= g.start_time %></li>
+          <li id='white' ><%= g.end_time %></li>
+          <li id='white'><%= g.admin_id %></li>
+          <li id='white'><%= g.name %></li>
+          <li id='white'><%= g.id %></li>
+          <li id='white'><%= link_to 'Delete game' , delete_path(g.id), method: :delete,  data: { confirm: 'Are you sure?' } %></li>
+        </ul>
+      </tr>
+      <br>
+    <% end %>
+    </ul>
+ </table>
 </div>
 
 <%= link_to 'Δημιούργησε Παιχνίδι', new_game_url %>

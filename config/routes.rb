@@ -31,6 +31,8 @@ Rails.application.routes.draw do
 
 	get '/admins/:id/stadia' => 'stadia#index' , :as => 'stadia'
 
+	delete '/game/:id' => 'games#delete' , :as => "delete"
+
 	#get '/admins/:id/stadia/new' => 'stadia#new' 
 
 

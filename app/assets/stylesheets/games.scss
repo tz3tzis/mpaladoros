@@ -27,8 +27,55 @@ label{
   width: 60%;
 }
 
-#time{
-	margin-left: auto;
+
+
+#white{
+  color:white; text-align: center;
+}
+
+
+
+
+#game_start_time{
+  height: 40px;
+  width: 200px;
+}
+
+
+#label{
+  text-align: right;   
+}
+
+#time1{
+    
+   height: 40px;
+   width: 161px;
+}
+
+
+#inline{
+  width:100%;
+  height:auto;
+  
+  display:flex;
+}
+.one,.two{
+  width:50%;
+  margin:10px;
+}
+
+#float{
+  float:right;
+}
+
+#newgame{
+  margin-left: auto;
   margin-right: auto;
   width: 30%;
 }
+
+
+
+
+
+

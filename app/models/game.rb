@@ -1,7 +1,6 @@
 class Game < ApplicationRecord
-
-validates :start_time , presence: true
+validates :start_time , :length => { minimum: 0} , :allow_blank => false
 
 has_one :stadium
-	
-end
+
+end 
