@@ -23,7 +23,7 @@ class GamesController < ApplicationController
 		@game = Game.new(game_params)
 
 		@stadium = Stadium.find_by(stadium_name: "#{@game.name}")
-		@stadium.game_id = @game.id
+		@game.stadium_id = @stadium.id
 
 		#get time from clock and concatenate it with date to start_time
 		date = params['game']['start_time']
@@ -42,6 +42,10 @@ class GamesController < ApplicationController
 			flash[:notice] = "Ούπς , κατι πηγε στραβά"
 			render :new
 		end
+
+	end
+
+	def join
 
 	end
 

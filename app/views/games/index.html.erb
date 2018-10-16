@@ -1,7 +1,10 @@
-<h3> Συνδεθήκατε επιτυχώς! </h3>
+<h3 id ='title'> Συνδεθήκατε επιτυχώς! </h3>
+
+<%= link_to 'Δημιούργησε Παιχνίδι', new_game_url, id: 'creategame' %>
+
 <div>	
   <% unless current_user %> 
-    <%= link_to "Sign in with Facebook", user_facebook_omniauth_authorize_path %>
+    <%= link_to "Sign in with Facebook", user_facebook_omniauth_authorize_path , id: 'button'%>
   <% else %>
   	<ul>
   	<li><%= current_user.uid %></li>
@@ -15,17 +18,17 @@
 
 <div id='gametable'>
 
-  <table border="1" id='gametable' >
+  <table  id='gametable' >
     
-    <% @games.each do |g| %>
+    <% @games.order("created_at DESC").each do |g| %>
       <tr>
-        <ul style="list-style-type:none">
+        <ul style="list-style-type:none" id = 'gameslayout'>
           <li id='white'><%= g.start_time %></li>
           <li id='white' ><%= g.end_time %></li>
           <li id='white'><%= g.admin_id %></li>
           <li id='white'><%= g.name %></li>
           <li id='white'><%= g.id %></li>
-          <li id='white'><%= link_to 'Delete game' , delete_path(g.id), method: :delete,  data: { confirm: 'Are you sure?' } %></li>
+          <li id='white'><%= link_to 'Delete game' , delete_path(g.id), method: :delete,  data: { confirm: 'Are you sure?' }, id: 'join' %></li>
         </ul>
       </tr>
       <br>
@@ -34,4 +37,4 @@
  </table>
 </div>
 
-<%= link_to 'Δημιούργησε Παιχνίδι', new_game_url %>
+
