@@ -34,7 +34,7 @@ Rails.application.routes.draw do
 	delete '/game/:id' => 'games#delete' , :as => "delete"
 
 	#get '/admins/:id/stadia/new' => 'stadia#new' 
-
+	get '/teams' => "teams#index" , :as => "join"
 
 	#post '/games/new' => 'games#create'
 

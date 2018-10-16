@@ -23,12 +23,13 @@
     <% @games.order("created_at DESC").each do |g| %>
       <tr>
         <ul style="list-style-type:none" id = 'gameslayout'>
-          <li id='white'><%= g.start_time %></li>
-          <li id='white' ><%= g.end_time %></li>
+          <li id='white'><%= g.start_time.strftime("%I:%M -")+g.end_time.strftime("%I:%M") %></li>
           <li id='white'><%= g.admin_id %></li>
           <li id='white'><%= g.name %></li>
           <li id='white'><%= g.id %></li>
-          <li id='white'><%= link_to 'Delete game' , delete_path(g.id), method: :delete,  data: { confirm: 'Are you sure?' }, id: 'join' %></li>
+          <li id='white'><%= link_to 'Delete game' , delete_path(g.id), method: :delete,  data: { confirm: 'Are you sure?' }, id: 'join' %>
+            <%= link_to 'Join game' , join_path, id: 'join' %>
+          </li>
         </ul>
       </tr>
       <br>

@@ -46,7 +46,8 @@ class GamesController < ApplicationController
 	end
 
 	def join
-
+		
+		
 	end
 
 	def delete()
