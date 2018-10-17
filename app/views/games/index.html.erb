@@ -28,7 +28,7 @@
           <li id='white'><%= g.name %></li>
           <li id='white'><%= g.id %></li>
           <li id='white'><%= link_to 'Delete game' , delete_path(g.id), method: :delete,  data: { confirm: 'Are you sure?' }, id: 'join' %>
-            <%= link_to 'Join game' , join_path, id: 'join' %>
+            <%= link_to 'Join game' , game_teams_path(g.id), id: 'join' %>
           </li>
         </ul>
       </tr>

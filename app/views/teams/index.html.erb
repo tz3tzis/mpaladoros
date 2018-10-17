@@ -1,1 +1,27 @@
-<h3> Pick a team </h3>
+<div class="center jumbotron">
+  <h3> Διάλεξε ομάδα! </h3>
+
+  <span>
+
+
+     <ul style="list-style-type: none; display: inline-block;">
+        <h3> Hometeam </h3>
+     		<% @game.hometeam.users.each do |player| %>
+       	 <li> <%= player.name %></li>
+        <% end %>
+
+        <%= link_to 'Παίξε σε αυτήν την ομάδα' , join_path(@game.hometeam.id)%>
+
+
+     </ul>
+
+     <ul style="list-style-type: none; display: inline-block;">
+      <h3> Awayteam </h3>
+     	<% @game.awayteam.users.each do |player| %>
+       	 <li> <%= player.name %></li>
+
+        <% end %>
+        <%= link_to 'Παίξε σε αυτήν την ομάδα' , join_path(@game.awayteam.id) %>
+     </ul>
+  <span>
+</div>

@@ -33,12 +33,16 @@ Rails.application.routes.draw do
 
 	delete '/game/:id' => 'games#delete' , :as => "delete"
 
-	#get '/admins/:id/stadia/new' => 'stadia#new' 
-	get '/teams' => "teams#index" , :as => "join"
+	get '/games/:id/teams/:id' => 'teams#join' , :as => 'join'
 
 	#post '/games/new' => 'games#create'
 
-	resources :games 
+	resources :games do
+		resources :teams
+	end
+
+
+
 	resources :admins , only: [:index,:show]
 
   

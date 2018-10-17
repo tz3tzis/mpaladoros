@@ -8,7 +8,6 @@ class GamesController < ApplicationController
 	def new
 		@game = Game.new
 		@stadia = Stadium.all
-		
 	end
 
 
@@ -21,8 +20,8 @@ class GamesController < ApplicationController
 	def create
 
 		@game = Game.new(game_params)
-
 		@stadium = Stadium.find_by(stadium_name: "#{@game.name}")
+		
 		@game.stadium_id = @stadium.id
 
 		#get time from clock and concatenate it with date to start_time
@@ -30,9 +29,23 @@ class GamesController < ApplicationController
 		time = params['game']['time']
 		@game.start_time = Time.parse("#{date} #{time}") + 3.hours
 
+		#ta paixnidia exoun diarkeia 90 lepta
 		@game.admin_id = @stadium.admin_id 
 		@game.end_time = @game.start_time + 90.minutes
-			
+
+
+		#dhmiourgountai 2  nees omades
+		@team1 = Team.create(name: 'home')
+		@team2 = Team.create(name: 'away')
+
+		#tous anathetontai ta antisoixa id
+		@game.hometeam_id = @team1.id
+		@game.awayteam_id = @team2.id
+
+		#o paikths pou ftiaxnei to paixnidi anatithetai sthn prwth omada
+		@team1.users << current_user	
+
+
 		#save game
 		if @game.save 
 			@stadium.save!
@@ -45,9 +58,8 @@ class GamesController < ApplicationController
 
 	end
 
-	def join
-		
-		
+	def teams
+
 	end
 
 	def delete()
