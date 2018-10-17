@@ -43,7 +43,7 @@ Rails.application.routes.draw do
 
 
 
-	resources :admins , only: [:index,:show]
+	resources :admins , only: [:index,:show , :update]
 
   
   
