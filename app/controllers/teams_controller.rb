@@ -15,7 +15,7 @@ class TeamsController < ApplicationController
 
 	def join 
 		@team = Team.find(params[:id])
-		#@team.users = current_user
+		@team.users << User.current_user
 		redirect_to games_path
 	end
 

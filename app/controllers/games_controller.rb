@@ -43,12 +43,12 @@ class GamesController < ApplicationController
 		@game.awayteam_id = @team2.id
 
 		#o paikths pou ftiaxnei to paixnidi anatithetai sthn prwth omada
-		@team1.users << User.find(params[:id])	
+		@team1.users << User.current_user
 
 
 		#save game
 		if @game.save 
-			@stadium.save!
+			#@stadium.save!
 			flash[:notice] = "Το παιχνιδι δημιουργήθηκε επιτυχώς"
 			redirect_to games_path
 		else

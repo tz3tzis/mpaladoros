@@ -1,4 +1,6 @@
 class Game < ApplicationRecord
+	cattr_accessor :current_user
+
 
 	belongs_to :stadium 
 

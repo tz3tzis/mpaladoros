@@ -1,9 +1,14 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
+
+ 	before_filter :set_current_user
+
+	def set_current_user
+	  User.current_user = current_user
+	end
  
 	#make the current admin method available to views also , not just controllers:
 	helper_method :current_admin
-	helper_method :current_user
 	  
 	#define the current_admin
 	def current_admin
@@ -11,14 +16,10 @@ class ApplicationController < ActionController::Base
 	    @current_admin ||= Admin.find(session[:admin_id]) if session[:admin_id]
 	end
 
-	def current_user
-		 # Look up the current admin based on admin_id in the session cookie:
-	    @current_user ||= User.find(session[:user_id]) if session[:user_id]
-	end
 
 	#helper method for current_game based on game id
 	def current_game
-			@current_game ||= Game.find(params[:admin_id]) if params[:admin_id]
+			@current_game ||= Game.find(params[:id]) if params[:id]
 	end
 
 	#redifines the redirect path after fblogin
