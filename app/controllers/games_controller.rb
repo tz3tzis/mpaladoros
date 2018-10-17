@@ -43,7 +43,7 @@ class GamesController < ApplicationController
 		@game.awayteam_id = @team2.id
 
 		#o paikths pou ftiaxnei to paixnidi anatithetai sthn prwth omada
-		@team1.users << current_user	
+		@team1.users << User.find(params[:id])	
 
 
 		#save game
