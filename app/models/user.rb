@@ -21,11 +21,17 @@ class User < ApplicationRecord
 	    user.email = auth.info.email
 	    user.password = Devise.friendly_token[0,20]
 	    user.name = auth.info.name
-	    user.image = URI.parse(auth.info.avatar) if auth.info.avatar?
+	    #user.image = URI.parse(auth.info.avatar) if auth.info.avatar?
       user.save!
   	end  	
   end
 
+  def largeimage
+    "http://graph.facebook.com/#{self.uid}/picture?type=large"
+  end
+  def normalimage
+    "http://graph.facebook.com/#{self.uid}/picture?type=normal"
+  end
 
 
 end
