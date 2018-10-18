@@ -1,5 +1,7 @@
 class TeamsController < ApplicationController
 
+	before_action :authenticate_user!
+
 	def index
 		@game = Game.find(params[:game_id])
 	end
@@ -15,7 +17,7 @@ class TeamsController < ApplicationController
 
 	def join 
 		@team = Team.find(params[:id])
-		@team.users << User.find(2)
+		@team.users << current_user
 		redirect_to games_path
 	end
 
