@@ -2,7 +2,7 @@
 
 <div id="inline">
 
-  <div >
+  <div class = "one">
     <%= link_to 'Δημιούργησε Παιχνίδι', new_game_url, id: 'creategame'%>
   </div>
 
@@ -31,7 +31,7 @@
   </div>
 
 
-  <div  id = "float">  
+  <div class = 'two' id = "float">  
     <% unless current_user %> 
       <%= link_to "Sign in with Facebook", user_facebook_omniauth_authorize_path , id: 'button'%>
     <% else %>
