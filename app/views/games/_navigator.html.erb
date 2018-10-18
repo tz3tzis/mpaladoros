@@ -23,7 +23,7 @@
       <form class="navbar-form navbar-left"></form>
       <ul class="nav navbar-nav navbar-right">
         <li><a id = "logo" href="#">Το προφίλ μου</a></li>
-      <li><a id = "logo" href="#">Αποσύνδεση</a></li>
+      <li><<%= button_to "Αποσύνδεση", destroy_user_session_path, method: :delete , id: 'button1' %></li>
 
         </li>
       </ul>
