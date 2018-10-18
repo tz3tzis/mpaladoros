@@ -1,6 +1,6 @@
 class User < ApplicationRecord
 
-  belongs_to :team
+  
 
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
@@ -27,4 +27,7 @@ class User < ApplicationRecord
       user.save!
   	end  	
   end
+
+
+
 end
