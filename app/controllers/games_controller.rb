@@ -1,5 +1,8 @@
 class GamesController < ApplicationController
 
+	before_action :authenticate_user!
+
+
 	def index
 		@games = Game.all
 		@admin=Admin.all.find_by(@game.admin_id) if !current_game.nil?
@@ -43,7 +46,7 @@ class GamesController < ApplicationController
 		@game.awayteam_id = @team2.id
 
 		#o paikths pou ftiaxnei to paixnidi anatithetai sthn prwth omada
-		@team1.users << User.current_user
+		@team1.users << current_user
 
 
 		#save game

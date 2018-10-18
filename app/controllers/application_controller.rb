@@ -1,10 +1,17 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
+  #before_action :current_user
 
- 
-	#make the current admin method available to views also , not just controllers:
-	helper_method :current_admin
-	  
+  helper_method :current_user
+  #make the current admin method available to views also , not just controllers:
+	#helper_method :current_admin
+
+  #def current_user
+    #User.find_by id: session["current_user_id"]
+    # or whatever
+   # @current_user ||= User.find(session[:current_user_id]) if session[:current_user_id]
+ # end
+  
 	#define the current_admin
 	def current_admin
 		 # Look up the current admin based on admin_id in the session cookie:
