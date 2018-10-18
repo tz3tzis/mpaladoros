@@ -1,7 +1,5 @@
 class User < ApplicationRecord
 
-  
-
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable,  :rememberable, :trackable, :validatable ,
@@ -23,7 +21,7 @@ class User < ApplicationRecord
 	    user.email = auth.info.email
 	    user.password = Devise.friendly_token[0,20]
 	    user.name = auth.info.name
-	    user.image = auth.info.avatar
+	    user.image = http://graph.facebook.com/#{auth.uid}/picture?type=normal
       user.save!
   	end  	
   end

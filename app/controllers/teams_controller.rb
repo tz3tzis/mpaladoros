@@ -18,7 +18,8 @@ class TeamsController < ApplicationController
 	def join 
 		@team = Team.find(params[:id])
 		@team.users << current_user
-		redirect_to games_path
+		flash[:notice] = "H επιλογή ομάδας έγινε με επιτυχία!"
+		flash[:notice] = "Θα ειδοποιηθείς στο messenger για την συνέχεια της διαδικασίας"
 	end
 
 
