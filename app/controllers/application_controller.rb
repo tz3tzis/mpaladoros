@@ -2,7 +2,7 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
   
   #make the current admin method available to views also , not just controllers:
-  helper_method :current_user
+  helper_method :current_admin
   
 	#define the current_admin
 	def current_admin

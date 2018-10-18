@@ -57,7 +57,6 @@ label{
 }
 
 #time1{
-    
    height: 40px;
    width: 161px;
 }
@@ -95,9 +94,12 @@ label{
   color: blue;
 }
 
-#button1{
-  color: black;
+.btn-small{
+  margin-top: 10px;
+  color: white;;
+  background-color: green;
 }
+
 
 #gametable{
   margin-left: auto;
