@@ -6,11 +6,11 @@
   <% unless current_user %> 
     <%= link_to "Sign in with Facebook", user_facebook_omniauth_authorize_path , id: 'button'%>
   <% else %>
-  
+
   	<div>
-     <%= current_user.name %> <%= current_user.email %> 
+     <h3><%= current_user.name %> </h3>
      <%= image_tag(current_user.normalimage) %> 
-     <%= button_to "Logout", destroy_user_session_path, method: :delete %>
+     <span><%= button_to "Logout", destroy_user_session_path, method: :delete %></span>
     </div>
     
   <% end %>
