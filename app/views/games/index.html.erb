@@ -8,9 +8,9 @@
 
 
 
-  <div class='one' id='gametable'>
+  <div  id='gametable'>
 
-    <table  id='gametable' >
+    <table  >
       
       <% @games.order("created_at DESC").each do |g| %>
         <tr>
@@ -37,7 +37,7 @@
     <% else %>
 
       <div >
-        <div><%= current_user.name %><div>
+        <div style="color: green;"><%= current_user.name %><div>
         <div><%= image_tag(current_user.normalimage) %> </div>
         <div><%= button_to "Logout", destroy_user_session_path, method: :delete %></div>
       </div>
