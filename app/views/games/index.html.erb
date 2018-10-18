@@ -1,24 +1,23 @@
 <h3 id ='title'> Συνδεθήκατε επιτυχώς! </h3>
 
 <div id="inline">
-  <div>
+  <div class='one'>
     <%= link_to 'Δημιούργησε Παιχνίδι', new_game_url, id: 'creategame'%>
   </div>
 
 
-  <div class='one'>	
+  <div class='two' id = "float">	
     <% unless current_user %> 
       <%= link_to "Sign in with Facebook", user_facebook_omniauth_authorize_path , id: 'button'%>
     <% else %>
 
-    	<div class='two' id = "float">
-       <h3><%= current_user.name %> </h3>
+    	<div >
+       <%= current_user.name %> 
        <%= image_tag(current_user.normalimage) %> 
-       <span><%= button_to "Logout", destroy_user_session_path, method: :delete %></span>
+       <%= button_to "Logout", destroy_user_session_path, method: :delete %>
       </div>
-      
     <% end %>
-  </div>
+  </div>  
 </div>
 
 <div id='gametable'>
