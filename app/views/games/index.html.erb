@@ -1,45 +1,47 @@
 <h3 id ='title'> Συνδεθήκατε επιτυχώς! </h3>
 
-<div id="inline">
+
   <div class='one'>
     <%= link_to 'Δημιούργησε Παιχνίδι', new_game_url, id: 'creategame'%>
   </div>
 
+<div id="inline">
 
-  <div class='two' id = "float">	
+  <div class='one' id='gametable'>
+
+    <table  id='gametable' >
+      
+      <% @games.order("created_at DESC").each do |g| %>
+        <tr>
+          <ul style="list-style-type:none" id = 'gameslayout'>
+            <li id='white'><%= g.start_time.strftime("%I:%M -")+g.end_time.strftime("%I:%M") %></li>
+            <li id='white'><%= g.admin_id %></li>
+            <li id='white'><%= g.name %></li>
+            <li id='white'><%= g.id %></li>
+            <li id='white'><%= link_to 'Delete game' , delete_path(g.id), method: :delete,  data: { confirm: 'Are you sure?' }, id: 'join' %>
+              <%= link_to 'Join game' , game_teams_path(g.id), id: 'join' %>
+            </li>
+          </ul>
+        </tr>
+        <br>
+      <% end %>
+      </ul>
+   </table>
+  </div>
+
+
+  <div class='two' id = "float">  
     <% unless current_user %> 
       <%= link_to "Sign in with Facebook", user_facebook_omniauth_authorize_path , id: 'button'%>
     <% else %>
 
-    	<div >
+      <div >
        <%= current_user.name %> 
        <%= image_tag(current_user.normalimage) %> 
        <%= button_to "Logout", destroy_user_session_path, method: :delete %>
       </div>
     <% end %>
-  </div>  
-</div>
-
-<div id='gametable'>
-
-  <table  id='gametable' >
-    
-    <% @games.order("created_at DESC").each do |g| %>
-      <tr>
-        <ul style="list-style-type:none" id = 'gameslayout'>
-          <li id='white'><%= g.start_time.strftime("%I:%M -")+g.end_time.strftime("%I:%M") %></li>
-          <li id='white'><%= g.admin_id %></li>
-          <li id='white'><%= g.name %></li>
-          <li id='white'><%= g.id %></li>
-          <li id='white'><%= link_to 'Delete game' , delete_path(g.id), method: :delete,  data: { confirm: 'Are you sure?' }, id: 'join' %>
-            <%= link_to 'Join game' , game_teams_path(g.id), id: 'join' %>
-          </li>
-        </ul>
-      </tr>
-      <br>
-    <% end %>
-    </ul>
- </table>
+  </div> 
 </div>
 
 
