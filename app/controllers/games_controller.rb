@@ -61,9 +61,6 @@ class GamesController < ApplicationController
 
 	end
 
-	def teams
-
-	end
 
 	def delete()
 		Game.find(params[:id]).destroy
