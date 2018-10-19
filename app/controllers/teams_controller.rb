@@ -20,6 +20,7 @@ class TeamsController < ApplicationController
 		@team.users << current_user
 		flash[:notice] = "H επιλογή ομάδας έγινε με επιτυχία!"
 		flash[:notice] = "Θα ειδοποιηθείς στο messenger για την συνέχεια της διαδικασίας"
+		render :new
 	end
 
 

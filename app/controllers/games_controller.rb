@@ -39,7 +39,11 @@ class GamesController < ApplicationController
 
 		#dhmiourgountai 2  nees omades
 		@team1 = Team.create(name: 'home')
+		@team1.capacity = @stadium.max_players / 2
 		@team2 = Team.create(name: 'away')
+		@team2.capacity = @stadium.max_players / 2
+
+
 
 		#tous anathetontai ta antisoixa id
 		@game.hometeam_id = @team1.id
@@ -60,6 +64,8 @@ class GamesController < ApplicationController
 		end
 
 	end
+
+
 
 
 	def delete()

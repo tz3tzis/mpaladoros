@@ -6,22 +6,20 @@
 
      <ul style="list-style-type: none; display: inline-block;">
         <h3> Hometeam </h3>
-     		<% @game.hometeam.users.each do |player| %>
-       	 <li> <%= player.name %></li>
+     		<% @game.hometeam.users.each_slice(@game.hometeam.capacity) do |player| %>
+       	  <li> <%= player.name %></li>
         <% end %>
-
         <%= link_to 'Παίξε σε αυτήν την ομάδα' , join_path(@game.hometeam.id)%>
-
-
      </ul>
 
      <ul style="list-style-type: none; display: inline-block;">
       <h3> Awayteam </h3>
-     	<% @game.awayteam.users.each do |player| %>
+     	<% @game.awayteam.users.each_slice(@game.awayteam.capacity) do |player| %>
        	 <li> <%= player.name %></li>
-
         <% end %>
         <%= link_to 'Παίξε σε αυτήν την ομάδα' , join_path(@game.awayteam.id) %>
      </ul>
+
+      <%= button_to 'Επιστροφή' , games_path %>
   <span>
 </div>
