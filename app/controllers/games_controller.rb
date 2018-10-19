@@ -37,11 +37,12 @@ class GamesController < ApplicationController
 		@game.end_time = @game.start_time + 90.minutes
 
 
-		#dhmiourgountai 2  nees omades
+		#dhmiourgountai 2  nees omades me default onomata kai 
+		#xwrhtikothta analogh tou ghpedou
 		@team1 = Team.create(name: 'home')
-		@team1.capacity = @stadium.max_players / 2
+		@team1.capacity = (@stadium.max_players) / 2
 		@team2 = Team.create(name: 'away')
-		@team2.capacity = @stadium.max_players / 2
+		@team2.capacity = (@stadium.max_players) / 2
 
 
 
