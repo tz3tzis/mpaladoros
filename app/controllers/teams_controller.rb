@@ -36,7 +36,7 @@ class TeamsController < ApplicationController
 
 	def team_is_full 
 		@team = Team.find(params[:id])
-		if self.users.count >= self.capacity
+		if @team.users.count >= @team.capacity
 			return false
 		else
 			return true
