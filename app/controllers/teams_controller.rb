@@ -18,16 +18,17 @@ class TeamsController < ApplicationController
 	def join 
 
 		@team = Team.find(params[:id])
+		@game = Game.find(params[:game_id])
 
 		if team_is_full
 			@team.users << current_user
 			flash[:notice] = "H επιλογή ομάδας έγινε με επιτυχία!"
 			flash[:notice] = "Θα ειδοποιηθείς στο messenger για την συνέχεια της διαδικασίας"
-			redirect_to game_teams_url
+			redirect_to game_teams_url(@game.id)
 		else
 			flash[:notice] = "Η ομάδα είναι πλήρης"
 			flash[:notice] = "Παίξτε στην άλλη ομάδα"
-			redirect_to game_teams_url
+			redirect_to game_teams_url(@game.id)
 		end
 	end
 
