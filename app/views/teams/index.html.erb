@@ -14,7 +14,7 @@
 
      <ul style="list-style-type: none; display: inline-block;">
       <h3> Awayteam </h3>
-     	<% @game.awayteam.users.each) do |player| %>
+     	<% @game.awayteam.users.each do |player| %>
        	 <li> <%= player.name %></li>
         <% end %>
         <%= link_to 'Παίξε σε αυτήν την ομάδα' , join_path(@game.awayteam.id) %>
