@@ -23,11 +23,9 @@ class TeamsController < ApplicationController
 			@team.users << current_user
 			flash[:notice] = "H επιλογή ομάδας έγινε με επιτυχία!"
 			flash[:notice] = "Θα ειδοποιηθείς στο messenger για την συνέχεια της διαδικασίας"
-			render :index
 		else
 			flash[:notice] = "Η ομάδα είναι πλήρης"
 			flash[:notice] = "Παίξτε στην άλλη ομάδα"
-			render :index
 		end
 	end
 
