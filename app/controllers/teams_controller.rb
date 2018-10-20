@@ -21,16 +21,14 @@ class TeamsController < ApplicationController
 
 		if team_is_full
 			@team.users << current_user
+			flash[:notice] = "H επιλογή ομάδας έγινε με επιτυχία!"
+			flash[:notice] = "Θα ειδοποιηθείς στο messenger για την συνέχεια της διαδικασίας"
+			render :new
 		else
 			flash[:notice] = "Η ομάδα είναι πλήρης"
 			flash[:notice] = "Παίξτε στην άλλη ομάδα"
 			render :new
 		end
-
-		flash[:notice] = "H επιλογή ομάδας έγινε με επιτυχία!"
-		flash[:notice] = "Θα ειδοποιηθείς στο messenger για την συνέχεια της διαδικασίας"
-		render :new
-
 	end
 
 
