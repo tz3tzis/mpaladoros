@@ -3,7 +3,6 @@
 
   <span>
 
-
      <ul style="list-style-type: none; display: inline-block;">
         <h3> Hometeam </h3>
      		<% @game.hometeam.users.each do |player| %>
@@ -19,7 +18,6 @@
         <% end %>
         <%= link_to 'Παίξε σε αυτήν την ομάδα' , join_path(@game.awayteam.id) %>
      </ul>
-
-      <%= button_to 'Επιστροφή' , games_url %>
+      <%= link_to 'Επιστροφή' , games_url %>
   <span>
 </div>
