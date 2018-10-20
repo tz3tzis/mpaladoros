@@ -18,7 +18,8 @@ class TeamsController < ApplicationController
 	def join 
 
 		@team = Team.find(params[:id])
-		if @team.capacity + 1 <= @team.capacity
+
+		if team_is_full
 			@team.users << current_user
 		else
 			flash[:notice] = "Η ομάδα είναι πλήρης"
@@ -33,8 +34,20 @@ class TeamsController < ApplicationController
 	end
 
 
+	def team_is_full 
+		@team = Team.find(params[:id])
+		if self.users.count >= self.capacity
+			return false
+		else
+			return true
+		end
+	end
+
+
  def team_params
- 	params.require(:team).permit( :name , :capacity , :game_id, :created_at)
+ 	params.
+ 		require(:team).
+ 			permit( :name , :capacity , :game_id, :created_at)
  end
 
 

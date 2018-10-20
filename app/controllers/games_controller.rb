@@ -13,6 +13,9 @@ class GamesController < ApplicationController
 		@stadia = Stadium.all
 	end
 
+	def show
+
+	end
 
 	def create
 
@@ -30,7 +33,6 @@ class GamesController < ApplicationController
 		@game.admin_id = @stadium.admin_id 
 		@game.end_time = @game.start_time + 90.minutes
 
-
 		#dhmiourgountai 2  nees omades me default onomata kai 
 		#xwrhtikothta analogh tou ghpedou
 		@team1 = Team.create(name: 'home')
@@ -40,14 +42,12 @@ class GamesController < ApplicationController
 		@team2.capacity = (@stadium.max_players) / 2
 		@team2.save
 
-
 		#tous anathetontai ta antisoixa id
 		@game.hometeam_id = @team1.id
 		@game.awayteam_id = @team2.id
 
 		#o paikths pou ftiaxnei to paixnidi anatithetai sthn prwth omada
 		@team1.users << current_user
-
 
 		#save game
 		if @game.save 
