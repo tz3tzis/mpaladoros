@@ -18,7 +18,7 @@ class TeamsController < ApplicationController
 	def join 
 
 		@team = Team.find(params[:id])
-		@game = Game.find(params[:game_id])
+		#@game = Game.find(params[:game_id])
 
 		if team_is_full
 			@team.users << current_user
