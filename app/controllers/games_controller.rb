@@ -1,6 +1,6 @@
 class GamesController < ApplicationController
 
-	#before_action :authenticate_user!
+	before_action :authenticate_user!
 
 
 	def index
@@ -11,12 +11,6 @@ class GamesController < ApplicationController
 	def new
 		@game = Game.new
 		@stadia = Stadium.all
-	end
-
-
-	def show
-		#@game = Game.find(params[:id])
-		#@stadia = Stadium.all
 	end
 
 
@@ -66,8 +60,6 @@ class GamesController < ApplicationController
 		end
 
 	end
-
-
 
 
 	def delete()

@@ -16,11 +16,20 @@ class TeamsController < ApplicationController
 	end
 
 	def join 
+
 		@team = Team.find(params[:id])
-		@team.users << current_user
+		if @team.capacity + 1 <= @team.capacity
+			@team.users << current_user
+		else
+			flash[:notice] = "Η ομάδα είναι πλήρης"
+			flash[:notice] = "Παίξτε στην άλλη ομάδα"
+			render :new
+		end
+
 		flash[:notice] = "H επιλογή ομάδας έγινε με επιτυχία!"
 		flash[:notice] = "Θα ειδοποιηθείς στο messenger για την συνέχεια της διαδικασίας"
 		render :new
+
 	end
 
 
