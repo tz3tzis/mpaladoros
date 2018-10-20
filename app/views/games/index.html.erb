@@ -7,8 +7,6 @@
     <%= link_to 'Δημιούργησε Παιχνίδι', new_game_url, id: 'creategame'%>
   </div>
 
-
-
   <div class ="duo" id='gametable'>
     <table  >
       <% @games.order("created_at DESC").each do |g| %>
@@ -29,13 +27,12 @@
    </table>
   </div>
 
-
   <div  class="ena" id = "float">  
     <% unless current_user %> 
       <%= link_to "Sign in with Facebook", user_facebook_omniauth_authorize_path , id: 'button'%>
     <% else %>
       <div style="color: green;"><%= current_user.name %><div>
-      <%= image_tag(current_user.smallimage) %> 
+      <div><%= image_tag(current_user.smallimage) %> </div>
     <% end %>
   </div> 
 </div>
