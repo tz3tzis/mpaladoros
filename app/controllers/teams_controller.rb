@@ -22,12 +22,10 @@ class TeamsController < ApplicationController
 
 		if team_is_full
 			@team.users << current_user
-			flash[:notice] = "H επιλογή ομάδας έγινε με επιτυχία!"
-			flash[:notice] = "Θα ειδοποιηθείς στο messenger για την συνέχεια της διαδικασίας"
+			flash[:notice] = "H επιλογή ομάδας έγινε με επιτυχία! Θα ειδοποιηθείς στο messenger για την συνέχεια της διαδικασίας"
 			redirect_back fallback_location: games_url
 		else
-			flash[:notice] = "Η ομάδα είναι πλήρης"
-			flash[:notice] = "Παίξτε στην άλλη ομάδα"
+			flash[:notice] = "Η ομάδα είναι πλήρης.Παίξτε στην άλλη ομάδα"
 			redirect_back fallback_location: games_url
 		end
 	end
