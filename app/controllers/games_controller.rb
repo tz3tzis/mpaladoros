@@ -27,7 +27,7 @@ class GamesController < ApplicationController
 		#get time from clock and concatenate it with date to start_time
 		date = params['game']['start_time']
 		time = params['game']['time']
-		@game.start_time = Time.parse("#{date} #{time}") + 3.hours
+		@game.start_time = Time.parse("#{date} #{time}") 
 
 		#ta paixnidia exoun diarkeia 90 lepta
 		@game.admin_id = @stadium.admin_id 
