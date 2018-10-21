@@ -89,7 +89,7 @@ Devise.setup do |config|
   # Notice that if you are skipping storage for all authentication paths, you
   # may want to disable generating routes to Devise's sessions controller by
   # passing skip: :sessions to `devise_for` in your config/routes.rb
-  #config.skip_session_storage = [:http_auth]
+  config.skip_session_storage = [:http_auth]
 
   # By default, Devise cleans up the CSRF token on authentication to
   # avoid CSRF token fixation attacks. This means that, when using AJAX
@@ -257,8 +257,7 @@ Devise.setup do |config|
   # ==> OmniAuth
   # Add a new OmniAuth provider. Check the wiki for more information on setting
   # up on your models and hooks.
-  config.omniauth :facebook, '213485926125142', 'c50dff834562bf16fa9506ef8c6369fd',
-   callback_url: "https://mpaladoros-app.herokuapp.com/users/auth/facebook/callback"
+  config.omniauth :facebook, '213485926125142', 'c50dff834562bf16fa9506ef8c6369fd'
 
   # ==> Warden configuration
   # If you want to use other strategies, that are not supported by Devise, or
