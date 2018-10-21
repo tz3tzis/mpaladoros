@@ -1,8 +1,9 @@
 <div class="center jumbotron">
   <h3> Διάλεξε ομάδα! </h3>
 
-  <span>
+  <div>
 
+    <!-- H lista me tous paiktes ths ghpedouxou omadas -->
      <ul style="list-style-type: none; display: inline-block;">
         <h3> Hometeam </h3>
      		<% @game.hometeam.users.each do |player| %>
@@ -11,6 +12,8 @@
         <%= link_to 'Παίξε σε αυτήν την ομάδα' , join_path(@game.hometeam.id)%>
      </ul>
 
+
+    <!-- H lista me tous paiktes ths filoksenoumenhs omadas -->
      <ul style="list-style-type: none; display: inline-block;">
       <h3> Awayteam </h3>
      	<% @game.awayteam.users.each do |player| %>
@@ -18,6 +21,10 @@
       <% end %>
         <%= link_to 'Παίξε σε αυτήν την ομάδα' , join_path(@game.awayteam.id) %>
      </ul>
-      <div class='btn btn-small'><%= link_to 'Επιστροφή' , games_url %></div>
-  <span>
+      
+  <div>
+
+    <div class='btn btn-small'><%= link_to 'Επιστροφή' , games_url %></div>
+
+
 </div>
