@@ -4,8 +4,8 @@
   <div>
 
     <!-- H lista me tous paiktes ths ghpedouxou omadas -->
-    <h3> Hometeam </h3>
      <ul style="list-style-type: none; display: inline-block;">
+        <h3> Hometeam </h3>
      		<% @game.hometeam.users.each do |player| %>
        	  <li> <%= player.name %></li>
         <% end %>
@@ -14,8 +14,8 @@
 
 
     <!-- H lista me tous paiktes ths filoksenoumenhs omadas -->
-     <h3> Awayteam </h3>
      <ul style="list-style-type: none; display: inline-block;">
+      <h3> Awayteam </h3>
      	<% @game.awayteam.users.each do |player| %>
        	 <li> <%= player.name %></li>
       <% end %>

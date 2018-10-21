@@ -14,15 +14,36 @@
     <%= render  'navigator' %>
 
     <div class="container">
-   
-      <%= notice %>
-      <%= alert %>
+    
+      <!-- morfopoihsh twn mhnhmatwn rohs -->
+        <% if notice %>
+          <div id='notice_wrapper'>
+            <p class = "notice"><%= notice %></p>
+          </div>
+        <% elsif alert %>
+          <div id = 'alert_wrapper'>
+            <p class = 'alert'><%= alert %></p>
+          </div>
+        <% end %>
+      <!-- ews kai edw -->
+
       <%= yield %>
       <%= debug(params) if Rails.env.development? %>
 
     </div>
 
     <%= render 'layouts/footer' %>
-    
+
+    <script>
+        $(document).ready(function() {
+          setTimeout(function(){
+            $('#notice_wrapper').fadeOut("slow", function(){
+              $(this).remoce();
+            })
+          }, 4500);
+        });
+    </script>
+
+
   </body>
 </html>

@@ -18,6 +18,30 @@
  */
 
 
+#notice_wrapper{
+	
+	top: 50;
+	width: 100%;
+	background: rgba(135, 216, 211, 0.85);
+	.alert, .notice {
+		padding: 1.5rem 0;
+		margin: 0 ;
+		font-size: 1.25rem;
+		font-weight: 700;
+		color: #FFFFFF ;
+		letter-spacing: 1px;
+	}
+}
+
+#alert_wrapper{
+	background: red;
+}
+
+
+
+
+
+
 
 .center.jumbotron{
 	opacity: 0.8;
