@@ -1,6 +1,7 @@
 <h3 id ='title'> Ενεργά παιχνίδια! </h3>
 
-
+  <% @stadio = Stadium.find(g.admin_id) %>
+  <% players_joined = g.hometeam.users.count + g.awayteam.users.count %>
 
   <div id="inline1">
 
@@ -23,14 +24,14 @@
                   </ol>
                   <div class="carousel-inner">
                     <div class="carousel-item active">
-                      <%=image_tag "#{t.stadium_name}/1.jpg" %>
+                      <%=image_tag "#{@stadio.stadium_name}/1.jpg", :class => "d-block w-100"%>
 
                     </div>
                     <div class="carousel-item">
-                      <%=image_tag "#{t.stadium_name}/2.jpg" %>
+                      <%=image_tag "#{@stadio.stadium_name}/2.jpg", :class => "d-block w-100"%>
                     </div>
                     <div class="carousel-item">
-                      <%=image_tag "#{t.stadium_name}/3.jpg" %>
+                      <%=image_tag "#{@stadio.stadium_name}/3.jpg", :class => "d-block w-100" %>
 
                     </div>
                   </div>
@@ -44,8 +45,7 @@
                   </a>
                 </div>
                
-                  <% @stadio = Stadium.find(g.admin_id) %>
-                  <% players_joined = g.hometeam.users.count + g.awayteam.users.count %>
+                  
                   <!-- kapoia stoixeia gia ton agwna -->
                   <li class="text"><%= "Όνομα γηπέδου : " + g.name %></li>
                   <li class="text"><%= "Ημερομηνία αγώνα : " + g.start_time.strftime("%d/%m/%Y") %></li>
