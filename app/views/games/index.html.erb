@@ -10,9 +10,10 @@
 
     <div class ="duo" id='gametable'>
       <table >
-        <ul style="list-style-type:none" id = 'gameslayout'>
+
         <% @games.order("created_at DESC").each do |g| %>
           <tr>
+            <ul style="list-style-type:none" id = 'gameslayout'>
 
             <% @stadio = Stadium.find(g.admin_id) %>
             <% players_joined = g.hometeam.users.count + g.awayteam.users.count %>
