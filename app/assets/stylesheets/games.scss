@@ -14,6 +14,7 @@ p{ color:white; text-align: center;}
 
 #join{
   color: red;
+  text-align: center
 }
 
 
@@ -32,7 +33,8 @@ label{
   border: 1px solid white;
   margin-left: auto;
   margin-right: auto;
-  width: 60%;
+  width: fit-content;
+  height: fit-content;
 }
 
 #datetimepicker1{
