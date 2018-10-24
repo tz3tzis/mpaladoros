@@ -20,9 +20,47 @@
             <% players_joined = g.hometeam.users.count + g.awayteam.users.count %>
 
 
-             
+              <!-- carousel gia tis fwtografies twn ghpedwn -->
+            <div id="carouselId" class="carousel slide" data-ride="carousel" style = "width:492px; height: 250px; ">
+                <!-- Indicators -->
+                <ol class="carousel-indicators">
+                  <li data-target="#carouselId" data-slide-to="0" class="active"></li>
+                  <li data-target="#carouselId" data-slide-to="1"></li>
+                  <li data-target="#carouselId" data-slide-to="2"></li>
+                </ol>
+
+                <div class="carousel-inner" role="listbox">
+
+                  <div class="item active">
+                      <%=image_tag "#{@stadio.stadium_name}/1.jpg" %>
+                  </div>
+
+                  <div class="item">
+                  </div>
+
+                  <div class="item">
+                      <%= image_tag "#{@stadio.stadium_name}/3.jpg" %>
+                  </div>
+
+                </div>
+
+
+
+
+                <!-- Left and right controls -->
+                <a class="left carousel-control" href="#carouselId" data-slide="prev">
+                  <span class="glyphicon glyphicon-chevron-left" aria-hidden="true" ></span>
+                  <span class="sr-only">Previous</span>
+                </a>
+                <a class="right carousel-control" href="#carouselId" data-slide="next">
+                  <span class="glyphicon glyphicon-chevron-right" aria-hidden="true" ></span>
+                  <span class="sr-only">Next</span>
+                </a>   
+             </div>   
+
+              <% carouselId += 1 %>
               
-                      <%=image_tag "#{@stadio.stadium_name}/2.jpg" %>  
+                     
 
 
               
