@@ -13,28 +13,26 @@
         <% @games.order("created_at DESC").each do |g| %>
           <tr>
 
-            <ul style="list-style-type:none" id = 'gameslayout'>
-
               <!-- carousel gia tis fwtografies twn ghpedwn -->
-              <div id="myCarousel" class="carousel slide" data-ride="carousel" style = "width:300px; height: 300px; ">
+              <div id="myCarousel" class="carousel slide" data-ride="carousel" style = "width:400px; height: 200px; ">
                   <!-- Indicators -->
                   <ol class="carousel-indicators">
-                    <li data-target="#myCarousel" data-slide-to="1" class="active"></li>
+                    <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                    <li data-target="#myCarousel" data-slide-to="1"></li>
                     <li data-target="#myCarousel" data-slide-to="2"></li>
-                    <li data-target="#myCarousel" data-slide-to="3"></li>
                   </ol>
 
-                  <div class="carousel-inner" role="listbox">
+                  <div class="carousel-inner" >
 
-                    <div class="item active">
+                    <div class="carousel-item active">
                         <%=image_tag "#{g.name}/1.jpg" %>
                     </div>
 
-                    <div class="item">
+                    <div class="carousel-item">
                         <%=image_tag "#{g.name}/2.jpg" %>
                     </div>
 
-                    <div class="item">
+                    <div class="carousel-item">
                         <%= image_tag "#{g.name}/3.jpg" %>
                     </div>
 
@@ -42,28 +40,29 @@
 
 
                   <!-- Left and right controls -->
-                  <a class="left carousel-control" href="#myCarousel" data-slide="prev">
-                    <span class="glyphicon glyphicon-chevron-left"></span>
+                  <a class="carousel-control-prev" href="#myCarousel" role="button">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                     <span class="sr-only">Previous</span>
                   </a>
-                  <a class="right carousel-control" href="#myCarousel" data-slide="next">
-                    <span class="glyphicon glyphicon-chevron-right"></span>
+                  <a class="right carousel-control-next" href="#myCarousel" role="button">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
                     <span class="sr-only">Next</span>
                   </a>   
               </div>   
-
-              <% @stadio = Stadium.find(g.admin_id) %>
-              <% players_joined = g.hometeam.users.count + g.awayteam.users.count %>
-              <!-- kapoia stoixeia gia ton agwna -->
-              <li id='white'><%= "Όνομα γηπέδου : " + g.name %></li>
-              <li id="white"><%= "Ημερομηνία αγώνα : " + g.start_time.strftime("%d/%m/%Y") %></li>
-              <li id='white'><%= "'Ωρα διεξαγωγής : " + g.start_time.strftime("%I:%M - ") + g.end_time.strftime("%I:%M") %></li>
-              <li id="white"><%= "Τιμή : " + @stadio.price.to_s + "ανα άτομο" %></li>
-              <b><li style="color: red; text-align: center:"><%= "Άτομα : " + players_joined.to_s + "/" + @stadio.max_players.to_s %></li></b>
               
-            
-                <%= link_to 'Join game' , game_teams_path(g.id), id: 'join' %>
-              </li>
+               <ul style="list-style-type:none" id = 'gameslayout'>
+                  <% @stadio = Stadium.find(g.admin_id) %>
+                  <% players_joined = g.hometeam.users.count + g.awayteam.users.count %>
+                  <!-- kapoia stoixeia gia ton agwna -->
+                  <li class="text"><%= "Όνομα γηπέδου : " + g.name %></li>
+                  <li class="text"><%= "Ημερομηνία αγώνα : " + g.start_time.strftime("%d/%m/%Y") %></li>
+                  <li class="text"><%= "'Ωρα διεξαγωγής : " + g.start_time.strftime("%I:%M - ") + g.end_time.strftime("%I:%M") %></li>
+                  <li id="white"><%= "Τιμή : " + @stadio.price.to_s + "ανα άτομο" %></li>
+                  <b><li style="color: red; text-align: center;"><%= "Άτομα : " + players_joined.to_s + "/" + @stadio.max_players.to_s %></li></b>
+                  
+                
+                    <%= link_to 'Join game' , game_teams_path(g.id), id: 'join' %>
+                  </li>
             </ul>
           </tr>
           <br>
