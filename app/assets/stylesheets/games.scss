@@ -3,7 +3,7 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 table, th, td {
-   border: 2px solid green;
+   
 }
 
 p{ color:white; text-align: center;}
@@ -35,6 +35,7 @@ label{
   margin-right: auto;
   width: fit-content;
   height: fit-content;
+  background-color: black;
 }
 
 #datetimepicker1{
@@ -124,7 +125,6 @@ label{
 
 
 #gametable{
-  margin-left: 62px;
   width: 80%;
 }
 
