@@ -1,7 +1,6 @@
 <h3 id ='title'> Ενεργά παιχνίδια! </h3>
 
-  <% @stadio = Stadium.find(g.admin_id) %>
-  <% players_joined = g.hometeam.users.count + g.awayteam.users.count %>
+ 
 
   <div id="inline1">
 
@@ -13,6 +12,10 @@
       <table  >
         <% @games.order("created_at DESC").each do |g| %>
           <tr>
+
+            <% @stadio = Stadium.find(g.admin_id) %>
+            <% players_joined = g.hometeam.users.count + g.awayteam.users.count %>
+            
             <ul style="list-style-type:none" id = 'gameslayout'>
 
               <!-- carousel gia tis fwtografies twn ghpedwn -->
