@@ -13,8 +13,8 @@
         <% @games.order("created_at DESC").each do |g| %>
           <tr>
             <ul style="list-style-type:none" id = 'gameslayout'>
+
               <!-- carousel gia tis fwtografies twn ghpedwn -->
-              
                 <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
                   <ol class="carousel-indicators">
                     <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
@@ -51,27 +51,20 @@
                   <li class="text"><%= "'Ωρα διεξαγωγής : " + g.start_time.strftime("%I:%M - ") + g.end_time.strftime("%I:%M") %></li>
                   <li id="white"><%= "Τιμή : " + @stadio.price.to_s + "ανα άτομο" %></li>
                   <b><li style="color: red; text-align: center;"><%= "Άτομα : " + players_joined.to_s + "/" + @stadio.max_players.to_s %></li></b>
-                  
-                
                     <%= link_to 'Join game' , game_teams_path(g.id), id: 'join' %>
                   </li>
             </ul>
           </tr>
           <br>
         <% end %>
-        </ul>
      </table>
     </div>
 
     <div  class="ena" id = "float">  
-    
-        <div style="color: green;"><%= current_user.name %><div>
-        <div><%= image_tag(current_user.smallimage) %> </div>
-      
+      <div style="color: green;"><%= current_user.name %><div>
+      <div><%= image_tag(current_user.smallimage) %> </div>
     </div> 
-    
   </div>
-
 </div>
 
 <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
