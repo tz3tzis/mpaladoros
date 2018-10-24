@@ -12,7 +12,7 @@
       <table  >
         <% @games.order("created_at DESC").each do |g| %>
           <tr>
-
+            <ul style="list-style-type:none" id = 'gameslayout'>
               <!-- carousel gia tis fwtografies twn ghpedwn -->
               <div id="myCarousel" class="carousel slide" data-ride="carousel" style = "width:400px; height: 200px; ">
                   <!-- Indicators -->
@@ -50,7 +50,7 @@
                   </a>   
               </div>   
               
-               <ul style="list-style-type:none" id = 'gameslayout'>
+               
                   <% @stadio = Stadium.find(g.admin_id) %>
                   <% players_joined = g.hometeam.users.count + g.awayteam.users.count %>
                   <!-- kapoia stoixeia gia ton agwna -->
