@@ -54,9 +54,9 @@
             <% players_joined = g.hometeam.users.count + g.awayteam.users.count %>
             <!-- kapoia stoixeia gia ton agwna -->
             <li id='white'><%= "Όνομα γηπέδου : " + g.name %></li>
-            <li id="white"><%= "Ημερομηνία αγώνα : " + g.start_time.strftime("%d/%m/%Y").to_s %></li>
-            <li id='white'><%= "'Ωρα διεξαγωγής : " + g.start_time.strftime("%I:%M - ").to_s + g.end_time.strftime("%I:%M").to_s %></li>
-            <li id="white"><%= "Τιμή : " + @stadio.price + "ανα άτομο" %></li>
+            <li id="white"><%= "Ημερομηνία αγώνα : " + g.start_time.strftime("%d/%m/%Y") %></li>
+            <li id='white'><%= "'Ωρα διεξαγωγής : " + g.start_time.strftime("%I:%M - ") + g.end_time.strftime("%I:%M") %></li>
+            <li id="white"><%= "Τιμή : " + @stadio.price.to_s + "ανα άτομο" %></li>
             <b><li style="color: red;"><%= "Άτομα : " + players_joined.to_s + "/" + @stadio.max_players.to_s %></li></b>
             
           
