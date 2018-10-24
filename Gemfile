@@ -46,9 +46,6 @@ gem "simple_calendar", "~> 2.0"
 
 gem 'carrierwave' , '~> 1.0'
 
-gem 'jquery-rails', '~> 4.3', '>= 4.3.1'
-
-
 #gia to fb login
 gem 'devise'
 gem 'omniauth-facebook'
@@ -59,8 +56,13 @@ gem 'simple_form'
 
 
 #gem gia to javascript
+gem 'execjs', '~> 2.7'
 gem 'therubyracer'
 gem 'rails-ujs'
+gem 'geocoder', '~> 1.3', '>= 1.3.7'
+gem 'jquery-rails', '~> 4.3', '>= 4.3.1'
+
+
 
 
 

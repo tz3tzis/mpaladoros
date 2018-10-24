@@ -1,4 +1,5 @@
 class StadiaController < ApplicationController
+
 	
 	def index
 		@stadia = Stadium.all

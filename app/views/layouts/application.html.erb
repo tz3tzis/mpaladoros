@@ -5,8 +5,10 @@
   <head>
     <title><%= full_title(yield(:title)) %> </title>
     <%= csrf_meta_tags %>
+  
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= tag :meta, name: 'google_maps', content:'AIzaSyBZZ_xemsf-NjF4N4PZgdXZZL-AhUK70xE' %>
   </head>
   
   <body>
@@ -28,6 +30,7 @@
       <!-- ews kai edw -->
 
       <%= yield %>
+     
       <%= debug(params) if Rails.env.development? %>
 
     </div>
@@ -38,11 +41,15 @@
         $(document).ready(function() {
           setTimeout(function(){
             $('#notice_wrapper').fadeOut("slow", function(){
-              $(this).remoce();
+              $(this).remove();
             })
           }, 4500);
         });
     </script>
+
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBZZ_xemsf-NjF4N4PZgdXZZL-AhUK70xE&callback=initMap"
+    type="text/javascript">
+   </script>
     
   </body>
 </html>

@@ -22,6 +22,11 @@
 
 
 
-
+$(document).on('turbolinks:load', function(){
+	if ($('#map').length > 0) {
+		var google_maps = $('meta[name=google_maps]').attr("content");
+		$.getScript(`https://maps.googleapis.com/maps/api/js?key=${google_map}&callbavk=initMap`);
+	}
+})
 
 
