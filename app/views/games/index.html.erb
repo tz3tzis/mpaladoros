@@ -21,7 +21,7 @@
 
 
               <!-- carousel gia tis fwtografies twn ghpedwn -->
-            <div id="carouselId" class="carousel slide" data-ride="carousel" style = "width:450px; height: 250px; ">
+            <div id="#{carouselId}" class="carousel slide" data-ride="carousel" style = "width:450px; height: 250px; ">
                 <!-- Indicators -->
                 <ol class="carousel-indicators">
                   <li data-target="#carouselId" data-slide-to="0" class="active"></li>
@@ -31,15 +31,15 @@
 
                 <div class="carousel-inner" role="listbox">
 
-                  <div class="carousel-item active">
+                  <div class="item active">
                       <%=image_tag "#{@stadio.stadium_name}/1.jpg" %>
                   </div>
 
-                  <div class="carousel-item">
+                  <div class="item">
                       <%=image_tag "#{@stadio.stadium_name}/2.jpg" %>  
                   </div>
 
-                  <div class="carousel-item">
+                  <div class="item">
                       <%= image_tag "#{@stadio.stadium_name}/3.jpg" %>
                   </div>
 
