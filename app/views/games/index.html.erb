@@ -48,7 +48,7 @@
                   <!-- kapoia stoixeia gia ton agwna -->
                   <li class="text"><%= "Όνομα γηπέδου : " + g.name %></li>
                   <li class="text"><%= "Ημερομηνία αγώνα : " + g.start_time.strftime("%d/%m/%Y") %></li>
-                  <li class="text"><%= "'Ωρα διεξαγωγής : " + g.start_time.strftime("%I:%M - ") + g.end_time.strftime("%I:%M") %></li>
+                  <li class="text"><%= " Ώρα διεξαγωγής : " + g.start_time.strftime("%I:%M - ") + g.end_time.strftime("%I:%M") %></li>
                   <li id="white"><%= "Τιμή : " + @stadio.price.to_s + "ανα άτομο" %></li>
                   <b><li style="color: red; text-align: center;"><%= "Άτομα : " + players_joined.to_s + "/" + @stadio.max_players.to_s %></li></b>
                     <%= link_to 'Join game' , game_teams_path(g.id), id: 'join' %>
