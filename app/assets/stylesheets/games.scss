@@ -3,7 +3,7 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 table, th, td {
-   
+   border: 2px solid green;
 }
 
 p{ color:white; text-align: center;}
@@ -125,6 +125,7 @@ label{
 
 
 #gametable{
+  margin-left: 62px;
   width: 80%;
 }
 
