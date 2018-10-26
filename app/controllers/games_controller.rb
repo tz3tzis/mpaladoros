@@ -14,6 +14,9 @@ class GamesController < ApplicationController
 
 	def show
 		
+	end
+
+	def maps
 
 	end
 

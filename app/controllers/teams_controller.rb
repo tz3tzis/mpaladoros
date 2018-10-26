@@ -21,7 +21,7 @@ class TeamsController < ApplicationController
 		@team = Team.find(params[:id])
 		#@game = Game.find(params[:game_id])
 
-		if team_is_full
+		if team_not_full
 			@team.users << current_user
 			flash[:notice] = "H επιλογή ομάδας έγινε με επιτυχία! Θα ειδοποιηθείς στο messenger για την συνέχεια της διαδικασίας"
 			redirect_back fallback_location: games_url
@@ -32,7 +32,7 @@ class TeamsController < ApplicationController
 	end
 
 
-	def team_is_full 
+	def team_not_full 
 		@team = Team.find(params[:id])
 		if @team.users.count >= @team.capacity
 			return false
