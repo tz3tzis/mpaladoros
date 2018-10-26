@@ -16,7 +16,7 @@
           <tr>
             <ul style="list-style-type:none" id = 'gameslayout' >
 
-            <% @stadio = Stadium.find(g.admin_id) %>
+            <% stadio = Stadium.find(g.admin_id) %>
             <% players_joined = g.hometeam.users.count + g.awayteam.users.count %>
 
 
@@ -32,14 +32,15 @@
                 <div class="carousel-inner" role="listbox">
 
                   <div class="item active">
-                      <%=image_tag "#{@stadio.stadium_name}/1.jpg" %>
+                      <%=image_tag "#{stadio.stadium_name}/1.jpg" %>
                   </div>
 
                   <div class="item">
+                      <%=image_tag "#{stadio.stadium_name}/2.jpg" %>
                   </div>
 
                   <div class="item">
-                      <%= image_tag "#{@stadio.stadium_name}/3.jpg" %>
+                      <%= image_tag "#{stadio.stadium_name}/3.jpg" %>
                   </div>
 
                 </div>
@@ -60,16 +61,13 @@
 
               <% carouselId += 1 %>
               
-                     
 
-
-              
                   <!-- kapoia stoixeia gia ton agwna -->
                   <li class="text"><%= "Όνομα γηπέδου : " + g.name %></li>
                   <li class="text"><%= "Ημερομηνία αγώνα : " + g.start_time.strftime("%d/%m/%Y") %></li>
                   <li class="text"><%= " Ώρα διεξαγωγής : " + g.start_time.strftime("%I:%M - ") + g.end_time.strftime("%I:%M") %></li>
-                  <li class="text"><%= "Τιμή : " + @stadio.price.to_s + "ανα άτομο" %></li>
-                  <b><li style="color: red; text-align: center;"><%= "Άτομα : " + players_joined.to_s + "/" + @stadio.max_players.to_s %></li></b>
+                  <li class="text"><%= "Τιμή : " + stadio.price.to_s + "ανα άτομο" %></li>
+                  <b><li style="color: red; text-align: center;"><%= "Άτομα : " + players_joined.to_s + "/" + stadio.max_players.to_s %></li></b>
                     <%= link_to 'Join game' , game_teams_path(g.id), id: 'join' %>
                   </li>
             </ul>
