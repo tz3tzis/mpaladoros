@@ -3,6 +3,7 @@ class ApplicationController < ActionController::Base
   
   #make the current admin method available to views also , not just controllers:
   helper_method :current_admin
+  helper_method :current_game
   
 	#define the current_admin
 	def current_admin
