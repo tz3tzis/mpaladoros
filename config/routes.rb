@@ -35,8 +35,8 @@ Rails.application.routes.draw do
 
 	get '/games/:id/teams/:id' => 'teams#join' , :as => 'join'
 
-	#post '/games/new' => 'games#create'
-
+	get '/games/maps'  => 'games#maps' , :as => 'maps'
+	
 	resources :games do
 		resources :teams
 	end
