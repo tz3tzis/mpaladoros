@@ -35,10 +35,9 @@ Rails.application.routes.draw do
 
 	get '/games/:id/teams/:id' => 'teams#join' , :as => 'join'
 
-	resources :maps, only: [:index]
 	
 	resources :games do
-
+		resources :maps, only: [:index]
 		resources :teams
 	end
 
