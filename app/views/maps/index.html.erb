@@ -2,12 +2,14 @@
 
  <div id="map"></div>
 
+<%= lati  =  stadium.latitude  %>
+<%= longi =  stadium.longitude %>
 
 <script >
 
 	function initMap(){
 
-		var address = {lat: 39.665028, lng: 20.853746};
+		var address = {lat: lati, lng: longi};
 
 		//orizo to kentro(Ioannina) kai to zoom tou ghpedou
 		var map = new google.maps.Map(document.getElementById('map'), {
