@@ -2,14 +2,11 @@
 
  <div id="map"></div>
 
-<%= lati  =  @sta.latitude  %>
-<%= longi =  @sta.longitude %>
-
 <script >
 
 	function initMap(){
 
-		var address = {lat: lati, lng: longi};
+		var address = {lat: @sta.latitude, lng: @sta.longitude};
 
 		//orizo to kentro(Ioannina) kai to zoom tou ghpedou
 		var map = new google.maps.Map(document.getElementById('map'), {
