@@ -1,16 +1,13 @@
 <h3 style="color:white; text-align: center;"> Δές την απόσταση σου απο το γήπεδο! </h3>
 
-	<b><%= @sta.latitude %><b>
-
  <div id="map"></div>
-
 
 <script >
 
-	var lati  =  <%= @sta.latitude %> ;
-	var longi =  <%= @sta.longitude %> ;
+	function initMap(){
 
-	function initMap(lati,longi){
+		var lati  =  <%= @sta.latitude %> ;
+	 	var longi =  <%= @sta.longitude %> ;
 
 		var address = {lat: lati, lng: longi};
 
@@ -26,4 +23,5 @@
 			map: map
 		});
 	}	
+
 </script> 
