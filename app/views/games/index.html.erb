@@ -67,7 +67,7 @@
                   <li class="text"><%= "Ημερομηνία αγώνα : " + g.start_time.strftime("%d/%m/%Y") %></li>
                   <li class="text"><%= " Ώρα διεξαγωγής : " + g.start_time.strftime("%I:%M - ") + g.end_time.strftime("%I:%M") %></li>
                   <li class="text"><%= "Τιμή : " + stadio.price.to_s + "ανα άτομο" %></li>
-                  <b><li style="color: blue; text-align: center;"><%= button_to "Τοποθεσία" , game_maps_path, class="btn btn-small" %></li></b>
+                  <b><li style="color: blue; text-align: center;"><%= button_to "Τοποθεσία" , game_maps_path(g.id), class="btn btn-small" %></li></b>
                   <b><li style="color: red; text-align: center;"><%= "Άτομα : " + players_joined.to_s + "/" + stadio.max_players.to_s %></li></b><br>
                     <b><li><%= link_to 'Join game' , game_teams_path(g.id), id: 'join' %></li></b>
 
