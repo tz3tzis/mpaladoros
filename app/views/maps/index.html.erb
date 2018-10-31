@@ -5,13 +5,15 @@
 <script >
 
 	var map
+	var stadiumMarker
+
 	function initMap(){
 		map = new google.maps.Map(document.getElementById('map'), {
 		  center: {lat: 39.665028, lng: 20.853746},
 		  zoom: 8
 		});
 
-		var stadiumMarker = new google.maps.Marker({
+		stadiumMarker = new google.maps.Marker({
 			position: {lat: lati , lng: longi}
 			map: map
 		});
