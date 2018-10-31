@@ -37,7 +37,7 @@ Rails.application.routes.draw do
 
 	
 	resources :games do
-		resources :maps, only: [:index]
+		resources :maps
 		resources :teams
 	end
 
