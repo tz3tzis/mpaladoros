@@ -5,13 +5,18 @@
 <script >
 
 	function initMap(){
+
+		var address = {lat: lati, lng: longi};
+
+		//orizo to kentro(Ioannina) kai to zoom tou ghpedou
 		var map = new google.maps.Map(document.getElementById('map'), {
 		  center: {lat: 39.665028, lng: 20.853746},
 		  zoom: 8
 		});
 
+		//bazw enan marker sto shmeio toy ghpedou
 		var stadiumMarker = new google.maps.Marker({
-			position: {lat: lati , lng: longi},
+			position: address,
 			map: map
 		});
 	}	
