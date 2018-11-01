@@ -2,12 +2,16 @@
 
  <div id="map"></div>
 
+ <%= @user.ip_address %>
+
 <script >
 
 	function initMap(){
 
 		var lati  =  <%= @sta.latitude %> ;
 	 	var longi =  <%= @sta.longitude %> ;
+
+
 
 		var address = {lat: lati, lng: longi};
 
