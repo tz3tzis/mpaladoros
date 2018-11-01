@@ -14,7 +14,7 @@
 		//orizo to kentro(Ioannina) kai to zoom tou ghpedou
 		var map = new google.maps.Map(document.getElementById('map'), {
 		  center: {lat: 39.665028, lng: 20.853746},
-		  zoom: 10
+		  zoom: 11
 		});
 
 		//bazw enan marker sto shmeio toy ghpedou
@@ -22,6 +22,12 @@
 			position: address,
 			map: map
 		});
+
+		var userMarker = new google.maps.Marker({
+			position: address,
+			map: map
+		});
+
 	}	
 
 </script> 
