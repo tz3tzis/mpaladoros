@@ -1,6 +1,6 @@
 class User < ApplicationRecord
 
-  geocoded_by :current_sign_in_ip
+  geocoded_by :ip
   after_validation :geocode 
 
   # Include default devise modules. Others available are:
@@ -24,6 +24,7 @@ class User < ApplicationRecord
 	    user.email = auth.info.email
 	    user.password = Devise.friendly_token[0,20]
 	    user.name = auth.info.name
+      user.ip = current_sign_in_ip
 	    #user.image = URI.parse(auth.info.avatar) if auth.info.avatar?
       user.save!
   	end  	
