@@ -21,10 +21,5 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
   end
 
 
-  def ip_address
-    ip = request.location
-    return ip
-  end
-
 
 end
