@@ -12,6 +12,8 @@ class User < ApplicationRecord
   	super.tap do |user|
   		if data = session["devise.facebook_data"] && session["devise.facebook_data"]["extra"]["raw_info"]
   			user.email = data["email"] if user.email.blank?
+        user.ip = request.remote_ip
+        user.save!
   		end
   	end
   end
@@ -22,7 +24,7 @@ class User < ApplicationRecord
 	    user.email = auth.info.email
 	    user.password = Devise.friendly_token[0,20]
 	    user.name = auth.info.name
-      user.ip = user.current_sign_in_ip.to_s
+      user.ip = request.remote_ip
 	    #user.image = URI.parse(auth.info.avatar) if auth.info.avatar?
       user.save!
   	end  	
