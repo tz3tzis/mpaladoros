@@ -1,14 +1,12 @@
 class User < ApplicationRecord
 
-  geocoded_by :ip
-  after_validation :geocode 
-
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable,  :rememberable, :trackable, :validatable ,
          :omniauthable, :omniauth_providers => [:facebook]
 
-  
+  geocoded_by :ip
+  after_validation :geocode 
 
   def self.new_with_session(params,session)
   	super.tap do |user|
