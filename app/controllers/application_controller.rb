@@ -4,14 +4,8 @@ class ApplicationController < ActionController::Base
   #make the current admin method available to views also , not just controllers:
   helper_method :current_admin
   helper_method :current_game
-  helper_method :ip_address
 
 
-   def ip_address
-    ip = request.location
-    return ip
-  end
-  
 	#define the current_admin
 	def current_admin
 		 # Look up the current admin based on admin_id in the session cookie:
