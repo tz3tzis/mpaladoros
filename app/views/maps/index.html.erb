@@ -11,11 +11,11 @@
 		var lati  =  <%= @sta.latitude %> ;
 	 	var longi =  <%= @sta.longitude %> ;
 
-	 	var latUser = <%= @user.latitude %>
-	 	var lngUser = <%= @user.longitude %>
+	 	var latUser = <%= @user.latitude %>;
+	 	var lngUser = <%= @user.longitude %>;
 
 		var address = {lat: lati, lng: longi};
-		var userAddress = {lat: latUser, lng: lngUser }
+		var userAddress = {lat: latUser, lng: lngUser };
 
 		//orizo to kentro(Ioannina) kai to zoom tou ghpedou
 		var map = new google.maps.Map(document.getElementById('map'), {
