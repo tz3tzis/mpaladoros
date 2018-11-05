@@ -4,9 +4,9 @@
  <div id="directionsPanel" style="float:right;width:30%;height 100%"></div>
 
 
-<div>
+<div id='floating-panel'>
 <strong style="color:white;">Διάλεξε μέσο: </strong>
-<select id="mode" onchange="calcRoute();">
+<select id="mode">
   <option value="DRIVING">Driving</option>
   <option value="WALKING">Walking</option>
 </select>
@@ -26,8 +26,8 @@
 		var address = new google.mapsLatLng(lati,longi);
 		var userAddress = new google.maps.LatLng(latUser,lngUser);
 
-		var directionsServise = new google.maps.DirectionsService();
 		var directionsDisplay = new google.maps.DirectionsRenderer();
+		var directionsServise = new google.maps.DirectionsService();
 		var ioannina = new.google.maps.LatLng(39.665028,20.853746)
 		var mapOptions = {
 			zoom: 11,
@@ -35,27 +35,32 @@
 		}
 		var map = new google.maps.Map(document.getElementById('map'),mapOptions);
 		directionsDisplay.setMap(map);
+		calcRoute(directionsServise,directionsDisplay);
+		document.getElementById('mode').addEventListener('change', function() {
+					calcRoute(directionsServise,directionsDisplay);
+		});
+
 		directionsDisplay.setPanel(document.getElementById('directionsPanel'));
 
 
 	}	
 
 	//======upologismos diadromhs======//
-	function calcRoute() {
+	function calcRoute(directionsServise,directionsDisplay) {
 
 		var selectedMode = document.getElementById('mode').value;
-		var request = {
-			origin: userAddress,
-			destination: address,
-			travelMode: google.maps.TravelMode.[selectedMode]
-		};
-
-		directionsServise.route(request,function(response,status) {
-			if (status == 'OK') {
+		directionsServise.route({
+			origin: {lat: latUser, lng: lngUser},   //userAddress
+			destination:{lat: lati, lng: longi}, //address
+			travelMode: google.maps.TravelMode[selectedMode]
+		}, function(response, status){
+			if (status == 'OK'){
 				directionsDisplay.setDirections(response);
+			} else {
+				window.alert('Directions request failed due to'+ status);
 			}
 		});
-	}
 
+	}
 
 </script> 
