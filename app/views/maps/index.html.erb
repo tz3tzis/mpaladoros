@@ -28,20 +28,17 @@
 
 		var directionsDisplay = new google.maps.DirectionsRenderer();
 		var directionsServise = new google.maps.DirectionsService();
-		var ioannina = new.google.maps.LatLng(39.665028,20.853746);
-		var mapOptions = {
-			zoom: 11,
-			center: ioannina
-		}
-		var map = new google.maps.Map(document.getElementById('map'),mapOptions);
+		var map = new.google.maps.Map(document.getElementById('map'), {
+			zoom: 12,
+			center: {lat:39.665028, lng: 20.853746 }
+		});
 		directionsDisplay.setMap(map);
+		
+	
 		calcRoute(directionsServise,directionsDisplay);
 		document.getElementById('mode').addEventListener('change', function() {
 					calcRoute(directionsServise,directionsDisplay);
 		});
-
-		directionsDisplay.setPanel(document.getElementById('directionsPanel'));
-
 
 	}	
 
