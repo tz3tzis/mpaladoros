@@ -1,7 +1,18 @@
 <h3 style="color:white; text-align: center;"> Δές την απόσταση σου απο το γήπεδο! </h3>
 
  <div id="map"></div>
+ <div id="directionsPanel" style="float:right;width:30%;height 100%"></div>
 
+
+<div>
+<strong>Mode of Travel: </strong>
+<select id="mode" onchange="calcRoute();">
+  <option value="DRIVING">Driving</option>
+  <option value="WALKING">Walking</option>
+  <option value="BICYCLING">Bicycling</option>
+  <option value="TRANSIT">Transit</option>
+</select>
+</div>
 
 
 <script >
@@ -60,18 +71,5 @@
 		});
 	}
 
-
-
-
-
-
-
-
-
-
-
-
-
-	}
 
 </script> 
