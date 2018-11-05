@@ -18,14 +18,17 @@
 	function initMap(){
 		
 
-		var directionsDisplay = new google.maps.DirectionsRenderer();
-		var directionsServise = new google.maps.DirectionsService();
+		var directionsDisplay = new google.maps.DirectionsRenderer;
+		var directionsServise = new google.maps.DirectionsService;
+
 		var map = new google.maps.Map(document.getElementById('map'), {
 			zoom: 12,
 			center: {lat:39.665028, lng: 20.853746 }
 		});
+
 		directionsDisplay.setMap(map);
-		
+		directionsDisplay.setPanel(document.getElementById('right-panel'));
+
 	
 		calcRoute(directionsServise,directionsDisplay);
 		document.getElementById('mode').addEventListener('change', function() {
