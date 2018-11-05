@@ -22,7 +22,6 @@ class User < ApplicationRecord
 	    user.email = auth.info.email
 	    user.password = Devise.friendly_token[0,20]
 	    user.name = auth.info.name
-      user.ip_address = user.current_sing_in_ip
 	    #user.image = URI.parse(auth.info.avatar) if auth.info.avatar?
       user.save!
   	end  	
