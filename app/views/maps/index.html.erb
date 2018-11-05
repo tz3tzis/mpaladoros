@@ -23,9 +23,6 @@
 	 	var lngUser = <%= @user.longitude %>;
 	 	//=====================================//
 
-		var address = new google.mapsLatLng(lati,longi);
-		var userAddress = new google.maps.LatLng(latUser,lngUser);
-
 		var directionsDisplay = new google.maps.DirectionsRenderer();
 		var directionsServise = new google.maps.DirectionsService();
 		var map = new google.maps.Map(document.getElementById('map'), {
