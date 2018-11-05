@@ -16,12 +16,7 @@
 <script >
 
 	function initMap(){
-		//====metavlites apo to controller====//
-		var lati  =  <%= @sta.latitude %> ;
-	 	var longi =  <%= @sta.longitude %> ;
-	 	var latUser = <%= @user.latitude %>;
-	 	var lngUser = <%= @user.longitude %>;
-	 	//=====================================//
+		
 
 		var directionsDisplay = new google.maps.DirectionsRenderer();
 		var directionsServise = new google.maps.DirectionsService();
@@ -41,6 +36,14 @@
 
 	//======upologismos diadromhs======//
 	function calcRoute(directionsServise,directionsDisplay) {
+
+		//====metavlites apo to controller====//
+		var lati  =  <%= @sta.latitude %> ;
+	 	var longi =  <%= @sta.longitude %> ;
+	 	var latUser = <%= @user.latitude %>;
+	 	var lngUser = <%= @user.longitude %>;
+	 	//=====================================//
+
 
 		var selectedMode = document.getElementById('mode').value;
 		directionsServise.route({
