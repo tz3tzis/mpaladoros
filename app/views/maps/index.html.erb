@@ -39,6 +39,8 @@
 		  zoom: 11
 		},directionsDisplay.setMap(map));
 
+		directionsDisplay.setPanel(document.getElementById('directionsPanel'));
+
 		//bazw enan marker sto shmeio toy ghpedou
 		var stadiumMarker = new google.maps.Marker({
 			position: address,
@@ -49,8 +51,6 @@
 			position: userAddress,
 			map: map
 		});
-
-		var
 
 	}	
 
@@ -70,6 +70,4 @@
 			}
 		});
 	}
-
-
 </script> 
