@@ -20,7 +20,7 @@
       </ul>
       <form class="navbar-form navbar-left"></form>
       <ul class="nav navbar-nav navbar-right">
-        <li><%= button_to "Το προφιλ μου " , user_path(@user), method: :get, class: 'btn btn-small' %></li>
+        <li><%= button_to "Το προφιλ μου " , user_path(current_user), method: :get, class: 'btn btn-small' %></li>
         <li><%= button_to "Αποσύνδεση", destroy_user_session_path, method: :delete , class: 'btn btn-small' %>
 
 
