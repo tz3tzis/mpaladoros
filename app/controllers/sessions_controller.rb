@@ -5,8 +5,13 @@ class SessionsController < ApplicationController
     # new.html.erb AKA the login page
   end
 
+  def show
+    @user = User.find(params[:id])
+  end
+
+
   def createAdmin
-    # Look up Admon in db by the email address submitted to the login form and
+    # Look up Admin in db by the email address submitted to the login form and
     # convert to lowercase to match email in db in case they had caps lock on:
     admin = Admin.find_by(email: params[:login][:email].downcase)
     
