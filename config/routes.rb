@@ -42,7 +42,7 @@ Rails.application.routes.draw do
 		resources :teams
 	end
 
-	resources :admins , only: [:index,:show , :update]
+	resources :admins , only: [:index, :show, :edit, :update]
 
   
   
