@@ -15,19 +15,16 @@
 
 <hr>
 <div class="container bootstrap snippet">
-    <div class="row">
-  		<div class="col-sm-10"><h1 style="color: white;"> <%= @user.name %> </h1></div>
-    <div class="row">
-  		<div class="col-sm-3"><!--left col-->
-              
+  <div class="row">
+  	<div class="col-sm-10"><h1 style="color: white;"> <%= @user.name %> </h1></div>
 
+   <div class="row">
+  	<div class="col-sm-3"><!--left col-->
       <div class="text-center">
         <img src="http://ssl.gstatic.com/accounts/ui/avatar_2x.png" class="avatar img-circle img-thumbnail" alt="avatar">
-        <h6>Upload a different photo...</h6>
+        <h6 style="color: white;">Ανέβασε αλλη φωτογραφία</h6>
         <input type="file" class="text-center center-block file-upload">
-      </div></hr><br>
-
-               
+        </div></hr><br>   
           <div class="panel panel-default">
             <div class="panel-heading">Αγαπημένη θέση <i class="fa fa-link fa-1x"></i></div>
             <div class="panel-body">Επιθετικός</div>
@@ -39,70 +36,67 @@
             <li class="list-group-item text-right"><span class="pull-left"><strong>Παιχνίδια που διοργανωσε</strong></span> 125</li>
             <li class="list-group-item text-right"><span class="pull-left"><strong>Συμμετοχές σε παιχίδια</strong></span> 13</li>
             <li class="list-group-item text-right"><span class="pull-left"><strong>Likes</strong></span> 37</li>
-           
           </ul> 
-               
-        
-          
-        </div><!--/col-3-->
-    	<div class="col-sm-9">
-            <ul class="nav nav-tabs">
-                <li class="active"><a data-toggle="tab" href="#home">Home</a></li>
-              </ul>
+        </div>
+      </div>    
+    </div><!--/col-3-->
 
-              
-          <div class="tab-content">
-            <div class="tab-pane active" id="home">
-                <hr>
-                  <form class="form" action="##" method="post" id="registrationForm">
-                      <div class="form-group">
-                          
-                          <div class="col-xs-6">
-                              <label for="first_name"><h4>Όνομα</h4></label>
-                              <input type="text" class="form-control" name="first_name" id="first_name" placeholder="όνομα" title="enter your first name if any.">
-                          </div>
-                      </div>
-                      <div class="form-group">
-                          
-                          <div class="col-xs-6">
-                            <label for="last_name"><h4>Επίθετο</h4></label>
-                              <input type="text" class="form-control" name="last_name" id="last_name" placeholder="Επίθετο" title="enter your last name if any.">
-                          </div>
-                      </div>
-          
-                      <div class="form-group">
-                          
-                          <div class="col-xs-6">
-                              <label for="phone"><h4>Τηλέφωνο</h4></label>
-                              <input type="text" class="form-control" name="phone" id="phone" placeholder="βάλε αριθμό" title="enter your phone number if any.">
-                          </div>
-                      </div>
+
+    <div class="col-sm-9">
+      <ul class="nav nav-tabs">
+        <li class="active"><a data-toggle="tab" href="#home">Τα στοιχέια σου</a></li>
+      </ul>
+    
+      <div class="tab-content">
+        <div class="tab-pane active" id="home">
+          <hr>
+          <form class="form" action="##" method="post" id="registrationForm">
+            <div class="form-group"> 
+              <div class="col-xs-6">
+                <label for="first_name"><h4>Όνομα</h4></label>
+                  <input type="text" class="form-control" name="first_name" id="first_name" placeholder="όνομα" title="enter your first name if any.">
+              </div>
+            </div>
+
+            <div class="form-group">
+              <div class="col-xs-6">
+                <label for="last_name"><h4>Επίθετο</h4></label>
+                  <input type="text" class="form-control" name="last_name" id="last_name" placeholder="Επίθετο" title="enter your last name if any.">
+              </div>
+            </div>
+
+            <div class="form-group">
+              <div class="col-xs-6">
+                <label for="phone"><h4>Τηλέφωνο</h4></label>
+                  <input type="text" class="form-control" name="phone" id="phone" placeholder="βάλε αριθμό" title="enter your phone number if any.">
+              </div>
+            </div>
           
                       
-                      <div class="form-group">
-                          
-                          <div class="col-xs-6">
-                              <label for="email"><h4>Email</h4></label>
-                              <input type="email" class="form-control" name="email" id="email" placeholder="you@email.com" title="enter your email.">
-                          </div>
-                      </div>
-                      <div class="form-group">
-                          
-                          <div class="col-xs-6">
-                              <label for="email"><h4>Τοποθεσία</h4></label>
-                              <input type="email" class="form-control" id="location" placeholder="somewhere" title="βάλε τοποθεσία">
-                          </div>
-                      </div>
+            <div class="form-group">
+              <div class="col-xs-6">
+                <label for="email"><h4>Email</h4></label>
+                  <input type="email" class="form-control" name="email" id="email" placeholder="you@email.com" title="enter your email.">
+              </div>
+            </div>
+                    
+            <div class="form-group">
+              <div class="col-xs-6">
+                <label for="email"><h4>Τοποθεσία</h4></label>
+                  <input type="email" class="form-control" id="location" placeholder="somewhere" title="βάλε τοποθεσία">
+              </div>
+            </div>
                       
-                      <div class="form-group">
-                           <div class="col-xs-12">
-                                <br>
-                              	<button class="btn btn-lg btn-success" type="submit"><i class="glyphicon glyphicon-ok-sign"></i> Αποθήκευση</button>
-                               	<button class="btn btn-lg" type="reset"><i class="glyphicon glyphicon-repeat"></i> Reset</button>
-                            </div>
-                      </div>
-              	</form>
-        </div><!--/col-9-->
-    </div><!--/row-->
-  </div>
-</div>
+            <div class="form-group">
+              <div class="col-xs-12">
+                <br>
+                <button class="btn btn-lg btn-success" type="submit"><i class="glyphicon glyphicon-ok-sign"></i> Αποθήκευση</button>
+                <button class="btn btn-lg" type="reset"><i class="glyphicon glyphicon-repeat"></i> Reset</button>
+              </div>
+            </div>
+        </form>
+      </div>
+    </div>
+  </div><!--/col-9-->
+</div><!--/row-->
+
