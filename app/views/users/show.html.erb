@@ -15,7 +15,7 @@
                
           <div class="panel panel-default">
             <strong><div class="panel-heading">Αγαπημένη θέση <i class="fa fa-link fa-1x"></i></div></strong>
-            <div class="panel-body"></div>
+            <div class="panel-body"><%= @user.position %><</div>
           </div>
           
           
@@ -43,7 +43,18 @@
               <div class="tab-pane active" id="home">
                  <div class="form-group">
                       <div style="color:white;" class="col-xs-6">
-                         Email: <%= @user.email %>
+                        <ul>
+                        
+                            <hr>
+                           <li>Πόλη: <%= @user.location %></li>
+                            <hr>
+                           <li>Ηλικία: <%= @user.birthday %></li> 
+                            <hr>
+                          <li> Αγαπημένη ομάδα(Ελληνική): <%= @user.teamgr %></li>
+                            <hr>
+                          <li> Αγαπημένη ομάδα(Ξένη): <%= @user.teameu %></li>
+                            <hr>
+                        </ul>
                       </div>
                   </div>
               </div><!--/tab-pane-->
