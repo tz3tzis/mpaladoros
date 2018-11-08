@@ -19,7 +19,7 @@ class UsersController < ApplicationController
 		@user.position = params[:position]
 		@user.birthday = params[:birthdate]
 		@user.teamgr   = params[:teamgr]
-		@user.teamgeu   = params[:teameu]
+		@user.teameu   = params[:teameu]
 
 		@user.save!
 		redirect_to user_path(@user)
