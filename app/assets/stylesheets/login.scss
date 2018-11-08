@@ -1,6 +1,3 @@
-@import "bootstrap-sprockets";
-@import "bootstrap";  
-
 
 .body { 
   background-image: url(background.jpg); 
@@ -74,6 +71,10 @@ h2,h4{
 
 #logo{
 	color: white;
+}
+
+div.container h4{
+	color: black;
 }
 
 
