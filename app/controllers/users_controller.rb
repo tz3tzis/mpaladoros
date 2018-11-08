@@ -14,13 +14,13 @@ class UsersController < ApplicationController
 
 		@user = User.find(params[:id])
 
-		@user.height = params[:height]
-		@user.weight = params[:weight]
-		@user.position = params[:position]
-		@user.birthday = params[:birthdate]
-		@user.location = params[:location]
-		@user.teamgr   = params[:teamgr]
-		@user.teameu   = params[:teameu]
+		@user.height = params[:user][:height]
+		@user.weight = params[:user][:weight]
+		@user.position = params[:user][:position]
+		@user.birthday = params[:user][:birthdate]
+		@user.location = params[:user][:location]
+		@user.teamgr   = params[:user][:teamgr]
+		@user.teameu   = params[:user][:teameu]
 
 		@user.save!
 		redirect_to user_path(@user)
