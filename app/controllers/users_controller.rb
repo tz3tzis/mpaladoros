@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-	attr_accessor :name, :position, :birthday, :teamgr, :teameu
+	
 
 	def show
 		@user = User.find(params[:id])
@@ -18,6 +18,7 @@ class UsersController < ApplicationController
 		@user.weight = params[:weight]
 		@user.position = params[:position]
 		@user.birthday = params[:birthdate]
+		@user.location = params[:location]
 		@user.teamgr   = params[:teamgr]
 		@user.teameu   = params[:teameu]
 
@@ -26,5 +27,11 @@ class UsersController < ApplicationController
 		flash[:notice] = "Τα στοιχεία σου ενημερώθηκαν επιτυχώς"
 
 	end
+
+
+	private
+	 def user_params
+	 		params.require(:user).permit(:height, :weight, :position, :birthdate, :location, :teamgr, :teameu)
+	 end
 
 end
