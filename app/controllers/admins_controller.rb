@@ -14,7 +14,6 @@ class AdminsController < ApplicationController
 	def update
 
 		@admin = current_admin 
-
 	
 		if params[:admin][:confirm_password] != params[:admin][:new_password ]
 			flash[:notice] = "Οι κωδικοί που έβαλες είναι διαφορετικοί!"

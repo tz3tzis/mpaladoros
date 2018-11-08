@@ -4,6 +4,11 @@
         <div class="col-sm-10"><h1 style="color: white;"><%= @user.name %></h1></div>
     </div>
     <div class="row">
+
+        <div>
+          <%= button_to "Επεξεργασία προφίλ", edit_user(@user), method: :get , class: 'btn btn-small' %>
+        </div>
+
         <div class="col-sm-3"><!--left col-->
               
           <div class="text-center">
@@ -34,7 +39,6 @@
               <ul class="nav nav-tabs">
                   <li class="active"><a data-toggle="tab" href="#home">Στοιχεία</a></li>
                   <li><a data-toggle="tab" href="#stats">Στατιστικά</a></li>
-                  <li><a data-toggle="tab" href="#edit">Επεξεργασία</a></li>
                 </ul>
 
                 
@@ -44,11 +48,14 @@
                  <div class="form-group">
                       <div style="color:white;" class="col-xs-6">
                         <ul>
-                        
+                             <hr>
+                           <li>Ύψος: <%= @user.height %></li>
                             <hr>
-                           <li>Πόλη: <%= @user.location %></li>
+                           <li>Βάρος: <%= @user.weight %></li>
                             <hr>
                            <li>Ηλικία: <%= @user.birthday %></li> 
+                            <hr>
+                           <li>Πόλη: <%= @user.location %></li>
                             <hr>
                           <li> Αγαπημένη ομάδα(Ελληνική): <%= @user.teamgr %></li>
                             <hr>
@@ -69,89 +76,7 @@
                       </div>
                   </div>
               </div><!--/tab-pane-->
-                  
-
-              <div class="tab-pane" id="edit">
-                  
-                    <form class="form" action="##" method="post" id="registrationForm">
-                        <div class="form-group">
-                            
-                            <div class="col-xs-6">
-                                <label for="first_name"><h4>Όνομα</h4></label>
-                                <input type="text" class="form-control" name="first_name" id="first_name" placeholder="π.χ. Μαρκος" title="enter your first name if any.">
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            
-                            <div class="col-xs-6">
-                              <label for="last_name"><h4>Επίθετο</h4></label>
-                                <input type="text" class="form-control" name="last_name" id="last_name" placeholder="π.χ. Τζέτζης" title="enter your last name if any.">
-                            </div>
-                        </div>
-
-                      <div class="form-group">
-                            
-                            <div class="col-xs-6">
-                                <label for="email"><h4>Θέση</h4></label>
-                                <input type="text" class="form-control" name="position" id="position" placeholder="π.χ. Επιθετικός" title="enter a position">
-                            </div>
-                        </div>
-            
-                        <div class="form-group">
-                          <div class="form-group">
-                            <div class="col-xs-6">
-                               <label for="mobile"><h4>Ύψος</h4></label>
-                                <input type="text" class="form-control" name="mobile" id="mobile" placeholder="69494949499" title="enter your mobile number if any.">
-                            </div>
-                        </div>
-
-                        <div class="form-group">
-                            
-                            <div class="col-xs-6">
-                                <label for="email"><h4>Βάρος</h4></label>
-                                <input type="email" class="form-control" name="email" id="email" placeholder="you@email.com" title="enter your email.">
-                            </div>
-                        </div>
-
-                        <div class="form-group">
-                            
-                            <div class="col-xs-6">
-                                <label for="email"><h4>Τοποθεσία</h4></label>
-                                <input type="text" class="form-control" id="location" placeholder="π.χ. Ιωάννινα" title="enter a location">
-                            </div>
-                        </div>
-
-                        <div class="form-group">
-                            
-                            <div class="col-xs-6">
-                                <label for="password"><h4>Ημερομηνία γέννησης</h4></label>
-                                <input type="date" class="form-control" name="age" id="age" placeholder="π.χ. 20/11/1993" title="enter your birthdate.">
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            
-                            <div class="col-xs-6">
-                              <label for="password2"><h4> Αγαπημένη Ομάδα (Ελληνική) </h4></label>
-                                <input type="text" class="form-control" name="teamgr" id="teamgr" placeholder="π.χ.Παναθηναικός" title="enter your favorite (greek)team.">
-                            </div>
-                        </div>
-
-
-                            <div class="col-xs-6">
-                              <label for="password2"><h4> Αγαπημένη Ομάδα (Ευρωπαική) </h4></label>
-                                <input type="text" class="form-control" name="teameu" id="teameu" placeholder="π.χ.Milan" title="enter your favorite (europe)team.">
-                            </div>
-                        </div>
-
-
-                        <div class="form-group">
-                             <div class="col-xs-12">
-                                  <br>
-                                  <button class="btn btn-lg btn-success" type="submit"><i class="glyphicon glyphicon-ok-sign"></i> Αποθήκευση</button>
-                                  <button class="btn btn-lg" type="reset"><i class="glyphicon glyphicon-repeat"></i> Αναίρεση</button>
-                              </div>
-                        </div>
-                  </form>
+              
             </div><!--/tab-pane-->
         </div><!--/tab-content-->
      </div><!--/col-9-->
