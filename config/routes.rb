@@ -35,6 +35,8 @@ Rails.application.routes.draw do
 
 	get '/games/:id/teams/:id' => 'teams#join' , :as => 'join'
 
+	post '/users/:id' => 'users#update', :as => 'edit_profile'
+
 
 	resources :users , only: [:show, :update, :edit]
 	
