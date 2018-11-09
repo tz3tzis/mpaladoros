@@ -5,16 +5,22 @@
     </div>
     <div class="row">
 
-        <div style="float:right;">
-          <%= button_to "Επεξεργασία προφίλ", edit_user_path(@user), method: :get , class: 'btn btn-small' %>
-        </div>
+        <!-- mono o current_user mporei na epejergastei ta stoixeia kai na allaksei thn fwtografia-->
+         <% if can? :edit, @user %>
+          <div style="float:right;">
+            <%= button_to "Επεξεργασία προφίλ", edit_user_path(@user), method: :get , class: 'btn btn-small' %>
+          </div>
+        <!------------------------------------->
 
         <div class="col-sm-3"><!--left col-->
               
           <div class="text-center">
+
             <img src="http://ssl.gstatic.com/accounts/ui/avatar_2x.png" class="avatar img-circle img-thumbnail" alt="avatar">
-            <h6>Ανέβασε άλλη φωτογραφία...</h6>
-            <input type="file" class="text-center center-block file-upload">
+             <% if can? :edit, @user %>
+              <h6>Ανέβασε άλλη φωτογραφία...</h6>
+              <input type="file" class="text-center center-block file-upload">
+            <% end %>
           </div></hr><br>
 
                

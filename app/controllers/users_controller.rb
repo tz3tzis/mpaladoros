@@ -14,8 +14,8 @@ class UsersController < ApplicationController
 
 		@user = User.find(params[:id])
 
-		@user.height = params[:user][:height]
-		@user.weight = params[:user][:weight]
+		@user.height 	 = params[:user][:height]
+		@user.weight 	 = params[:user][:weight]
 		@user.position = params[:user][:position]
 		@user.birthday = params[:user][:birthdate]
 		@user.location = params[:user][:location]
