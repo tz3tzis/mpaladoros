@@ -5,7 +5,7 @@ class Ability
     
     can :read, User 
     return unless user.present?
-    can :manage, User, user_id: user.id
-    
+    can :manage, User, id: user.id
+
   end
 end
