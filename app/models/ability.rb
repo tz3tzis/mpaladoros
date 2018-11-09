@@ -3,11 +3,9 @@ class Ability
 
   def initialize(user)
     
-    if user != current_user
-        can :read, :all
-    else
-        can :manage, :all
-    end
+    can :read, User 
+    return unless user.present?
+    can :manage, User, user_id: user.id
     
   end
 end
