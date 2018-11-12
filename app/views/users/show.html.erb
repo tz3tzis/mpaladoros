@@ -26,7 +26,6 @@
              <% if can? :edit, @user %>
               <h6>Ανέβασε άλλη φωτογραφία...</h6>
               <input type="file" id="user_avatar" name="user[avatar]" class="text-center center-block file-upload">
-              <% @user.save! %>
             <% end %>
           </div></hr><br>
 
