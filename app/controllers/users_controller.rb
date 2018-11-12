@@ -32,7 +32,7 @@ class UsersController < ApplicationController
 
 	private
 	 def user_params
-	 		params.require(:user).permit(:height, :weight, :position, :birthdate, :location, :teamgr, :teameu)
+	 		params.require(:user).permit(:height, :weight, :position, :birthdate, :location, :teamgr, :teameu, :avatar)
 	 end
 
 end
