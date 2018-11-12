@@ -24,8 +24,15 @@
             <% end %>
 
              <% if can? :edit, @user %>
-              <h6>Ανέβασε άλλη φωτογραφία...</h6>
-              <input type="file" id="user_avatar" name="user[avatar]" class="text-center center-block file-upload">
+              <%= form_for @user do |f| %>
+                
+                <div>
+                  <%= f.label :Ανέβασε_άλλη_φωτογραφία %>
+                  <%= f.file_field :avatar %>
+                </div>
+
+                <%= f.submit %>
+              <% end %>
             <% end %>
           </div></hr><br>
 
