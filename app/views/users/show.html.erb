@@ -6,7 +6,7 @@
     <div class="row">
 
 
-      <%= link_to(image_tag(@user.image.thumb.url, alt: 'Image'), @user.image.url, target: '_blank') if @user.image? %>
+      <%= link_to(image_tag(@user.avatar.thumb.url, alt: 'Image'), @user.avatar.url, target: '_blank') if @user.avatar? %>
 
         <!-- mono o current_user mporei na epejergastei ta stoixeia kai na allaksei thn fwtografia-->
          <% if can? :edit, @user %>
