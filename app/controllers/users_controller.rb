@@ -31,11 +31,13 @@ class UsersController < ApplicationController
 
 	def avatar_update
 
-		@user = User.find(params[:id])
+		@user = current_user
 		@user.avatar = params['user']['avatar']
+		puts @user.avatar
 		@user.save!
 		redirect_to user_path(@user)
 		flash[:notice] = "Η φωτογραφία σου ενημερώθηκε επιτυχώς "
+
 	end
 
 	private

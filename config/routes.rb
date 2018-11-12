@@ -43,7 +43,9 @@ Rails.application.routes.draw do
 	resources :admins , only: [:index, :show, :edit, :update]
 
 	resources :users do
-		get :avatar_update 
+		collection do
+			put :avatar_update 
+		end
 	end
 	
 	resources :games do
