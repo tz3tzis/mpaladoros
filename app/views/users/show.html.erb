@@ -24,7 +24,7 @@
             <% end %>
 
              <% if can? :edit, @user %>
-              <%= form_for @user, :url => { :action => "avatar_update" } do |f| %>
+              <%= form_for @user, :url => { :action => "avatar_update" }. :html => { :method => "put" } do |f| %>
                 
                 <div>
                   <%= f.label :Ανέβασε_άλλη_φωτογραφία %>
