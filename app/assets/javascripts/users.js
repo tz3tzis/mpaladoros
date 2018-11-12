@@ -15,10 +15,5 @@ $(document).ready(function() {
 
     $(".file-upload").on('change', function(){
         readURL(this);
-        $.ajax({
-            type: 'PUT',
-            url: "/users/"+user_id+"/avatar_update",
-            data: { user_id: "<%= current_user.id %>"}
-        });
     });
 });
