@@ -1,5 +1,7 @@
 class User < ApplicationRecord
 
+  mount_uploader :avatar, AvatarUploader 
+
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable,  :rememberable, :trackable, :validatable ,
@@ -25,6 +27,7 @@ class User < ApplicationRecord
 	    user.password = Devise.friendly_token[0,20]
 	    user.name = auth.info.name
 	    #user.image = URI.parse(auth.info.avatar) if auth.info.avatar?
+      user.avatar ="http://graph.facebook.com/#{self.uid}/picture?type=large"
       user.save!
   	end  	
   end

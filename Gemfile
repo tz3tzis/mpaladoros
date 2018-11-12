@@ -36,15 +36,13 @@ gem 'jbuilder', '~> 2.5'
 
 #### <-------I added those -----------> ###
 gem 'bootstrap-sass', '~> 3.3.7'
+
 # Use ActiveModel has_secure_password
 gem 'bcrypt', '~> 3.1.7'
 
 gem 'npm-rails', '~> 0.2.1'
 
 gem "simple_calendar", "~> 2.0"
-
-
-gem 'carrierwave' , '~> 1.0'
 
 #gia to fb login
 gem 'devise'
@@ -53,7 +51,6 @@ gem 'omniauth-facebook'
 #gem gia thn wra
 gem 'clockpicker-rails'
 gem 'simple_form'
-
 
 #gem gia to javascript
 gem 'execjs', '~> 2.7'
@@ -64,7 +61,7 @@ gem 'jquery-rails', '~> 4.3', '>= 4.3.1'
 
 gem 'cancancan', '~> 2.0'
 
-
+gem 'carrierwave' , '~> 1.0'
 
 
 
