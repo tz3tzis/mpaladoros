@@ -20,7 +20,7 @@
             <% if @user.avatar.file.nil? %>
               <img src="http://ssl.gstatic.com/accounts/ui/avatar_2x.png" class="avatar img-circle img-thumbnail" alt="avatar">
             <% else %>
-              <%= image_tag(@user.avatar_url, class: "avatar img-circle img-thumbnail" ) %>
+              <%= image_tag(@user.avatar_url.to_s, class: "avatar img-circle img-thumbnail" ) %>
             <% end %>
 
              <% if can? :edit, @user %>
