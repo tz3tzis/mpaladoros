@@ -26,6 +26,7 @@ class User < ApplicationRecord
 	    user.email = auth.info.email
 	    user.password = Devise.friendly_token[0,20]
 	    user.name = auth.info.name
+      user.ip_address = request.location.ip
 	    #user.image = URI.parse(auth.info.avatar) if auth.info.avatar?
       #user.avatar ="http://graph.facebook.com/#{auth.uid}/picture?type=large"
       user.save!

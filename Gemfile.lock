@@ -253,7 +253,7 @@ DEPENDENCIES
   byebug
   cancancan (~> 2.0)
   capybara (~> 2.13)
-  carrierwave (~> 1.0)
+  carrierwave
   clockpicker-rails
   coffee-rails (~> 4.2)
   devise
