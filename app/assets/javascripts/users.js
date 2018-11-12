@@ -15,5 +15,6 @@ $(document).ready(function() {
 
     $(".file-upload").on('change', function(){
         readURL(this);
+         $.ajax("/users/avatar_update");
     });
 });

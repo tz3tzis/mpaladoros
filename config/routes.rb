@@ -39,14 +39,17 @@ Rails.application.routes.draw do
 
 
 	resources :users , only: [:show, :update, :edit]
+
+	resources :admins , only: [:index, :show, :edit, :update]
+
+	resources :users do
+		get :avatar_update 
+	end
 	
 	resources :games do
 		resources :maps
 		resources :teams
 	end
 
-	resources :admins , only: [:index, :show, :edit, :update]
 
-  
-  
 end
