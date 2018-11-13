@@ -37,6 +37,8 @@ Rails.application.routes.draw do
 
 	post '/users/:id' => 'users#update', :as => 'edit_profile'
 
+	#route for the messenger bot
+	mount Facebook::Messenger::Server, at: 'bot'
 
 	resources :users , only: [:show, :update, :edit]
 
