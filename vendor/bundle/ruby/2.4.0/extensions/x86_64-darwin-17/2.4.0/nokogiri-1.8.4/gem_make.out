@@ -1,36 +1,152 @@
 current directory: /Users/tz3m/Desktop/mpala/vendor/bundle/ruby/2.4.0/gems/nokogiri-1.8.4/ext/nokogiri
-/Users/tz3m/.rvm/rubies/ruby-2.4.1/bin/ruby -r ./siteconf20181113-8314-15jhei6.rb extconf.rb --use-system-libraries --with-xml2-include=/usr/local/opt/libxml2/include/libxml2
-checking if the C compiler accepts ... *** extconf.rb failed ***
-Could not create Makefile due to some reason, probably lack of necessary
-libraries and/or headers.  Check the mkmf.log file for more details.  You may
-need configuration options.
+/Users/tz3m/.rvm/rubies/ruby-2.4.1/bin/ruby -r ./siteconf20181113-12725-1pfu2jv.rb extconf.rb --use-system-libraries --with-xml2-include=/usr/local/opt/libxml2/include/libxml2
+checking if the C compiler accepts ... yes
+checking if the C compiler accepts -Wno-error=unused-command-line-argument-hard-error-in-future... no
+Building nokogiri using system libraries.
+pkg-config could not be used to find libxslt
+Please install either `pkg-config` or the pkg-config gem per
 
-Provided configuration options:
-	--with-opt-dir
-	--with-opt-include
-	--without-opt-include=${opt-dir}/include
-	--with-opt-lib
-	--without-opt-lib=${opt-dir}/lib
-	--with-make-prog
-	--without-make-prog
-	--srcdir=.
-	--curdir
-	--ruby=/Users/tz3m/.rvm/rubies/ruby-2.4.1/bin/$(RUBY_BASE_NAME)
-	--help
-	--clean
-/Users/tz3m/.rvm/rubies/ruby-2.4.1/lib/ruby/2.4.0/mkmf.rb:457:in `try_do': The compiler failed to generate an executable file. (RuntimeError)
-You have to install development tools first.
-	from /Users/tz3m/.rvm/rubies/ruby-2.4.1/lib/ruby/2.4.0/mkmf.rb:572:in `block in try_compile'
-	from /Users/tz3m/.rvm/rubies/ruby-2.4.1/lib/ruby/2.4.0/mkmf.rb:523:in `with_werror'
-	from /Users/tz3m/.rvm/rubies/ruby-2.4.1/lib/ruby/2.4.0/mkmf.rb:572:in `try_compile'
-	from extconf.rb:138:in `nokogiri_try_compile'
-	from extconf.rb:162:in `block in add_cflags'
-	from /Users/tz3m/.rvm/rubies/ruby-2.4.1/lib/ruby/2.4.0/mkmf.rb:630:in `with_cflags'
-	from extconf.rb:161:in `add_cflags'
-	from extconf.rb:410:in `<main>'
+    gem install pkg-config -v "~> 1.1"
 
-To see why this extension failed to compile, please check the mkmf.log which can be found here:
+pkg-config could not be used to find libexslt
+Please install either `pkg-config` or the pkg-config gem per
 
-  /Users/tz3m/Desktop/mpala/vendor/bundle/ruby/2.4.0/extensions/x86_64-darwin-17/2.4.0/nokogiri-1.8.4/mkmf.log
+    gem install pkg-config -v "~> 1.1"
 
-extconf failed, exit code 1
+checking for xmlParseDoc() in libxml/parser.h... no
+checking for xmlParseDoc() in -lxml2... yes
+checking for xsltParseStylesheetDoc() in libxslt/xslt.h... no
+checking for xsltParseStylesheetDoc() in -lxslt... yes
+checking for exsltFuncRegister() in libexslt/exslt.h... no
+checking for exsltFuncRegister() in -lexslt... yes
+checking for xmlHasFeature()... yes
+checking for xmlFirstElementChild()... yes
+checking for xmlRelaxNGSetParserStructuredErrors()... yes
+checking for xmlRelaxNGSetParserStructuredErrors()... yes
+checking for xmlRelaxNGSetValidStructuredErrors()... yes
+checking for xmlSchemaSetValidStructuredErrors()... yes
+checking for xmlSchemaSetParserStructuredErrors()... yes
+creating Makefile
+
+current directory: /Users/tz3m/Desktop/mpala/vendor/bundle/ruby/2.4.0/gems/nokogiri-1.8.4/ext/nokogiri
+make "DESTDIR=" clean
+
+current directory: /Users/tz3m/Desktop/mpala/vendor/bundle/ruby/2.4.0/gems/nokogiri-1.8.4/ext/nokogiri
+make "DESTDIR="
+compiling html_document.c
+compiling html_element_description.c
+compiling html_entity_lookup.c
+html_entity_lookup.c:9:24: warning: unused parameter 'self' [-Wunused-parameter]
+static VALUE get(VALUE self, VALUE key)
+                       ^
+1 warning generated.
+compiling html_sax_parser_context.c
+compiling html_sax_push_parser.c
+compiling nokogiri.c
+compiling xml_attr.c
+compiling xml_attribute_decl.c
+compiling xml_cdata.c
+xml_cdata.c:29:23: warning: implicit conversion loses integer precision: 'long' to 'int' [-Wshorten-64-to-32]
+    content_str_len = RSTRING_LEN(content);
+                    ~ ^~~~~~~~~~~~~~~~~~~~
+/Users/tz3m/.rvm/rubies/ruby-2.4.1/include/ruby-2.4.0/ruby/ruby.h:980:6: note: expanded from macro 'RSTRING_LEN'
+     RSTRING_EMBED_LEN(str) : \
+     ^~~~~~~~~~~~~~~~~~~~~~
+/Users/tz3m/.rvm/rubies/ruby-2.4.1/include/ruby-2.4.0/ruby/ruby.h:976:6: note: expanded from macro 'RSTRING_EMBED_LEN'
+     (long)((RBASIC(str)->flags >> RSTRING_EMBED_LEN_SHIFT) & \
+     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+xml_cdata.c:29:23: warning: implicit conversion loses integer precision: 'long' to 'int' [-Wshorten-64-to-32]
+    content_str_len = RSTRING_LEN(content);
+                    ~ ^~~~~~~~~~~~~~~~~~~~
+/Users/tz3m/.rvm/rubies/ruby-2.4.1/include/ruby-2.4.0/ruby/ruby.h:981:28: note: expanded from macro 'RSTRING_LEN'
+     RSTRING(str)->as.heap.len)
+     ~~~~~~~~~~~~~~~~~~~~~~^~~
+2 warnings generated.
+compiling xml_comment.c
+compiling xml_document.c
+xml_document.c:3:38: warning: unused parameter 'key' [-Wunused-parameter]
+static int dealloc_node_i(xmlNodePtr key, xmlNodePtr node, xmlDocPtr doc)
+                                     ^
+1 warning generated.
+compiling xml_document_fragment.c
+compiling xml_dtd.c
+compiling xml_element_content.c
+compiling xml_element_decl.c
+compiling xml_encoding_handler.c
+xml_encoding_handler.c:24:27: warning: unused parameter 'klass' [-Wunused-parameter]
+static VALUE delete(VALUE klass, VALUE name)
+                          ^
+xml_encoding_handler.c:36:26: warning: unused parameter 'klass' [-Wunused-parameter]
+static VALUE alias(VALUE klass, VALUE from, VALUE to)
+                         ^
+2 warnings generated.
+compiling xml_entity_decl.c
+compiling xml_entity_reference.c
+compiling xml_io.c
+xml_io.c:54:30: warning: unused parameter 'ctx' [-Wunused-parameter]
+int io_close_callback(void * ctx) {
+                             ^
+1 warning generated.
+compiling xml_libxml2_hacks.c
+compiling xml_namespace.c
+compiling xml_node.c
+compiling xml_node_set.c
+xml_node_set.c:43:29: warning: unused parameter 'klass' [-Wunused-parameter]
+static VALUE allocate(VALUE klass)
+                            ^
+xml_node_set.c:322:41: warning: unused parameter 'rb_node' [-Wunused-parameter]
+static VALUE to_array(VALUE self, VALUE rb_node)
+                                        ^
+2 warnings generated.
+compiling xml_processing_instruction.c
+compiling xml_reader.c
+compiling xml_relax_ng.c
+compiling xml_sax_parser.c
+xml_sax_parser.c:88:9: warning: unused parameter 'self' [-Wunused-parameter]
+  VALUE self,
+        ^
+xml_sax_parser.c:126:7: warning: unused parameter 'nb_defaulted' [-Wunused-parameter]
+  int nb_defaulted,
+      ^
+2 warnings generated.
+compiling xml_sax_parser_context.c
+compiling xml_sax_push_parser.c
+compiling xml_schema.c
+compiling xml_syntax_error.c
+xml_syntax_error.c:10:34: warning: unused parameter 'ctx' [-Wunused-parameter]
+void Nokogiri_error_raise(void * ctx, xmlErrorPtr error)
+                                 ^
+1 warning generated.
+compiling xml_text.c
+compiling xml_xpath_context.c
+xml_xpath_context.c:162:48: warning: unused parameter 'ns_uri' [-Wunused-parameter]
+                                const xmlChar* ns_uri )
+                                               ^
+xml_xpath_context.c:172:52: warning: unused parameter 'ctx' [-Wunused-parameter]
+static void xpath_generic_exception_handler(void * ctx, const char *msg, ...)
+                                                   ^
+2 warnings generated.
+compiling xslt_stylesheet.c
+xslt_stylesheet.c:64:41: warning: unused parameter 'klass' [-Wunused-parameter]
+static VALUE parse_stylesheet_doc(VALUE klass, VALUE xmldocobj)
+                                        ^
+xslt_stylesheet.c:112:51: warning: unused parameter 'userdata' [-Wunused-parameter]
+static void swallow_superfluous_xml_errors(void * userdata, xmlErrorPtr error, ...)
+                                                  ^
+xslt_stylesheet.c:112:73: warning: unused parameter 'error' [-Wunused-parameter]
+static void swallow_superfluous_xml_errors(void * userdata, xmlErrorPtr error, ...)
+                                                                        ^
+xslt_stylesheet.c:226:17: warning: unused parameter 'uri' [-Wunused-parameter]
+        const xmlChar *uri, void *data)
+                       ^
+xslt_stylesheet.c:226:28: warning: unused parameter 'data' [-Wunused-parameter]
+        const xmlChar *uri, void *data)
+                                  ^
+5 warnings generated.
+linking shared-object nokogiri/nokogiri.bundle
+Cleaning files only used during build.
+rm -rf /Users/tz3m/Desktop/mpala/vendor/bundle/ruby/2.4.0/gems/nokogiri-1.8.4/ports/archives
+
+current directory: /Users/tz3m/Desktop/mpala/vendor/bundle/ruby/2.4.0/gems/nokogiri-1.8.4/ext/nokogiri
+make "DESTDIR=" install
+/usr/local/opt/coreutils/bin/ginstall -c -m 0755 nokogiri.bundle ./.gem.20181113-12725-aessjj/nokogiri
