@@ -64,7 +64,7 @@ gem 'cancancan', '~> 2.0'
 gem 'carrierwave' 
 gem 'mini_magick'
 
-
+gem 'facebook-messenger'
 
 
 
