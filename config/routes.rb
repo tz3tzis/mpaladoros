@@ -38,6 +38,9 @@ Rails.application.routes.draw do
 	post '/users/:id' => 'users#update', :as => 'edit_profile'
 
 
+
+
+
 	resources :users , only: [:show, :update, :edit]
 
 	resources :admins , only: [:index, :show, :edit, :update]
