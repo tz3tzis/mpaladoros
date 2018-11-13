@@ -59,8 +59,10 @@ gem 'rails-ujs'
 gem 'geocoder', '~> 1.3', '>= 1.3.7'
 gem 'jquery-rails', '~> 4.3', '>= 4.3.1'
 
+#gem gia to authorization twn xrhstwn
 gem 'cancancan', '~> 2.0'
 
+#gia to uploaf fwtografiwn
 gem 'carrierwave' 
 gem 'mini_magick'
 
