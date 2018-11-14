@@ -2,10 +2,10 @@
 require 'facebook/messenger'
 include Facebook::Messenger
 
-#Facebook::Messenger::Subscriptions.subscribe(access_token:ENV["ACCESS_TOKEN"])  
+Facebook::Messenger::Subscriptions.subscribe(access_token:ENV["ACCESS_TOKEN"])  
 
 Bot.on :message do |message|
-  message.reply(text: 'Καλησπέρα παιχταρά μου!')
+  message.reply(text: 'Καλωσήρθες παιχταρά μου!')
   message.reply(
 	  attachment: {
 	    type: 'template',
