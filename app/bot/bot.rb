@@ -28,9 +28,7 @@ Bot.on :postback do |postback|
 	postback.payload
 
 	if postback.payload == "yes"
-		postback.reply(text: "Τότε μπες εδω 
-		https://mpaladoros-app.herokuapp.com 
-		 και ξεκίνα το παιχνίδι! ")
+		postback.reply(text: "Τότε μπες εδω https://mpaladoros-app.herokuapp.com και ξεκίνα το παιχνίδι! ")
 	elsif postback.payload == 'no'
 		postback.reply(text: "ΑΝΤΕ ΓΕΙΑ!") 
 		postback.reply(
