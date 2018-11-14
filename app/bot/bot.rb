@@ -28,14 +28,16 @@ Bot.on :postback do |postback|
 	postback.payload
 
 	if postback.payload == "yes"
-		postback.reply(text: "Τότε μπες εδω(www.mpaladoros-app.herokuapp.com) και ξεκίνα το παιχνίδι!")
+		postback.reply(text: "Τότε μπες εδω '\n'
+		https://mpaladoros-app.herokuapp.com '\n'
+		 και ξεκίνα το παιχνίδι! '\n")
 	elsif postback.payload == 'no'
 		postback.reply(text: "ΑΝΤΕ ΓΕΙΑ!") 
 		postback.reply(
 			attachment: {
 				type: 'image',
 				payload: {
-					url: 'https://tenor.com/view/tsoukalas-gif-6718908'
+					url: 'https://www.reader.gr/sites/default/files/styles/reader_l/public/tsoykalas.jpg?itok=WTYkINB5'
 				}
 			}
 		)
