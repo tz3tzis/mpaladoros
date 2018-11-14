@@ -28,9 +28,9 @@ Bot.on :postback do |postback|
 	postback.payload
 
 	if postback.payload == "yes"
-		puts "Τότε #{postback.recepient} μπες εδω(www.mpaladoros.gr) και ξεκίνα το παιχνίδι!"
+		postback.reply(text: "Τότε #{postback.recepient} μπες εδω(www.mpaladoros.gr) και ξεκίνα το παιχνίδι!")
 	elsif postback.payload == 'no'
-		puts "ΑΝΤΕ ΓΕΙΑ!"
+		postback.reply(text: "ΑΝΤΕ ΓΕΙΑ!") 
 	end
 
 end
