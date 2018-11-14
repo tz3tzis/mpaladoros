@@ -28,9 +28,17 @@ Bot.on :postback do |postback|
 	postback.payload
 
 	if postback.payload == "yes"
-		postback.reply(text: "Τότε #{postback.sent_at} μπες εδω(www.mpaladoros.gr) και ξεκίνα το παιχνίδι!")
+		postback.reply(text: "Τότε μπες εδω(www.mpaladoros-app.herokuapp.com) και ξεκίνα το παιχνίδι!")
 	elsif postback.payload == 'no'
 		postback.reply(text: "ΑΝΤΕ ΓΕΙΑ!") 
+		postback.reply(
+			attachment: {
+				type: 'image',
+				payload: {
+					'https://tenor.com/view/tsoukalas-gif-6718908'
+				}
+			}
+		)
 	end
 
 end
