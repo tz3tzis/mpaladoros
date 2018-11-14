@@ -35,7 +35,7 @@ Bot.on :postback do |postback|
 			attachment: {
 				type: 'image',
 				payload: {
-					'https://tenor.com/view/tsoukalas-gif-6718908'
+					url: 'https://tenor.com/view/tsoukalas-gif-6718908'
 				}
 			}
 		)
