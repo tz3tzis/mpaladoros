@@ -7,7 +7,7 @@
      <ul style="list-style-type: none; display: inline-block;">
         <h3> Hometeam </h3>
      		<% @game.hometeam.users.each do |player| %>
-       	  <li> <%= player.name %></li>
+       	  <li> <%= link_to '#{player.name}', user_path(@game.hometeam.user) %></li>
         <% end %>
         <%= link_to 'Παίξε σε αυτήν την ομάδα' , join_path(@game.hometeam.id)%>
      </ul>
@@ -17,7 +17,7 @@
      <ul style="list-style-type: none; display: inline-block;">
       <h3> Awayteam </h3>
      	<% @game.awayteam.users.each do |player| %>
-       	 <li> <%= player.name %></li>
+       	 <li> <%= link_to '#{player.name}', user_path(@game.awayteam.user) %></li>
       <% end %>
         <%= link_to 'Παίξε σε αυτήν την ομάδα' , join_path(@game.awayteam.id) %>
      </ul>
