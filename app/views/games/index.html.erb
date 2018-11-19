@@ -1,4 +1,4 @@
-<h3 id ='title'> Ενεργά παιχνίδια! </h3>
+g.hometeam<h3 id ='title'> Ενεργά παιχνίδια! </h3>
 
  
 
@@ -16,7 +16,7 @@
           <tr>
             <ul style="list-style-type:none" id = 'gameslayout' >
 
-            <% stadio = Stadium.find(g.admin_id) %>
+            <% stadio = g.stadium %>
             <% players_joined = g.hometeam.users.count + g.awayteam.users.count %>
 
 
