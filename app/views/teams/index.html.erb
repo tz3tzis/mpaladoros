@@ -4,7 +4,7 @@
   <div style="text-align: center;">
 
     <!-- H lista me tous paiktes ths ghpedouxou omadas -->
-     <ol style="list-style-type: none; display: inline-block;">
+     <ol>
         <h4> Hometeam </h4>
      		<% @game.hometeam.users.each do |player| %>
        	  <li> <%= link_to "#{player.name}", user_path(player), class: ['btn','btn-link'] %></li>
@@ -14,7 +14,7 @@
 
 
     <!-- H lista me tous paiktes ths filoksenoumenhs omadas -->
-     <ol style="list-style-type: none; display: inline-block;">
+     <ol >
       <h4> Awayteam </h4>
      	<% @game.awayteam.users.each do |player| %>
          <% if player.nil? %>
