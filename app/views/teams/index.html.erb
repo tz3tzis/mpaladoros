@@ -1,7 +1,7 @@
 <div class="center jumbotron">
   <h2> Διάλεξε ομάδα! </h2>
 
-  <div>
+  <div style="text-align: center;">
 
     <!-- H lista me tous paiktes ths ghpedouxou omadas -->
      <ul style="list-style-type: none; display: inline-block;">
@@ -18,7 +18,7 @@
       <h4> Awayteam </h4>
      	<% @game.awayteam.users.each do |player| %>
          <% if player.nil? %>
-            <li> </li>
+            <li> Κενή θέση</li>
           <% else %>
        	    <li> <%= link_to "#{player.name}", user_path(player), class: ['btn','btn-link'] %></li>
           <%end %>
@@ -26,7 +26,6 @@
         <%= link_to 'Παίξε σε αυτήν την ομάδα' , join_path(@game.awayteam.id), class: ['btn','btn-info'] %>
      </ul>
   <div>
-
-  <div><%= link_to 'Επιστροφή' , :back, class: ['btn','btn-primary']%></div>
-  
 </div>
+
+<div style="text-align: center;"><%= link_to 'Επιστροφή' , :back, class: ['btn','btn-primary']%></div>
