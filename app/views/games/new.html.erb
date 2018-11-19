@@ -8,9 +8,10 @@
     <% @stadia.each do |t| %>
 
       <th style = "width:100px; height: 150px;" >
+           <h3><%="Γήπεδο : " t.stadium_name %></h3>
           <%=image_tag "#{t.stadium_name}/2.jpg" %>
-          <h3><%= t.stadium_name %></h3>
-          <h3><%= t.admin_id.to_s %></h3>
+         
+          <p><%= t.admin_id.to_s %></>
           <p><%= "Χωρητικότητα : " + t.max_players.to_s %></p>
           <p><%= "Τιμή : " + t.price.to_s + "/άτομο"%></p>
 
@@ -52,7 +53,7 @@
   <br>
 
   <div id="newgame">
-    <%= f.submit "Δημιούργησε το παιχνίδι"  %>
+    <%= f.submit "Δημιούργησε το παιχνίδι" , class: ['btn','btn-success'] %>
   </div>
 <% end %>
 
