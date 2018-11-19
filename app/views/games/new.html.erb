@@ -8,7 +8,7 @@
     <% @stadia.each do |t| %>
 
       <th style = "width:100px; height: 150px;" >
-           <h3><%="Γήπεδο : " t.stadium_name %></h3>
+           <h3><%="Γήπεδο : " + t.stadium_name %></h3>
           <%=image_tag "#{t.stadium_name}/2.jpg" %>
          
           <p><%= t.admin_id.to_s %></>
