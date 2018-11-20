@@ -2,62 +2,63 @@
 
 <%= form_for (@game) do |f| %>
 
-  <div style="overflow-x:auto;">
-    <table id="ghpeda" align="center">
+  <div>
 
-      <% @stadia.each do |t| %>
+    <div style="overflow-x:auto;">
+      <table id="ghpeda" align="center">
 
-        <th style = "width:100px; height: 150px;" >
-             <h3><%="Γήπεδο : " + t.stadium_name %></h3>
-            <%=image_tag "#{t.stadium_name}/2.jpg" %>
-           
-            <p><%= t.admin_id.to_s %></>
-            <p><%= "Χωρητικότητα : " + t.max_players.to_s %></p>
-            <p><%= "Τιμή : " + t.price.to_s + "/άτομο"%></p>
+        <% @stadia.each do |t| %>
 
-            <div>
-              
-            <%= f.label :Επέλεξε_ενα_εδώ %>
-            <%= f.radio_button  :name, t.stadium_name  , :required => true  %>
+          <th style = "width:100px; height: 150px;" >
+               <h3><%="Γήπεδο : " + t.stadium_name %></h3>
+              <%=image_tag "#{t.stadium_name}/2.jpg" %>
+             
+              <p><%= t.admin_id.to_s %></p>
+              <p><%= "Χωρητικότητα : " + t.max_players.to_s %></p>
+              <p><%= "Τιμή : " + t.price.to_s + "/άτομο"%></p>
 
-            </div>
-        </th> 
-      <% end %>
-    </table>
-  <br>
-  
-    <div id="inline">
-      <div class="one">
-         <%= f.label :Ποιά_μέρα_θές_να_παίξεις? %>
-         <%= f.date_field :start_time , :required => true  %>
-       </div>
-    
+              <div>
+                
+              <%= f.label :Επέλεξε_ενα_εδώ %>
+              <%= f.radio_button  :name, t.stadium_name  , :required => true  %>
 
-      <div class="two">
-        <%= f.label :Ποιά_ώρα_θές_να_παίξεις? , :id => "label" %>
-        <div class="input-group clockpicker" id="float"  data-placement="left" data-align="top" data-autoclose="true" >
-        
-
-          <input  type="text" class="form-control" id="time1"  name="game[time]"required>
-
-          <span class="input-group-addon">
-              <span class="glyphicon glyphicon-time"></span>
-          </span> 
-        </div>
-
-      </div>
+              </div>
+          </th> 
+        <% end %>
+      </table>
     </div>
-     
+    <br>
+    
+      <div id="inline">
+        <div class="one">
+           <%= f.label :Ποιά_μέρα_θές_να_παίξεις? %>
+           <%= f.date_field :start_time , :required => true  %>
+         </div>
+      
 
-  <br>
+        <div class="two">
+          <%= f.label :Ποιά_ώρα_θές_να_παίξεις? , :id => "label" %>
+          <div class="input-group clockpicker" id="float"  data-placement="left" data-align="top" data-autoclose="true" >
+          
 
-  <div id="newgame">
-    <%= f.submit "Δημιούργησε το παιχνίδι" , class: ['btn','btn-success'] %>
-  </div>
-<% end %>
+            <input  type="text" class="form-control" id="time1"  name="game[time]"required>
 
+            <span class="input-group-addon">
+                <span class="glyphicon glyphicon-time"></span>
+            </span> 
+          </div>
+
+        </div>
+      </div>
+       
+
+    <br>
+
+    <div id="newgame">
+      <%= f.submit "Δημιούργησε το παιχνίδι" , class: ['btn','btn-success'] %>
+    </div>
+  <% end %>
 </div>
-
 <br>
 <br>
 
