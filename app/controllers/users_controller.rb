@@ -18,7 +18,7 @@ class UsersController < ApplicationController
 		@user.height 	 = params[:user][:height]
 		@user.weight 	 = params[:user][:weight]
 		@user.position = params[:user][:position]
-		birthday = ((Time.zone.now - params[:user][:birthday].to_time) / 1.year.seconds).floor 
+		birthday = ((Time.zone.now - params[:user][:age].to_time) / 1.year.seconds).floor 
 		@user.age = birthday
 		@user.location = params[:user][:location]
 		@user.teamgr   = params[:user][:teamgr]
@@ -43,7 +43,7 @@ class UsersController < ApplicationController
 
 	private
 	 def user_params
-	 		params.require(:user).permit(:height, :weight, :position, :birthdate, :location, :teamgr, :teameu, :avatar)
+	 		params.require(:user).permit(:height, :weight, :position, :age, :location, :teamgr, :teameu, :avatar)
 	 end
 
 
