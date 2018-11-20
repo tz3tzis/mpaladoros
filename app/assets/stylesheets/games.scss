@@ -8,6 +8,10 @@ table, th, td {
   background-color: black;
 }
 
+#parent{
+  width: 80%;
+}
+
 #new_game, table, th{
     text-align: center; 
 }
@@ -96,15 +100,14 @@ label{
 }
 .one{
   width:80%;
-  margin:10px;
-  margin-left: 80px;
+  margin-top:20px;
+  
 }
 
 
 .two{
   width:80%;
-  margin:10px;
-  margin-right: 80px;
+  margin-top:20px;
 }
 
 
