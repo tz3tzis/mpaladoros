@@ -3,28 +3,27 @@
 <%= form_for (@game) do |f| %>
 
   <div style="overflow-x:auto;">
-  <table id="ghpeda" align="center">
+    <table id="ghpeda" align="center">
 
-    <% @stadia.each do |t| %>
+      <% @stadia.each do |t| %>
 
-      <th style = "width:100px; height: 150px;" >
-           <h3><%="Γήπεδο : " + t.stadium_name %></h3>
-          <%=image_tag "#{t.stadium_name}/2.jpg" %>
-         
-          <p><%= t.admin_id.to_s %></>
-          <p><%= "Χωρητικότητα : " + t.max_players.to_s %></p>
-          <p><%= "Τιμή : " + t.price.to_s + "/άτομο"%></p>
+        <th style = "width:100px; height: 150px;" >
+             <h3><%="Γήπεδο : " + t.stadium_name %></h3>
+            <%=image_tag "#{t.stadium_name}/2.jpg" %>
+           
+            <p><%= t.admin_id.to_s %></>
+            <p><%= "Χωρητικότητα : " + t.max_players.to_s %></p>
+            <p><%= "Τιμή : " + t.price.to_s + "/άτομο"%></p>
 
-          <div>
-            
-          <%= f.label :Επέλεξε_ενα_εδώ %>
-          <%= f.radio_button  :name, t.stadium_name  , :required => true  %>
+            <div>
+              
+            <%= f.label :Επέλεξε_ενα_εδώ %>
+            <%= f.radio_button  :name, t.stadium_name  , :required => true  %>
 
-          </div>
-      </th> 
-    <% end %>
-  </table>
-  </div>
+            </div>
+        </th> 
+      <% end %>
+    </table>
   <br>
   
     <div id="inline">
@@ -56,6 +55,8 @@
     <%= f.submit "Δημιούργησε το παιχνίδι" , class: ['btn','btn-success'] %>
   </div>
 <% end %>
+
+</div>
 
 <br>
 <br>
