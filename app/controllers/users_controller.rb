@@ -18,7 +18,8 @@ class UsersController < ApplicationController
 		@user.height 	 = params[:user][:height]
 		@user.weight 	 = params[:user][:weight]
 		@user.position = params[:user][:position]
-		@user.birthday = params[:user][:birthdate]
+		birthday = ((Time.zone.now - params[:user][:birthdate].to_time) / 1.year.seconds).floor 
+		@user.age = birthday
 		@user.location = params[:user][:location]
 		@user.teamgr   = params[:user][:teamgr]
 		@user.teameu   = params[:user][:teameu]

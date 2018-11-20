@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20181109151152) do
+ActiveRecord::Schema.define(version: 20181120110518) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -80,7 +80,6 @@ ActiveRecord::Schema.define(version: 20181109151152) do
     t.string "position"
     t.string "phone"
     t.string "location"
-    t.date "birthday"
     t.string "teamgr"
     t.string "teameu"
     t.integer "games_created"
@@ -89,6 +88,7 @@ ActiveRecord::Schema.define(version: 20181109151152) do
     t.float "height"
     t.float "weight"
     t.string "avatar"
+    t.integer "age"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
