@@ -62,7 +62,7 @@ gem 'jquery-rails', '~> 4.3', '>= 4.3.1'
 gem 'cancancan', '~> 2.0'
 
 gem 'carrierwave' 
-gem "fog-aws"
+gem "fog"
 gem 'mini_magick'
 
 gem 'facebook-messenger'
