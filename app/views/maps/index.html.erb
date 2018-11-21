@@ -11,9 +11,10 @@
 
 <div id="map" style="width:70%;height 100% "></div>
 
+<button id="show" style="float:right;width:15%;position: absolute;">Εμφάνισε οδηγίες</button>
+<button id="hide" style="float:right;width:15%;position: absolute;">Κρύψε οδηγίες</button>
+
 <div id="right-panel" style="float:right;width:30%;height 100%; display: none;"></div>
-<button id="show" style="float:right;width:15%;height 100%;">Εμφάνισε οδηγίες</button>
-<button id="hide" style="float:right;width:15%;height 100%;">Κρύψε οδηγίες</button>
 
 <script >
 
@@ -71,6 +72,9 @@
 	$(document).ready(function(){
 		$("#show").click(function(){
 			$("#right-panel").show();
+		});
+		$("#hide").click(function(){
+			$("#right-panel").hide();
 		});
 	});
 
