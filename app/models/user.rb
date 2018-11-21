@@ -10,8 +10,6 @@ class User < ApplicationRecord
   geocoded_by :ip_address
   after_validation :geocode 
 
-  
-
   def self.new_with_session(params,session)
   	super.tap do |user|
   		if data = session["devise.facebook_data"] && session["devise.facebook_data"]["extra"]["raw_info"]
