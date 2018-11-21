@@ -6,10 +6,15 @@
 }
 
 
+
 #right-panel {
   font-family: 'Roboto','sans-serif';
   line-height: 30px;
   padding-left: 10px;
+}
+
+#right-panel table, th,td{
+   border: 2px solid green;
 }
 
 #right-panel select, #right-panel input {
