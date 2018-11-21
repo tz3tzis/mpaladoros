@@ -11,8 +11,8 @@
 
 <div id="map" style="width:70%;height 100% "></div>
 
-<div id="right-panel" style="float:right;width:30%;height 100%"></div>
-
+<div id="right-panel" style="float:right;width:30%;height 100%; display: none;"></div>
+<button id="show" style="float:right;width:30%;height 100%;">Οδηγίες</button>
 
 <script >
 
@@ -66,10 +66,20 @@
 
 </script> 
 
+<script>
+	$(document).ready(function(){
+		$("#show").click(function(){
+			$("#right-panel").show();
+		});
+	});
 
-    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBZZ_xemsf-NjF4N4PZgdXZZL-AhUK70xE&callback=initMap"
+</script>
+
+<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBZZ_xemsf-NjF4N4PZgdXZZL-AhUK70xE&callback=initMap"
     type="text/javascript">
-   </script>
+</script>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
 
 
