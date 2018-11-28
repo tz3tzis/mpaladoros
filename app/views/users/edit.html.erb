@@ -3,68 +3,68 @@
 <%= form_for @user do |u| %>
     <div class="form-group">              
         <div class="col-xs-6">
-            <%= u.label :Ονοματεπώνυμο , style: 'text-align: center;' %>
-            <%= u.text_field :name, :required => true , style: 'text-align: center;'%>
+            <%= u.label :Ονοματεπώνυμο  %>
+            <%= u.text_field :name, :required => true %>
         </div>
     </div>
 
 
      <div class="form-group">              
         <div class="col-xs-6">
-            <%= u.label :θέση , style: 'text-align: center;'%>
-            <%= u.text_field :position, :required => true , style: 'text-align: center;'%>
+            <%= u.label :θέση %>
+            <%= u.text_field :position, :required => true %>
         </div>
     </div>
 
     <div class="form-group">              
         <div class="col-xs-6">
-            <%= u.label :Ύψος , style: 'text-align: center;'%>
-            <%= u.number_field :height, :class => 'text_field', :step => 0.01, :required => true , style: 'text-align: center;'%>
+            <%= u.label :Ύψος %>
+            <%= u.number_field :height, :class => 'text_field', :step => 0.01, :required => true %>
         </div>
     </div>
 
     <div class="form-group">              
         <div class="col-xs-6">
-            <%= u.label :Βάρος, style: 'text-align: center;' %>
-            <%= u.number_field :weight, :class => 'text_field', :required => true, style: 'text-align: center;' %>
+            <%= u.label :Βάρος %>
+            <%= u.number_field :weight, :class => 'text_field', :required => true %>
         </div>
     </div>
 
 
      <div class="form-group">              
         <div class="col-xs-6">
-            <%= u.label :Ημερομηνία_γέννησης, style: 'text-align: center;' %>
-            <%= u.date_field :age, :required => true, style: 'text-align: center;' %>
+            <%= u.label :Ημερομηνία_γέννησης %>
+            <%= u.date_field :age, :required => true %>
         </div>
     </div>
 
 
     <div class="form-group">              
         <div class="col-xs-6">
-            <%= u.label :Πόλη, style: 'text-align: center;' %>
-            <%= u.text_field :location, :required => true, style: 'text-align: center;' %>
+            <%= u.label :Πόλη %>
+            <%= u.text_field :location, :required => true %>
         </div>
     </div>
 
     <div class="form-group">              
         <div class="col-xs-6">
-            <%= u.label :Αγαπημένη_Ελληνική_ομάδα, style: 'text-align: center;'%>
-            <%= u.text_field :teamgr, style: 'text-align: center;' %>
+            <%= u.label :Αγαπημένη_Ελληνική_ομάδα %>
+            <%= u.text_field :teamgr %>
         </div>
     </div>
 
     <div class="form-group">              
         <div class="col-xs-6">
-            <%= u.label :Αγαπημένη_Ξένη_ομάδα, style: 'text-align: center;' %>
-            <%= u.text_field :teameu , style: 'text-align: center;'%>
+            <%= u.label :Αγαπημένη_Ξένη_ομάδα %>
+            <%= u.text_field :teameu %>
         </div>
     </div>
 
 
     <div class="form-group">              
         <div class="col-xs-6">
-            <%= u.submit  "Αλλαγή στοιχείων", method: :post, :class => "btn btn-success" , style: 'text-align: center;' %>
-            <button class="btn btn-success" , style='text-align: center; 'type="reset"><i class="glyphicon glyphicon-repeat"></i> Αναίρεση</button>
+            <%= u.submit  "Αλλαγή στοιχείων", method: :post, :class => "btn btn-success" %>
+            <button class="btn btn-success" type="reset"><i class="glyphicon glyphicon-repeat"></i> Αναίρεση</button>
         </div>
     </div>
 
