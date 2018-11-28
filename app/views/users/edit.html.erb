@@ -3,8 +3,8 @@
 <%= form_for @user do |u| %>
     <div class="form-group">              
         <div class="col-xs-6">
-            <%= u.label :Ονοματεπώνυμο %>
-            <%= u.text_field :name, :required => true %>
+            <%= u.label :Ονοματεπώνυμο , style: 'text-align: center;' %>
+            <%= u.text_field :name, :required => true,  %>
         </div>
     </div>
 
@@ -63,11 +63,10 @@
 
     <div class="form-group">              
         <div class="col-xs-6">
-            <i class="glyphicon glyphicon-ok-sign"></i><%= u.submit  "Αλλαγή στοιχείων", method: :post, :class => "btn btn-lg" %>
-            <button class="btn btn-lg" type="reset"><i class="glyphicon glyphicon-repeat"></i> Αναίρεση</button>
+            <%= u.submit  "Αλλαγή στοιχείων", method: :post, :class => "btn btn-success" %>
+            <button class="btn btn-success" type="reset"><i class="glyphicon glyphicon-repeat"></i> Αναίρεση</button>
         </div>
     </div>
-
 
 
 <% end %>
