@@ -1,4 +1,4 @@
-<h3 style="color: white;"> Επεξεργάσου τα στοιχεία σου </h3>
+<h2 style="color: white;"> Επεξεργάσου τα στοιχεία σου </h2>
 
 <%= form_for @user do |u| %>
     <div class="form-group">              
@@ -8,6 +8,7 @@
         </div>
     </div>
 
+    <br>
 
      <div class="form-group">              
         <div class="col-xs-6">
@@ -15,21 +16,21 @@
             <%= u.text_field :position, :required => true %>
         </div>
     </div>
-
+    <br>
     <div class="form-group">              
         <div class="col-xs-6">
             <%= u.label :Ύψος %>
             <%= u.number_field :height, :class => 'text_field', :step => 0.01, :required => true %>
         </div>
     </div>
-
+    <br>
     <div class="form-group">              
         <div class="col-xs-6">
             <%= u.label :Βάρος %>
             <%= u.number_field :weight, :class => 'text_field', :required => true %>
         </div>
     </div>
-
+    <br>
 
      <div class="form-group">              
         <div class="col-xs-6">
@@ -37,7 +38,7 @@
             <%= u.date_field :age, :required => true %>
         </div>
     </div>
-
+    <br>
 
     <div class="form-group">              
         <div class="col-xs-6">
@@ -45,24 +46,25 @@
             <%= u.text_field :location, :required => true %>
         </div>
     </div>
-
+    <br>
     <div class="form-group">              
         <div class="col-xs-6">
             <%= u.label :Αγαπημένη_Ελληνική_ομάδα %>
             <%= u.text_field :teamgr %>
         </div>
     </div>
-
+    <br>
     <div class="form-group">              
         <div class="col-xs-6">
             <%= u.label :Αγαπημένη_Ξένη_ομάδα %>
             <%= u.text_field :teameu %>
         </div>
     </div>
-
+    <br>
+    <br>
 
     <div class="form-group">              
-        <div class="col-xs-6">
+        <div class="col align-self-center">
             <%= u.submit  "Αλλαγή στοιχείων", method: :post, :class => "btn btn-success" %>
             <button class="btn btn-success" type="reset"><i class="glyphicon glyphicon-repeat"></i> Αναίρεση</button>
         </div>
