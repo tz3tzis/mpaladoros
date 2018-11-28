@@ -12,7 +12,7 @@
         <h4> Αν είσαι μπαλαδόρος συνδέσου εδω! </h4>
 
         <div class = "fbbutton">
-          <%= link_to "Sign in with Facebook", user_facebook_omniauth_authorize_path ,id:"fbb"%>
+          <%= link_to "Sign in with Facebook", user_facebook_omniauth_authorize_path ,id:"fbb", class: ['btn','btn-primary']%>
         </div><br>
               
         <div class="adminlogin"> Αν είσαι ιδιοκτήτης συνδέσου     <%= link_to "Εδώ" , login_path ,id: "edw" %> 
