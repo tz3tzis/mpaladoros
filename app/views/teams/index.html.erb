@@ -7,7 +7,7 @@
      <ol style=" display: inline-block;">
         <h4> Hometeam </h4>
      		<% @game.hometeam.users.each do |player| %>
-       	  <li> <%= link_to "#{player.name}", user_path(player), class: ['btn','btn-link'] %></li>
+       	    <li> <%= link_to "#{player.name}", user_path(player), class: ['btn','btn-link'] %></li>
         <% end %>
         <%= link_to 'Παίξε σε αυτήν την ομάδα' , join_path(@game.hometeam.id), class: ['btn','btn-info']%>
      </ol>
