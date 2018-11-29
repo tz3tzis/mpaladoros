@@ -4,14 +4,14 @@ class AdminsController < ApplicationController
   def show
   	@games = Game.all
     @admin = current_admin
-    unauthorized! if cannot? :read, @admin
+    authorize! :show, @admin
 
   end
 
  def edit
  		@admins = current_admin
 		@admin = Admin.find(params[:id])
-		unauthorized! if cannot? :update, @admin
+		authorize! :update, @admin
  end
 
 	def update
