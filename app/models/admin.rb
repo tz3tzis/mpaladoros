@@ -1,5 +1,7 @@
 class Admin < ApplicationRecord
 
+	enum role: [ :admin ]
+
 	has_many :stadia
 
 	before_save { self.email = email.downcase }
