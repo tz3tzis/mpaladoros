@@ -4,8 +4,6 @@ class AdminsController < ApplicationController
   def show
   	@games = Game.all
     @admin = current_admin
-    unauthorized! if cannot? :show
-
   end
 
  def edit
