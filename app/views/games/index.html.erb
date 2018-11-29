@@ -8,7 +8,16 @@
       <%= button_to 'Δημιούργησε Παιχνίδι', new_game_path,method: :get, class: ['btn','btn-danger']%>
     </div>
 
-    <div class ="duo" id='gametable'>
+
+    <div  class="ena" id = "float">  
+      <div style="color: green;"><%= current_user.name %><div>
+        <div><%= image_tag(current_user.avatar_url(:thumb).to_s) %> </div>
+      </div> 
+   </div>
+   
+  </div>
+
+    <div id='gametable'>
       <table >
 
         <% carouselId = 0 %>
@@ -81,11 +90,7 @@
      </table>
     </div>
 
-    <div  class="ena" id = "float">  
-      <div style="color: green;"><%= current_user.name %><div>
-      <div><%= image_tag(current_user.avatar_url(:thumb).to_s) %> </div>
-    </div> 
-  </div>
+
 
 <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
