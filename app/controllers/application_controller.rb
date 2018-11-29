@@ -30,10 +30,10 @@ class ApplicationController < ActionController::Base
 
 	# overriding CanCan::ControllerAdditions
   def current_ability
-    if current_admin?
-      @current_ability ||= Ability.new(current_admin)
-    else
+    if current_user?
       @current_ability ||= Ability.new(current_user)
+    else
+      @current_ability ||= Ability.new(current_admin)
     end
   end
 
