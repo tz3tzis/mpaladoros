@@ -8,8 +8,7 @@ class Ability
   end
 
   def initialize(admin)
-  	can :read, Admin
-  	return unless admin.present?
+  	can :read, Admin, id: admin.id
   	can :manage, Admin, id: admin.id
   end
 
