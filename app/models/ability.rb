@@ -17,14 +17,4 @@ class AdminAbility
   end
 end
 
-class ApplicationController < ActionController::Base
-  # overriding CanCan::ControllerAdditions
-  def current_ability
-    if current_account.kind_of?(AdminUser)
-      @current_ability ||= AdminAbility.new(current_account)
-    else
-      @current_ability ||= UserAbility.new(current_account)
-    end
-  end
-end
 
