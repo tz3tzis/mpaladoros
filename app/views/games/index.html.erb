@@ -9,10 +9,8 @@
     </div>
 
 
-    <div  style="display: inline-block;">  
-      <div style="color: green;"><%= current_user.name %><div>
-        <div><%= image_tag(current_user.avatar_url(:thumb).to_s) %> </div>
-      </div> 
+    <div  style="display: inline-block;float: right">  
+        <div style="border-radius: 50%;"><%= image_tag(current_user.avatar_url(:thumb).to_s) %> </div>
    </div>
 
   </div>
