@@ -7,9 +7,9 @@ class Ability
     can :manage, User, id: user.id
   end
 
-  def initialize(admin)
-  	can [:read, :update], Admin, id: admin.id
-  end
+ # def initialize(admin)
+  #	can [:read, :update], Admin, id: admin.id
+ # end
 
 end
 
