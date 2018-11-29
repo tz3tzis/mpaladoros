@@ -1,4 +1,4 @@
-<h2> Αλλαγη κωδικου! </h2>
+<h2 style="text-align: center; color: white;"> Ενημέρωσε τα στοιχεία σου εδω </h2>
 
 <%= form_for  @admin do |t| %>
 	<div class="adminEdit">
@@ -19,7 +19,7 @@
   <br>
 
   <div class="adminEdit">
-		<%= t.submit 'Αλλαγη στοιχείων', method: :post %>
+		<%= t.submit 'Αλλαγη στοιχείων', method: :post, class: ['btn','btn-success'] %>
 	</div>
 
 <% end %>
