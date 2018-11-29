@@ -28,6 +28,13 @@ class ApplicationController < ActionController::Base
 	  redirect_to login_path, alert: 'You must be logged in to access this page.' if current_admin.nil?
 	end
 
-	
+	# overriding CanCan::ControllerAdditions
+  def current_ability
+    if current_user?
+      @current_ability ||= Ability.new(current_user)
+    elsif current_admin?
+      @current_ability ||= Ability.new(current_admin)
+    end
+  end
 
 end
