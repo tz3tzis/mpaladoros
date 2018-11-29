@@ -6,7 +6,7 @@ class Ability
 	    can :read, User 
 	    return unless user.present?
 	    can :manage, User, id: user.id
-	  elsif user.is_a?(Admin)
+	  else
 	  	can [:read, :update], Admin, id: admin.id
 	  end
 	  	
