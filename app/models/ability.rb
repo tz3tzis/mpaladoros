@@ -9,8 +9,8 @@ class Ability
 
   def initialize(admin)
   	can :read, Admin
-  	return unless user.present?
-  	can :manage, User, id: admin.id
+  	return unless admin.present?
+  	can :manage, Admin, id: admin.id
   end
 
 end
