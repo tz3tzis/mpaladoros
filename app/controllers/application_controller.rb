@@ -1,9 +1,10 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
   
-  #make the current admin method available to views also , not just controllers:
+  #make the current_example method available to views also , not just controllers:
   helper_method :current_admin
   helper_method :current_game
+  helper_method :current_ability
 
 
 	#define the current_admin
@@ -11,7 +12,6 @@ class ApplicationController < ActionController::Base
 		 # Look up the current admin based on admin_id in the session cookie:
 	    @current_admin ||= Admin.find(session[:admin_id]) if session[:admin_id]
 	end
-
 
 	#helper method for current_game based on game id
 	def current_game
@@ -34,7 +34,7 @@ class ApplicationController < ActionController::Base
       @current_ability ||= Ability.new(current_admin)
     else
       @current_ability ||= Ability.new(current_user)
+    end
   end
-
-
+  
 end
