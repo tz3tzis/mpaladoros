@@ -6,7 +6,7 @@
     <!-- H lista me tous paiktes ths ghpedouxou omadas -->
      <ol style=" display: inline-block;">
 
-        <h4> Hometeam </h4>
+        <h4 style="position: fixed;"> Hometeam </h4>
 
         <% emptyList = @game.hometeam.capacity - @game.hometeam.users.count %>
 
@@ -15,8 +15,11 @@
         <% end %>
 
         <% emptyList.times do |e| %>
-          <li> κενή θέση </li>
+          <li> κενή θέση  </li>
         <% end %>
+
+        <br>
+        <br>
 
         <%= link_to 'Παίξε σε αυτήν την ομάδα' , join_path(@game.hometeam.id), class: ['btn','btn-info']%>
      </ol>
@@ -24,7 +27,7 @@
 
     <!-- H lista me tous paiktes ths filoksenoumenhs omadas -->
      <ol style=" display: inline-block;">
-      <h4> Awayteam </h4>
+      <h4 style="position: fixed;"> Awayteam </h4>
 
       <% emptyList = @game.awayteam.capacity - @game.awayteam.users.count %>
 
@@ -35,6 +38,8 @@
       <% emptyList.times do |e| %>
         <li> κενή θέση </li>
       <% end %>
+      <br>
+      <br>
 
         <%= link_to 'Παίξε σε αυτήν την ομάδα' , join_path(@game.awayteam.id), class: ['btn','btn-info'] %>
      </ol>
