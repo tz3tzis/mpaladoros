@@ -1,6 +1,5 @@
 class User < ApplicationRecord
 
-  enum role: [ :player ]
 
   mount_uploader :avatar, AvatarUploader 
 
