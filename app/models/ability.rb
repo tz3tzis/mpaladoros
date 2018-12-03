@@ -5,10 +5,10 @@ class Ability
 
   	if userOrAdmin.is_a? User
 	    can :read, User 
-	    return unless user.present?
-	    can :manage, User, id: user.id
+	    return unless userOrAdmin.present?
+	    can :manage, User, id: userOrAdmin.id
 	  elsif userOrAdmin.is_a?  Admin
-	  	can [:update, :read] , Admin, id: admin.id
+	  	can [:update, :read] , Admin, id: userOrAdmin.id
 	  end
   end
 end
