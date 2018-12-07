@@ -19,7 +19,7 @@
 //= require turbolinks
 //= require bootstrap
 //= require_tree .
-
+//= require serviceworker-companion
 
 
 $(document).on('turbolinks:load', function(){
@@ -28,5 +28,6 @@ $(document).on('turbolinks:load', function(){
 		$.getScript(`https://maps.googleapis.com/maps/api/js?key=${google_map}&callbavk=initMap`);
 	}
 })
+
 
 

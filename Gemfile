@@ -67,6 +67,9 @@ gem 'mini_magick'
 
 gem 'facebook-messenger'
 
+#Web Push Notifications
+gem 'webpush'
+gem 'serviceworker-rails'
 
 
 
