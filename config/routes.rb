@@ -3,7 +3,7 @@ Rails.application.routes.draw do
 
 	root "pages#home"
 
-	post 'notify/push'
+	post 'notify/push' => 'notify#push', :as => 'sendmessage'
 
 	get '/users/sign_out' => 'devise/sessions#destroy'
 
