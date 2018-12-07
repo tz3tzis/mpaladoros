@@ -1,3 +1,5 @@
+<% @decodedVapidPublicKey = Base64.urlsafe_decode64(ENV['VAPID_PUBLIC_KEY']).bytes %>
+
 <div class="center jumbotron">
   <h2> Διάλεξε ομάδα! </h2>
 
@@ -49,3 +51,7 @@
 </div>
 
 <div style="text-align: center;"><%= link_to 'Επιστροφή' , games_path, class: ['btn','btn-primary']%></div>
+
+<script>
+window.vapidPublicKey = new Uint8Array(<%= @decodedVapidPublicKey %>);
+</script>
