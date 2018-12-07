@@ -2,8 +2,6 @@ module ActionCable
   module Server
     extend ActiveSupport::Autoload
 
-    @decodedVapidPublicKey = Base64.urlsafe_decode64(ENV['VAPID_PUBLIC_KEY']).bytes
-
     eager_autoload do
       autoload :Base
       autoload :Broadcasting

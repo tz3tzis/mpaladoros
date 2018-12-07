@@ -18,8 +18,9 @@
 //= require jquery/clockpicker
 //= require turbolinks
 //= require bootstrap
-//= require_tree .
 //= require serviceworker-companion
+//= require_tree .
+
 
 
 $(document).on('turbolinks:load', function(){

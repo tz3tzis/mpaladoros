@@ -1,6 +1,9 @@
 Rails.application.routes.draw do
 
+
 	root "pages#home"
+
+	post 'notify/push'
 
 	get '/users/sign_out' => 'devise/sessions#destroy'
 
@@ -36,6 +39,7 @@ Rails.application.routes.draw do
 	get '/games/:id/teams/:id' => 'teams#join' , :as => 'join'
 
 	post '/users/:id' => 'users#update', :as => 'edit_profile'
+
 
 	#route for the messenger bot
 	mount Facebook::Messenger::Server, at: 'bot'
