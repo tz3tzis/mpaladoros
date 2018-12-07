@@ -50,3 +50,5 @@
 </div>
 
 <div style="text-align: center;"><%= link_to 'Επιστροφή' , games_path, class: ['btn','btn-primary']%></div>
+
+<div style="text-align: center;"><%= link_to 'Send notification', {:controller => 'notify', :action => 'push'}, {:method => :post }, class: ['btn','btn-warning'] %></div>
