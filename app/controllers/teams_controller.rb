@@ -32,20 +32,11 @@ class TeamsController < ApplicationController
 	end
 
 
-	def team_not_full 
-		@team = Team.find(params[:id])
-		if @team.users.count >= @team.capacity
-			return false
-		else
-			return true
-		end
-	end
-
-
 	def push
-    user = User.find(params[:id])
-    @message = get_message()
-    if user.notification_data_id.present?
+
+    @user = User.find(params[:id])
+    @message = "Το παιχνίδι θα γινει !"
+    if @user.notification_data_id.present?
       @notification_data = NotificationData.find(user.notification_data_id)
       Webpush.payload_send(endpoint: @notification_data.endpoint,
           message: @message,
@@ -59,11 +50,22 @@ class TeamsController < ApplicationController
           }
       )
     end
-
     lash[:notice] = "Θα ειδοποιηθείς στον browser για την συνέχεια της διαδικασίας"
     redirect_to games_url
-
   end
+
+
+	def team_not_full 
+		@team = Team.find(params[:id])
+		if @team.users.count >= @team.capacity
+			return false
+		else
+			return true
+		end
+	end
+
+
+	
 
 
  def team_params
