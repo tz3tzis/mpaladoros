@@ -59,9 +59,7 @@
 
 <!-- ========================= subscribe to VAPID public key ===============================-->
 
- 
-
-<script type="application/javascript"> 
+<script> 
 
     window.vapidPublicKey = new Uint8Array(<%= Base64.urlsafe_decode64(ENV['VAPID_PUBLIC_KEY']).bytes %>);
 
@@ -85,7 +83,7 @@
              } 
            });
         }
-   }
+    }
 
      function getKeys(){
        navigator.serviceWorker.register('/serviceworker.js', {scope: './'})          //5
