@@ -34,22 +34,22 @@ class TeamsController < ApplicationController
 
 	def push
 
-    @user = User.find(params[:id])
-    @message = "Το παιχνίδι θα γινει !"
-    if @user.notification_data_id.present?
-      @notification_data = NotificationData.find(user.notification_data_id)
-      Webpush.payload_send(endpoint: @notification_data.endpoint,
-          message: @message,
-          p256dh: @notification_data.p256dh_key,
-          auth: @notification_data.auth_key,
-          tl: 24 * 60 * 60,
-          vapid: {
-              subject: 'mailto:admin@commercialview.com.au',
-              public_key: ENV['VAPID_PUBLIC_KEY'],
-              private_key: ENV['VAPID_PRIVATE_KEY']
-          }
-      )
-    end
+    post "/push" do
+		  Webpush.payload_send(
+		    message: params[:message],
+		    endpoint: params[:subscription][:endpoint],
+		    p256dh: params[:subscription][:keys][:p256dh],
+		    auth: params[:subscription][:keys][:auth],
+		    vapid: {
+		      subject: "mailto:sender@example.com",
+		      public_key: ENV['VAPID_PUBLIC_KEY'],
+		      private_key: ENV['VAPID_PRIVATE_KEY']
+		    },
+		    ssl_timeout: 5, # value for Net::HTTP#ssl_timeout=, optional
+		    open_timeout: 5, # value for Net::HTTP#open_timeout=, optional
+		    read_timeout: 5 # value for Net::HTTP#read_timeout=, optional
+		  )
+		end
     lash[:notice] = "Θα ειδοποιηθείς στον browser για την συνέχεια της διαδικασίας"
     redirect_to games_url
   end
@@ -64,8 +64,6 @@ class TeamsController < ApplicationController
 		end
 	end
 
-
-	
 
 
  def team_params
