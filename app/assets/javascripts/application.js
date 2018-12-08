@@ -31,34 +31,17 @@ $(document).on('turbolinks:load', function(){
 
 
 
-//========REGISTER SERVICEWORKER=============================================
-
-if ('serviceWorker' in navigator) {
-  console.log('Service Worker is supported');
-  navigator.serviceWorker.register('/serviceworker.js')
-    .then(function(registration) {
-      console.log('Successfully registered!', ':^)', registration);
-      registration.pushManager.subscribe({ userVisibleOnly: true })
-        .then(function(subscription) {
-            console.log('endpoint:', subscription.endpoint);
-        });
-  }).catch(function(error) {
-    console.log('Registration failed', ':^(', error);
-  });
-}
-
-
 
 //=====================SUBSCRIPTION==========================================
 
  window.vapidPublicKey = new Uint8Array(<%= Base64.urlsafe_decode64(ENV['VAPID_PUBLIC_KEY']).bytes %>);
 
-reg.pushManager.subscribe({ userVisibleOnly: true })
+navigator.serviceWorker.ready.then((serviceWorkerRegistration) => {
+  serviceWorkerRegistration.pushManager.subscribe({ userVisibleOnly: true , applicationServerKey: window.vapidPublicKey})
   .then(function(subscription) {
     $.post("/subscribe", { subscription: subscription.toJSON() });
   });
-
-
+});
 
 
 
