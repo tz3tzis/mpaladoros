@@ -51,9 +51,9 @@
   <div>
 </div>
 
-<div style="text-align: center;"><%= link_to 'Επιστροφή' , games_path, class: ['btn','btn-primary']%></div>
+<div class="webpush-button" style="text-align: center;"><%= link_to 'Επιστροφή' , games_path, class: ['btn','btn-primary']%></div>
 <br>
-<div style="text-align: center;"><%= button_to 'Send notification',sendmessage_path(current_user), method: :post %></div>
+<div class="webpush-button" style="text-align: center;"><%= button_to 'Send notification',sendmessage_path(current_user), method: :post %></div>
 
 
 
