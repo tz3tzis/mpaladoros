@@ -3,8 +3,6 @@ Rails.application.routes.draw do
 
 	root "pages#home"
 
-	post 'notify/push' => 'notify#push', :as => 'sendmessage'
-
 	get '/users/sign_out' => 'devise/sessions#destroy'
 
 	#to devise_for mas ftiaxnei kapoia dika tou routes 
@@ -37,6 +35,8 @@ Rails.application.routes.draw do
 	delete '/game/:id' => 'games#delete' , :as => "delete"
 
 	get '/games/:id/teams/:id' => 'teams#join' , :as => 'join'
+
+	post '/games/:id/teams/:id' => 'teams#push', :as => 'sendmessage'
 
 	post '/users/:id' => 'users#update', :as => 'edit_profile'
 
