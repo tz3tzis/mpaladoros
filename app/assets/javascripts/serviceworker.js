@@ -1,12 +1,16 @@
 // The serviceworker context can respond to 'push' events and trigger
 // notifications on the registration property
 self.addEventListener("push", (event) => {
-  let title = (event.data && event.data.text()) || "Yay a message";
-  let body = "We have received a push message";
-  let tag = "push-simple-demo-notification-tag";
-  let icon = '/assets/my-logo-120x120.png';
+  var title = (event.data && event.data.text().split("-")[0]) || "Yay a message";
+  var body; body = event.data.text().split("-")[1];
+  var tag = "push-simple-demo-notification-tag";
+  var icon = '/assets/logo.png';
 
   event.waitUntil(
-    self.registration.showNotification(title, { body, icon, tag })
-  )
+    self.registration.showNotification(title, {
+     body: body,
+     icon: icon,
+     tag: tag 
+   })
+  );
 });

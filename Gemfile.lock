@@ -228,6 +228,8 @@ GEM
     selenium-webdriver (3.141.0)
       childprocess (~> 0.5)
       rubyzip (~> 1.2, >= 1.2.2)
+    serviceworker-rails (0.5.5)
+      railties (>= 3.1)
     simple_calendar (2.3.0)
       rails (>= 3.0)
     simple_form (4.0.1)
@@ -305,6 +307,7 @@ DEPENDENCIES
   rails_12factor
   sass-rails (~> 5.0)
   selenium-webdriver
+  serviceworker-rails
   simple_calendar (~> 2.0)
   simple_form
   spring

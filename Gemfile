@@ -69,6 +69,7 @@ gem 'facebook-messenger'
 
 #Web Push Notifications
 gem 'webpush'
+gem 'serviceworker-rails'
 gem 'json'
 
 
