@@ -1,6 +1,6 @@
 class NotifyController < ApplicationController
 
-  def push()
+  def push
     user = User.find(params[:id])
     @message = get_message()
     if user.notification_data_id.present?
