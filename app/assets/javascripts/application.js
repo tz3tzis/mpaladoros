@@ -29,21 +29,14 @@ $(document).on('turbolinks:load', function(){
 	}
 })
 
-//===============================================================
+//=====================SUBSCRIPTION==========================================
 
+ window.vapidPublicKey = new Uint8Array(<%= Base64.urlsafe_decode64(ENV['VAPID_PUBLIC_KEY']).bytes %>);
 
-// Send the subscription and message from the client for the backend
-// to set up a push notification
-$(".webpush-button").on("click", (e) => {
-  navigator.serviceWorker.ready
-  .then((serviceWorkerRegistration) => {
-    serviceWorkerRegistration.pushManager.getSubscription()
-    .then((subscription) => {
-      $.post("/push", { subscription: subscription.toJSON(), message: "You clicked a button!" });
-    });
+reg.pushManager.subscribe({ userVisibleOnly: true })
+  .then(function(subscription) {
+    $.post("/subscribe", { subscription: subscription.toJSON() });
   });
-});
-
 
 
 

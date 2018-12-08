@@ -36,7 +36,11 @@ Rails.application.routes.draw do
 
 	get '/games/:id/teams/:id' => 'teams#join' , :as => 'join'
 
-	post '/games/:id/teams/:id' => 'teams#push', :as => 'sendmessage'
+
+	#=========================notifications========================
+	post "/subscribe" => "subscriptions#create"
+	post "/push" => "push_notifications#create"
+	#==============================================================
 
 	post '/users/:id' => 'users#update', :as => 'edit_profile'
 
