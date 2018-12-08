@@ -25,7 +25,7 @@
         <br>
         <br>
 
-        <%= link_to 'Παίξε σε αυτήν την ομάδα' , join_path(@game.id,@game.hometeam.id), class: ['btn','btn-info']%>
+        <%= link_to 'Παίξε σε αυτήν την ομάδα' , join_path(@game.id, @game.hometeam.id), class: ['btn','btn-info']%>
      </ol>
 
 
@@ -51,30 +51,27 @@
   <div>
 </div>
 
-<div  style="text-align: center;"><%= link_to 'Επιστροφή' , games_path, class: ['btn','btn-primary']%></div>
+<div class="webpush-button" style="text-align: center;"><%= link_to 'Επιστροφή' , games_path, class: ['btn','btn-primary']%></div>
 <br>
-<button class="js-push-button" style="text-align: center;"> Send a message </button>
+<div class="webpush-button" style="text-align: center;"><%= button_to 'Send notification',sendmessage_path(current_user), method: :post %></div>
+
 
 
 <!-- ========================= subscribe to VAPID public key ===============================-->
-<script type="text/javascript">
-  window.vapidPublicKey = new Uint8Array(<%= Base64.urlsafe_decode64(ENV['VAPID_PUBLIC_KEY']).bytes %>);
 
-  navigator.serviceWorker.ready.then((serviceWorkerRegistration) => {
-    serviceWorkerRegistration.pushManager.subscribe({ userVisibleOnly: true , applicationServerKey: window.vapidPublicKey})
-    .then(function(subscription) {
-      $.post("/subscribe", { subscription: subscription.toJSON() });
+<script> 
+    window.vapidPublicKey = new Uint8Array(<%= Base64.urlsafe_decode64(ENV['VAPID_PUBLIC_KEY']).bytes %>);
+
+    $(".webpush-button").on("click", (e) => {
+    navigator.serviceWorker.ready
+    .then((serviceWorkerRegistration) => {
+      serviceWorkerRegistration.pushManager.getSubscription()
+      .then((subscription) => {
+        $.post("/push", { subscription: subscription.toJSON(), message: "You clicked a button!" });
+        });
+      });
     });
-  });
-</script>
 
-
-<script type="text/javascript">
-  (function() {
-    $('.js-push-button').on("click", function onClick() {
-      $.post("/push");
-    });
-  })();
 </script>
 
 
