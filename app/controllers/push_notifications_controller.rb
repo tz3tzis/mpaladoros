@@ -14,9 +14,6 @@ class PushNotificationsController < ApplicationController
 	    endpoint = subscription_params[:endpoint],
 	    p256dh = subscription_params.dig(:keys, :p256dh)
 	    auth = subscription_params.dig(:keys, :auth)
-	    api_key = enpoint =~ /\.google.com\// = ENV.fetch('GOOGLE_CLOUD_MESSAGE_API_KEY') || ""
-
-	    { message: message, endpoint: endpoint, p256dh: p256dh, auth: auth, api_key: api_key }
 	  end
 
 	  def fetch_subscription
