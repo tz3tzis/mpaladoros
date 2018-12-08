@@ -1,6 +1,7 @@
 class NotifyController < ApplicationController
 
-  def push(user)
+  def push()
+    user = User.find(params[:id])
     @message = get_message()
     if user.notification_data_id.present?
       @notification_data = NotificationData.find(user.notification_data_id)
@@ -16,7 +17,7 @@ class NotifyController < ApplicationController
           }
       )
     end
-    
+
     lash[:notice] = "Θα ειδοποιηθείς στον browser για την συνέχεια της διαδικασίας"
     redirect_to games_url
 
