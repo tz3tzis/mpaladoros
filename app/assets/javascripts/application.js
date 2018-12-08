@@ -27,7 +27,7 @@ $(document).on('turbolinks:load', function(){
 		var google_maps = $('meta[name=google_maps]').attr("content");
 		$.getScript(`https://maps.googleapis.com/maps/api/js?key=${google_map}&callbavk=initMap`);
 	}
-})
+});
 
 
 //=====================SUBSCRIPTION==========================================
