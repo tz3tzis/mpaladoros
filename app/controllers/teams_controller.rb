@@ -32,23 +32,6 @@ class TeamsController < ApplicationController
 	end
 
 
-	def push
-
-		  Webpush.payload_send(
-		    message: params[:message],
-		    endpoint: params[:subscription][:endpoint],
-		    p256dh: params[:subscription][:keys][:p256dh],
-		    auth: params[:subscription][:keys][:auth],
-		    vapid: {
-		      subject: "mailto:sender@example.com",
-		      public_key: ENV['VAPID_PUBLIC_KEY'],
-		      private_key: ENV['VAPID_PRIVATE_KEY']
-		    }
-		   )
-    flash[:notice] = "Θα ειδοποιηθείς στον browser για την συνέχεια της διαδικασίας"
-    redirect_to games_url
-  end
-
 
 	def team_not_full 
 		@team = Team.find(params[:id])
