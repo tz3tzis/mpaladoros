@@ -30,16 +30,17 @@ $(document).on('turbolinks:load', function(){
 })
 
 
-
-
 //=====================SUBSCRIPTION==========================================
 
- window.vapidPublicKey = new Uint8Array(<%= Base64.urlsafe_decode64(ENV['VAPID_PUBLIC_KEY']).bytes %>);
+window.vapidPublicKey = new Uint8Array(<%= Base64.urlsafe_decode64(ENV['VAPID_PUBLIC_KEY']).bytes %>);
 
+// When serviceWorker is supported, installed, and activated,
+// subscribe the pushManager property with the vapidPublicKey
 navigator.serviceWorker.ready.then((serviceWorkerRegistration) => {
-  serviceWorkerRegistration.pushManager.subscribe({ userVisibleOnly: true , applicationServerKey: window.vapidPublicKey})
-  .then(function(subscription) {
-    $.post("/subscribe", { subscription: subscription.toJSON() });
+  serviceWorkerRegistration.pushManager
+  .subscribe({
+    userVisibleOnly: true,
+    applicationServerKey: window.vapidPublicKey
   });
 });
 
