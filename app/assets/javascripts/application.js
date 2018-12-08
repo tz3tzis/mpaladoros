@@ -32,7 +32,17 @@ $(document).on('turbolinks:load', function(){
 //===============================================================
 
 
-
+// Send the subscription and message from the client for the backend
+// to set up a push notification
+$(".webpush-button").on("click", (e) => {
+  navigator.serviceWorker.ready
+  .then((serviceWorkerRegistration) => {
+    serviceWorkerRegistration.pushManager.getSubscription()
+    .then((subscription) => {
+      $.post("/push", { subscription: subscription.toJSON(), message: "You clicked a button!" });
+    });
+  });
+});
 
 
 
