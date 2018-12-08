@@ -16,6 +16,10 @@ class NotifyController < ApplicationController
           }
       )
     end
+    
+    lash[:notice] = "Θα ειδοποιηθείς στον browser για την συνέχεια της διαδικασίας"
+    redirect_to games_url
+
   end
 
 end
