@@ -33,6 +33,7 @@ class TeamsController < ApplicationController
 
 
 	def push
+
 		  Webpush.payload_send(
 		    message: params[:message],
 		    endpoint: params[:subscription][:endpoint],
@@ -44,7 +45,6 @@ class TeamsController < ApplicationController
 		      private_key: ENV['VAPID_PRIVATE_KEY']
 		    }
 		   )
-		end
     flash[:notice] = "Θα ειδοποιηθείς στον browser για την συνέχεια της διαδικασίας"
     redirect_to games_url
   end
