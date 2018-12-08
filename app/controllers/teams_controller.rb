@@ -33,8 +33,6 @@ class TeamsController < ApplicationController
 
 
 	def push
-
-    post "/push" do
 		  Webpush.payload_send(
 		    message: params[:message],
 		    endpoint: params[:subscription][:endpoint],
@@ -44,13 +42,10 @@ class TeamsController < ApplicationController
 		      subject: "mailto:sender@example.com",
 		      public_key: ENV['VAPID_PUBLIC_KEY'],
 		      private_key: ENV['VAPID_PRIVATE_KEY']
-		    },
-		    ssl_timeout: 5, # value for Net::HTTP#ssl_timeout=, optional
-		    open_timeout: 5, # value for Net::HTTP#open_timeout=, optional
-		    read_timeout: 5 # value for Net::HTTP#read_timeout=, optional
-		  )
+		    }
+		   )
 		end
-    lash[:notice] = "Θα ειδοποιηθείς στον browser για την συνέχεια της διαδικασίας"
+    flash[:notice] = "Θα ειδοποιηθείς στον browser για την συνέχεια της διαδικασίας"
     redirect_to games_url
   end
 
