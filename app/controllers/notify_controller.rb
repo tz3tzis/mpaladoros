@@ -1,5 +1,6 @@
 class NotifyController < ApplicationController
-  def self.sendPush(user)
+
+  def push(user)
     @message = get_message()
     if user.notification_data_id.present?
       @notification_data = NotificationData.find(user.notification_data_id)

@@ -19,7 +19,7 @@
 //= require turbolinks
 //= require bootstrap
 //= require_tree .
-
+//= require serviceworker-companion
 
 
 $(document).on('turbolinks:load', function(){
@@ -52,4 +52,4 @@ $(document).on('turbolinks:load', function(){
 
 
 
-//= require serviceworker-companion
+
