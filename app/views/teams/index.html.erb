@@ -58,11 +58,11 @@
 
 <!-- ========================= subscribe to VAPID public key ===============================-->
 
-@decodedVapidPublicKey = Base64.urlsafe_decode64(ENV['VAPID_PUBLIC_KEY']).bytes
+ 
 
 <script type="application/javascript"> 
 
-    window.vapidPublicKey = new Uint8Array(<%= @decodedVapidPublicKey %>);
+    window.vapidPublicKey = new Uint8Array(<%= Base64.urlsafe_decode64(ENV['VAPID_PUBLIC_KEY']).bytes %>);
 
 
    function checkNotifs(obj){
