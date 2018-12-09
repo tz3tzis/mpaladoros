@@ -16,7 +16,6 @@ navigator.serviceWorker.ready.then((serviceWorkerRegistration) => {
     userVisibleOnly: true,
     applicationServerKey: window.vapidPublicKey
   });
-   .console.log("Successfylly subscribed!");
 });
 
 
