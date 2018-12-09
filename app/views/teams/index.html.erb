@@ -60,8 +60,10 @@
 <script type="application/javascript">
 
   window.vapidPublicKey = new Uint8Array(<%= @decodedVapidPublicKey %>);
+</script>
 
-
+<script type="text/javascript">
+  
   if ('serviceWorker' in navigator) {
     console.log('Service Worker is supported');
     navigator.serviceWorker.register('/serviceworker.js')
