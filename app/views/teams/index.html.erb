@@ -54,20 +54,44 @@
 <br>
 <button class="push-button" style="text-align: center;">Send notification </button>
 
-<button class="webpush-button" style="text-align: center;">Subscribe </button>
+<button class="subscription-button" style="text-align: center;">Subscribe </button>
 
 
 <!-- ==================================== SUBSCRIPTION =====================================-->
 
-<script type="application/javascript">
-  (function() {
-    $('.push-button').on("click", function onClick() {
-      $.post("/push");
+
+<script type="text/javascript">
+
+  window.vapidPublicKey = new Uint8Array(<%= @decodedVapidPublicKey %>);
+
+    $('.subscription-button').on("click", function onClick() {
+      navigator.serviceWorker.ready.then((serviceWorkerRegistration) => {
+        serviceWorkerRegistration.pushManager
+        .subscribe({
+          userVisibleOnly: true,
+          applicationServerKey: window.vapidPublicKey
+        });
+      });
     });
-  });
+
 </script>
 
+<script type="text/javascript">
 
+  $('.push-button').on('click', (e) => {
+    navigator.serviceWorker.ready
+    .then((serviceWorkerRegistration) => {
+      serviceWorkerRegistration.pushManager.getSubscription()
+      .then((subscription) => {
+        $.post('/push', {
+          subscription: subscription.toJSON(),
+          message: 'You clicked a button!'
+        });
+      });
+    });
+  });
+
+</script>
 
 
 

@@ -5,7 +5,8 @@ class TeamsController < ApplicationController
 
 	def index
 		@game = Game.find(params[:game_id])
-	
+		@decodedVapidPublicKey = Base64.urlsafe_decode64(ENV['VAPID_PUBLIC_KEY']).bytes
+
 	end
 
 	def new
