@@ -1,7 +1,6 @@
 class PushNotificationsController < ApplicationController
 	
 	def create
-		post '/push' do
 		  Webpush.payload_send(
 		    message: params[:message]
 		    endpoint: params[:subscription][:endpoint],
@@ -14,6 +13,5 @@ class PushNotificationsController < ApplicationController
 		      private_key: ENV['VAPID_PRIVATE_KEY']
 		    }
 		  )
-		end
 	end
 end
