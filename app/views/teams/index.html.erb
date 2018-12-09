@@ -1,4 +1,6 @@
-<link rel="manifest" href="/manifest.json" />
+<head>
+  <link rel="manifest" href="/manifest.json" />
+</head>
 
 <div class="center jumbotron">
   <h2> Διάλεξε ομάδα! </h2>
@@ -64,22 +66,17 @@
 </script>
 
 <script type="text/javascript">
-
-    $('.subscription-button').on("click", (e) => {
-      navigator.serviceWorker.ready
+    navigator.serviceWorker.ready
       .then((serviceWorkerRegistration) => {
         serviceWorkerRegistration.pushManager
         .subscribe({
           userVisibleOnly: true,
           applicationServerKey: window.vapidPublicKey
         });
-      });
     });
-
 </script>
 
 <script type="text/javascript">
-
   $('.push-button').on('click', (e) => {
     navigator.serviceWorker.ready
     .then((serviceWorkerRegistration) => {
@@ -92,7 +89,6 @@
       });
     });
   });
-
 </script>
 
 
