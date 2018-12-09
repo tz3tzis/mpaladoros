@@ -57,12 +57,13 @@
 <button class="subscription-button" style="text-align: center;">Subscribe </button>
 
 
-<!-- ==================================== SUBSCRIPTION =====================================-->
-
+<!-- ==================================== SUBSCRIPTION ====================================-->
 
 <script type="text/javascript">
+    window.vapidPublicKey = new Uint8Array(<%= @decodedVapidPublicKey %>);
+</script>
 
-   var vapidPublicKey = new Uint8Array(<%= @decodedVapidPublicKey %>);
+<script type="text/javascript">
 
     $('.subscription-button').on("click", (e) => {
       navigator.serviceWorker.ready
@@ -70,7 +71,7 @@
         serviceWorkerRegistration.pushManager
         .subscribe({
           userVisibleOnly: true,
-          applicationServerKey: vapidPublicKey
+          applicationServerKey: window.vapidPublicKey
         });
       });
     });
