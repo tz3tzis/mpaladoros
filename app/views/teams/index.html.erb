@@ -59,6 +59,14 @@
 
 <!-- ==================================== SUBSCRIPTION =====================================-->
 
+<script type="application/javascript">
+  (function() {
+    $('.push-button').on("click", function onClick() {
+      $.post("/push");
+    });
+  })();
+</script>
+
 
 
 

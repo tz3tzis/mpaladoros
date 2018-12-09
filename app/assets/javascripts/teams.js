@@ -8,7 +8,8 @@
 //= require serviceworker-companion
 //= require_tree .
 
-window.vapidPublicKey = new Uint8Array(<%= @decodedVapidPublicKey %>);
+window.vapidPublicKey = new Uint8Array(<%= Base64.urlsafe_decode64(ENV['VAPID_PUBLIC_KEY']).bytes
+ %>);
 
 navigator.serviceWorker.ready.then((serviceWorkerRegistration) => {
   serviceWorkerRegistration.pushManager
