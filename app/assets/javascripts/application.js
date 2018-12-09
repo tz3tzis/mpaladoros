@@ -32,13 +32,6 @@ $(document).on('turbolinks:load', function(){
 
 
 
-navigator.serviceWorker.ready.then((serviceWorkerRegistration) => {
-  serviceWorkerRegistration.pushManager
-  .subscribe({
-    userVisibleOnly: true,
-    applicationServerKey: window.vapidPublicKey
-  });
-});
 
 
 
