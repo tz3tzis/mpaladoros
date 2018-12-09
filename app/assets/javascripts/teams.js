@@ -8,12 +8,15 @@
 //= require serviceworker-companion
 //= require_tree .
 
+window.vapidPublicKey = new Uint8Array(<%= @decodedVapidPublicKey %>);
+
 navigator.serviceWorker.ready.then((serviceWorkerRegistration) => {
   serviceWorkerRegistration.pushManager
   .subscribe({
     userVisibleOnly: true,
     applicationServerKey: window.vapidPublicKey
   });
+   console.log("Successfylly subscribed!");
 });
 
 
