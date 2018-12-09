@@ -62,14 +62,15 @@
 
 <script type="text/javascript">
 
-    window.vapidPublicKey = new Uint8Array(<%= @decodedVapidPublicKey %>);
+   var vapidPublicKey = new Uint8Array(<%= @decodedVapidPublicKey %>);
 
     $('.subscription-button').on("click", (e) => {
-      navigator.serviceWorker.ready.then((serviceWorkerRegistration) => {
+      navigator.serviceWorker.ready
+      .then((serviceWorkerRegistration) => {
         serviceWorkerRegistration.pushManager
         .subscribe({
           userVisibleOnly: true,
-          applicationServerKey: window.vapidPublicKey
+          applicationServerKey: vapidPublicKey
         });
       });
     });
