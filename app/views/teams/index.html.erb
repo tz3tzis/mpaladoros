@@ -1,3 +1,4 @@
+<link rel="manifest" href="/manifest.json" />
 
 <div class="center jumbotron">
   <h2> Διάλεξε ομάδα! </h2>
@@ -51,7 +52,7 @@
 
 <div style="text-align: center;"><%= link_to 'Επιστροφή' , games_path, class: ['btn','btn-primary']%></div>
 <br>
-<button class="webpush-button" style="text-align: center;">Send notification </button>
+<button class="push-button" style="text-align: center;">Send notification </button>
 
 
 <!-- ==================================== SUBSCRIPTION =====================================-->
@@ -67,13 +68,21 @@
         console.log('Successfully registered!', registration);
         registration.pushManager.subscribe({ userVisibleOnly: true })
           .then(function(subscription) {
-              console.log('endpoint:', subscription.endpoint);
+            $.post("/subscribe", { subscription: subscription.toJSON() });
           });
     }).catch(function(error) {
       console.log('Registration failed',  error);
     });
   }
 
+</script>
+
+<script type="text/javascript">
+  (function() {
+    $('.push-button').on("click", function onClick() {
+      $.post("/push");
+    });
+  })();
 </script>
 
 
