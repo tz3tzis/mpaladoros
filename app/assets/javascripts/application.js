@@ -18,8 +18,9 @@
 //= require jquery/clockpicker
 //= require turbolinks
 //= require bootstrap
-//= require_tree .
 //= require serviceworker-companion
+//= require_tree .
+
 
 
 $(document).on('turbolinks:load', function(){
@@ -28,47 +29,6 @@ $(document).on('turbolinks:load', function(){
 		$.getScript(`https://maps.googleapis.com/maps/api/js?key=${google_map}&callbavk=initMap`);
 	}
 });
-
-
-//=====================SUBSCRIPTION==========================================
-
-window.vapidPublicKey = new Uint8Array(<%= Base64.urlsafe_decode64(ENV['VAPID_PUBLIC_KEY']).bytes %>);
-
-// When serviceWorker is supported, installed, and activated,
-// subscribe the pushManager property with the vapidPublicKey
-//navigator.serviceWorker.ready.then((serviceWorkerRegistration) => {
- // serviceWorkerRegistration.pushManager
- // .subscribe({
-  //  userVisibleOnly: true,
-  //  applicationServerKey: window.vapidPublicKey
-  //});
-//});
-
-if ('serviceWorker' in navigator) {
-  console.log('Service Worker is supported');
-  navigator.serviceWorker.register('/serviceworker.js')
-    .then(function(registration) {
-      console.log('Successfully registered!', ':^)', registration);
-      registration.pushManager.subscribe({ userVisibleOnly: true })
-        .then(function(subscription) {
-            console.log('endpoint:', subscription.endpoint);
-        });
-  }).catch(function(error) {
-    console.log('Registration failed', ':^(', error);
-  });
-}
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

@@ -53,10 +53,11 @@
 <div style="text-align: center;"><%= link_to 'Επιστροφή' , games_path, class: ['btn','btn-primary']%></div>
 <br>
 <button class="push-button" style="text-align: center;">Send notification </button>
+<%= @decodedVapidPublicKey %>
 
 
 <!-- ==================================== SUBSCRIPTION =====================================-->
-<script type="text/javascript">
+<script type="application/javascript">
 
   window.vapidPublicKey = new Uint8Array(<%= @decodedVapidPublicKey %>);
 
@@ -77,7 +78,7 @@
 
 </script>
 
-<script type="text/javascript">
+<script type="application/javascript">
   (function() {
     $('.push-button').on("click", function onClick() {
       $.post("/push");
@@ -86,9 +87,6 @@
 </script>
 
 
-<script language="JavaScript" type="text/javascript" src="/js/jquery-1.2.6.min.js"></script>
-<script language="JavaScript" type="text/javascript" src="/js/jquery-ui-personalized-1.5.2.packed.js"></script>
-<script language="JavaScript" type="text/javascript" src="/js/sprinkle.js"></script>
 
 
 
