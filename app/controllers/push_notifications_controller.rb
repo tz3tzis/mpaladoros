@@ -1,7 +1,7 @@
 class PushNotificationsController < ApplicationController
 	def create
 		def create
-	    Webpush.payload_send webpush_params
+	    Webpush.payload_send (webpush_params)
 
 	    head :ok
 	  end
@@ -14,6 +14,8 @@ class PushNotificationsController < ApplicationController
 	    endpoint = subscription_params[:endpoint],
 	    p256dh = subscription_params.dig(:keys, :p256dh)
 	    auth = subscription_params.dig(:keys, :auth)
+
+	    { message: message, endpoint: endpoint, p256dh: p256dh, auth: auth }
 	  end
 
 	  def fetch_subscription
