@@ -3,7 +3,7 @@ Rails.application.configure do
     # map to assets implicitly
     match "/serviceworker.js"
     match "/manifest.json"
-    match "/logo.png"
+    match "/my-push-logo-192x192.png"
 
     # Examples
     #

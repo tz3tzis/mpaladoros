@@ -62,9 +62,9 @@
 
 <script type="text/javascript">
 
-  window.vapidPublicKey = new Uint8Array(<%= @decodedVapidPublicKey %>);
+    window.vapidPublicKey = new Uint8Array(<%= @decodedVapidPublicKey %>);
 
-    $('.subscription-button').on("click", function onClick() {
+    $('.subscription-button').on("click", (e) => {
       navigator.serviceWorker.ready.then((serviceWorkerRegistration) => {
         serviceWorkerRegistration.pushManager
         .subscribe({
