@@ -58,17 +58,6 @@
 
 
 <!-- ==================================== SUBSCRIPTION =====================================-->
-<script type="text/javascript">
-   window.vapidPublicKey = new Uint8Array(<%= @decodedVapidPublicKey %>);
-</script>
-
-<script type="application/javascript">
-  (function() {
-    $('.push-button').on("click", function onClick() {
-      $.post("/push");
-    });
-  })();
-</script>
 
 
 
