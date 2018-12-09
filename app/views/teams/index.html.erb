@@ -57,28 +57,8 @@
 
 
 <!-- ==================================== SUBSCRIPTION =====================================-->
-<script type="application/javascript">
-
-  window.vapidPublicKey = new Uint8Array(<%= @decodedVapidPublicKey %>);
-  
-</script>
-
 <script type="text/javascript">
-
-  if ('serviceWorker' in navigator) {
-    console.log('Service Worker is supported');
-    navigator.serviceWorker.register('/serviceworker.js')
-      .then(function(registration) {
-        console.log('Successfully registered!', registration);
-        registration.pushManager.subscribe({ userVisibleOnly: true })
-          .then(function(subscription) {
-            $.post("/subscribe", { subscription: subscription.toJSON() });
-          });
-    }).catch(function(error) {
-      console.log('Registration failed',  error);
-    });
-  }
-
+   window.vapidPublicKey = new Uint8Array(<%= @decodedVapidPublicKey %>);
 </script>
 
 <script type="application/javascript">

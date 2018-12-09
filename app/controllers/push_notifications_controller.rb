@@ -1,7 +1,7 @@
 class PushNotificationsController < ApplicationController
 	
 	def create
-	  Webpush.payload_send (webpush_params())
+	  Webpush.payload_send webpush_params
 
 	  head :ok
 	end
