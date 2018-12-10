@@ -9,7 +9,6 @@ class UsersController < ApplicationController
 
 	def edit
 		@user = current_user
-		authorize! :update, @user
 	end	
 
 	def update
@@ -28,19 +27,16 @@ class UsersController < ApplicationController
 		@user.save!
 		redirect_to user_path(@user)
 		flash[:notice] = "Τα στοιχεία σου ενημερώθηκαν επιτυχώς"
-		authorize! :update, @user
 
 	end
 
 	def avatar_update
-
 		@user = User.find(params[:id])
 		@user.avatar = params[:user][:avatar]
 		@user.save!
 		redirect_to user_path(@user)
 		flash[:notice] = "Η φωτογραφία σου ενημερώθηκε επιτυχώς "
 		authorize! :update, @user
-
 	end
 
 	private
