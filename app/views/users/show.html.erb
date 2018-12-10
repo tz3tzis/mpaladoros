@@ -6,7 +6,7 @@
     <div class="row">
 
         <!-- mono o current_user mporei na epejergastei ta stoixeia kai na allaksei thn fwtografia-->
-       <% if can? :read, User %> 
+       <% if can? :read, current_user %> 
           <div style="float:right;">
             <%= button_to "Επεξεργασία προφίλ", edit_user_path(@user), method: :get , class: 'btn btn-small' %>
           </div>
@@ -23,7 +23,7 @@
               <%= image_tag(@user.avatar_url.to_s, class: "avatar img-circle img-thumbnail" ) %>
             <% end %>
 
-             <% if can? :update, User %> 
+             <% if can? :update, current_user %> 
               <%= form_for @user, :url => { :action => "avatar_update" }, :html => { :method => "put" } do |f| %>
                 
                 <div>
