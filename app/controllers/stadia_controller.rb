@@ -13,6 +13,7 @@ class StadiaController < ApplicationController
 	def edit
 		@admin = current_admin
 		@stadia = Stadium.where("admins_id: #{@admin.id}")
+		authorize! :update, @admin
 	end
 
 	def update

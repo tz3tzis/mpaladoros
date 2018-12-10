@@ -8,7 +8,7 @@
 		    <% if game.admin_id == current_admin.id %>
 
 		    		<div style="color: red;font-style: italic;"><%= game.name %></div>
-			      <div style="color: red;font-size:18px;">
+			      <div style="color: red;font-size:16px;">
 			      	<%= game.start_time.strftime("%I:%M - ") %>
 			      </div>
 			      <% game.end_time = game.start_time + 90.minutes %>
