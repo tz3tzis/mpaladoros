@@ -1,0 +1,31 @@
+<h2 style="color: white;"> Άλλαξε τα στοιχεία των γηπέδων σου. </h2>
+<hr>
+
+<div> 
+			<ul class ="list-inline" >
+				<% @stadia.each do |s| %>
+					<li class="list-inline-item">
+						<ul class = "acd" style="list-style-type:none;">
+
+							<li style="text-align: center;color: red;font-size: 20px;">
+									<%= "Όνομα Γηπέδου  : " + s.stadium_name %>
+							</li>
+							<br>
+
+							<%= form_for s do |up| %>
+								<li style="text-align: center;color: white;"><%= "Τρέχουσα χωριτηκότητα  " %></li>
+								<li style="text-align: center;"><%= up.number_field :max_players %></li>
+								<br>
+								<li style="text-align: center;color: white;"><%= "Τρέχουσα τιμή  "  %></li>
+								<li style="text-align: center;"><%= up.number_field :price %></li>
+								<br>
+
+								<li style="text-align: center;"><%= up.submit "Υποβολή", class: "btn btn-danger" %></li>
+							<% end %>
+						</ul>
+					</li>
+
+				<% end %>
+			</ul>
+</div>
+

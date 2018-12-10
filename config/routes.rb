@@ -36,9 +36,11 @@ Rails.application.routes.draw do
 
 	get '/games/:id/teams/:id' => 'teams#join' , :as => 'join'
 
+	get 'admins/:id/stadium_attributes' => 'admins#stadium_attributes', :as => 'stadium_attributes'
 
+
+  post '/stadium_attributes/:id'  => 'stadia#update', :as => "stadium_update"
 	#=========================notifications========================
-	post "/subscribe" => "subscriptions#create"
 	post "/push" => "push_notifications#create"
 	#==============================================================
 
@@ -51,6 +53,8 @@ Rails.application.routes.draw do
 	resources :users , only: [:show, :update, :edit]
 
 	resources :admins , only: [:index, :show, :edit, :update]
+
+	resources :stadia , only: [:show, :update, :edit]
 
 	resources :users do
 		member do
