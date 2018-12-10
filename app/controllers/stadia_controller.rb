@@ -20,7 +20,6 @@ class StadiaController < ApplicationController
 		@admin = current_admin
 
 		@stadium = Stadium.find(params[:id])
-		print "#{@stadium}"
 		@stadium.max_players = params[:stadium][:max_players]
 		@stadium.price = params[:stadium][:price]
 
