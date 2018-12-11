@@ -7,7 +7,7 @@ class AdminsController < ApplicationController
 
  def edit
 		@admin = Admin.find(params[:id])
-		
+		authorize! :update, Admin
  end
 
 
