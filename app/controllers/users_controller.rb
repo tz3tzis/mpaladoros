@@ -36,7 +36,6 @@ class UsersController < ApplicationController
 		@user.save!
 		redirect_to user_path(@user)
 		flash[:notice] = "Η φωτογραφία σου ενημερώθηκε επιτυχώς "
-		authorize! :update, @user
 	end
 
 	private
