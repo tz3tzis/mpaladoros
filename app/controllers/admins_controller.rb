@@ -4,7 +4,6 @@ class AdminsController < ApplicationController
   	@games = Game.all
     @admin = current_admin
     authorize! :show, @admin
-
   end
 
  def edit

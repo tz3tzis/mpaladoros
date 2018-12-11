@@ -31,7 +31,7 @@ class ApplicationController < ActionController::Base
 
    	 if current_user
 	     @current_ability ||= Ability.new(current_user)
-	   elsif current_admin.present?
+	   elsif current_admin
 	     @current_ability ||= Ability.new(current_admin)
 	   end
 
