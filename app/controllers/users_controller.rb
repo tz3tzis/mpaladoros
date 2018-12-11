@@ -9,10 +9,7 @@ class UsersController < ApplicationController
 
 	def edit
 		@user = current_user
-		unless authorize! :update, @user 
-		 	render :new 
-		 	flash[:error] = "Δεν μπορέις να επεξεργαστείς αυτό το προφίλ."
-		 end 
+	  authorize! :update, @user 
 	end	
 
 	def update
