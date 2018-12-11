@@ -6,7 +6,7 @@
     <div class="row">
 
         <!-- mono o current_user mporei na epejergastei ta stoixeia kai na allaksei thn fwtografia-->
-       <%= if can? :update, @user %>
+       <% if can? :update, @user %>
           <div style="float:right;">
             <%= button_to "Επεξεργασία προφίλ", edit_user_path(@user), method: :get , class: 'btn btn-small' %>
           </div>
