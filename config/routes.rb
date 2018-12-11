@@ -18,7 +18,7 @@ Rails.application.routes.draw do
 
 
 	# delete action to log out:
-	delete '/logout' => 'sessions#destroyAdmin' 
+	delete '/logout' => 'sessions#destroyAdmin', :as => 'exit_admin'
 
 
 	#get admin distinct program
