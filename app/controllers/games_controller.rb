@@ -5,6 +5,7 @@ class GamesController < ApplicationController
 
 	def index
 		@games = Game.all
+		@games = @games.paginate(:page => 1, :per_page => 2)
 		@admin=Admin.all.find_by(@game.admin_id) if !current_game.nil?
 	end
 
