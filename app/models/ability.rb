@@ -4,7 +4,7 @@ class Ability
   def initialize(userOrAdmin)
 
   	if userOrAdmin.is_a? User
-	    can :read, all
+	    can :read, User
 	    can :update, User, id: userOrAdmin.id
 	  elsif userOrAdmin.is_a?  Admin
 	  	can [:update, :read] , Admin, id: userOrAdmin.id
