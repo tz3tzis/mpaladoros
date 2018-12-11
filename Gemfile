@@ -72,7 +72,7 @@ gem 'webpush'
 gem 'serviceworker-rails'
 gem 'json'
 
-
+gem 'will_paginate-bootstrap'
 
 
 # Use Capistrano for deployment
