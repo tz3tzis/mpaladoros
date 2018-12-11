@@ -13,6 +13,12 @@ class ApplicationController < ActionController::Base
 	    @current_admin ||= Admin.find(session[:admin_id]) if session[:admin_id]
 	end
 
+
+	def current_user
+		 # Look up the current admin based on admin_id in the session cookie:
+	    @current_user ||= User.find(session[:user_id]) if session[:user_id]
+	end
+
 	#helper method for current_game based on game id
 	def current_game
 			@current_game ||= Game.find(params[:id]) if params[:id]

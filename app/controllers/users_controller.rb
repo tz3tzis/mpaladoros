@@ -8,7 +8,7 @@ class UsersController < ApplicationController
 
 
 	def edit
-		@user = current_user
+		@user = User.find(params[:id])
 	  authorize! :update, @user 
 	end	
 
