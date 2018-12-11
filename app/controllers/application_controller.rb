@@ -4,7 +4,7 @@ class ApplicationController < ActionController::Base
   #make the current_example method available to views also , not just controllers:
   helper_method :current_admin
   helper_method :current_game
- 
+ 	helper_method :current_user
 
 
 	#define the current_admin
