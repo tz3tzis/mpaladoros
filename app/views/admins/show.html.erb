@@ -1,4 +1,4 @@
-<div>
+<div id="calendar">
 	<%= month_calendar events: @games do |date, games| %>
 	  <%= date %>
 	 
@@ -25,3 +25,6 @@
 
 </div>
 
+<script type="text/javascript">
+	$("#calendar").html("<%= escape_javascript render(partial: "calendar", locals: {events: @games}) %>");
+</script>
