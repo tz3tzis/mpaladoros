@@ -26,5 +26,5 @@
 </div>
 
 <script type="text/javascript">
-	$("#calendar").html("<%= escape_javascript render(partial: "calendar", locals: {events: @games}) %>");
+	$("#calendar").html("<%= escape_javascript render(partial: "month_calendar", locals: {events: @games}) %>");
 </script>
