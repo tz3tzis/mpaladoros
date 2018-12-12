@@ -1,6 +1,6 @@
 <div id="calendar" >
 
-	 <div id="games_changed"><% @games %></div>
+	 <div id="games_changed"><% @games.count %></div>
 
 	<%= month_calendar events: @games do |date, games| %>
 	  <%= date %>
