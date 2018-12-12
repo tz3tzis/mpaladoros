@@ -1,5 +1,7 @@
 <div id="calendar" >
 
+	 <div id="games_changed"><% @games %></div>
+
 	<%= month_calendar events: @games do |date, games| %>
 	  <%= date %>
 	 
@@ -27,16 +29,8 @@
 </div>
 
 <script type="text/javascript">
-	function executeQuery() {
-	  $.ajax({
-	    //url: '/index',
-	    success: function(data) {
-	      $('#calendar').load('/admins/show #calendar')
-	    }
-	  });
-	  setTimeout(executeQuery, 500);
-	}
-
-
+	$(document).on 'ready page:load', ->
+	  $('#games_changed').on "change", ->
+	    value = $(this).val()
 </script>
 
