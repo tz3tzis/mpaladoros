@@ -1,4 +1,5 @@
-<div id="calendar">
+<div id="calendar" >
+
 	<%= month_calendar events: @games do |date, games| %>
 	  <%= date %>
 	 
@@ -26,5 +27,19 @@
 </div>
 
 <script type="text/javascript">
-	$("#calendar").html("<%= escape_javascript render(partial: "month_calendar", locals: {events: @games}) %>");
+	function executeQuery() {
+	  $.ajax({
+	    //url: '/index',
+	    success: function(data) {
+	      $('#calendar').load('/admins/show #calendar')
+	    }
+	  });
+	  setTimeout(executeQuery, 500);
+	}
+
+	$(document).ready(function() {
+	  setTimeout(executeQuery, 500);
+	});
+
 </script>
+
