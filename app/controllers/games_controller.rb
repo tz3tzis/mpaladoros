@@ -2,7 +2,7 @@ class GamesController < ApplicationController
 
 
 	#before_action :authenticate_user!
-	before_action :assign_ip
+#	before_action :assign_ip
 
 	def index
 		@games = Game.all
@@ -76,11 +76,11 @@ class GamesController < ApplicationController
 
 	private
 
-		def assign_ip
-		 	@user = current_user
+		#def assign_ip
+		 #	@user = current_user
 		 #	@user.ip_address = @user.current_sign_in_ip.to_s
-		 	@user.save!
-	 	end
+		 #	@user.save!
+	 #	end
 
 		def game_params
 			params.
