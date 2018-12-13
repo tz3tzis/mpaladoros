@@ -69,8 +69,5 @@ Rails.application.routes.draw do
 		resources :teams
 	end
 
-	#==========script for sumiltaneous users============================#
-	get '/games/stadium_attributes' => "games#test", :as => 'test'
-
 
 end
