@@ -5,3 +5,15 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+	
+	require 'benchmark'
+
+
+		1.upto(10) do |i| 
+			Game.create(:name => 'Game #{i}')
+		end
+		time = Benchmark.measure{
+			Game.create(:name => "Game 11")
+		}
+
+		puts time.real
