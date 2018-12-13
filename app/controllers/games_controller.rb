@@ -1,7 +1,7 @@
 class GamesController < ApplicationController
 
 
-	before_action :authenticate_user!
+	#before_action :authenticate_user!
 	before_action :assign_ip
 
 	def index
