@@ -78,7 +78,7 @@ class GamesController < ApplicationController
 
 		def assign_ip
 		 	@user = current_user
-		 	@user.ip_address = @user.current_sign_in_ip.to_s
+		 #	@user.ip_address = @user.current_sign_in_ip.to_s
 		 	@user.save!
 	 	end
 
