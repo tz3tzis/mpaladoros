@@ -7,12 +7,13 @@ class GamesController < ApplicationController
 
 	def index
 		@games = Game.all
-
-		@time = get_test(1)
-		puts @time
-
 		@games = @games.paginate(:page => params[:page], :per_page => 4)
 		@admin=Admin.all.find_by(@game.admin_id) if !current_game.nil?
+
+		#===========test sumultaneous users=========
+		@time = get_test(1)
+		puts @time
+		#==========================================
 	end
 
 	def new
@@ -20,10 +21,6 @@ class GamesController < ApplicationController
 		@stadia = Stadium.all
 	end
 
-
-	def test
-		
-	end
 
 	def show
 		
