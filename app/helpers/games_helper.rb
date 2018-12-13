@@ -12,6 +12,5 @@ module GamesHelper
 		return time
 	end
 
-	puts get(100)
 
 end
