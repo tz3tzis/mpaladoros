@@ -18,7 +18,7 @@ class GamesController < ApplicationController
 
 
 	def test
-		get(100)
+		@time = get(100)
 	end
 
 	def show
