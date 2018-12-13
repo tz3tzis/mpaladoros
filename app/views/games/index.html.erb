@@ -6,6 +6,7 @@
       <%= button_to 'Δημιούργησε Παιχνίδι', new_game_path,method: :get, class: ['btn','btn-danger']%>
     </div>
 
+    <div><%= button_to "Run Script" ,test_path %> </div>
    
     <div id="image" style="display: inline-block;float: right">  
         <div style="border-radius: 50%;"><%= image_tag(current_user.avatar_url(:thumb).to_s) %> </div>

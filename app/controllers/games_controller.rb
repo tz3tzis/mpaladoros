@@ -1,5 +1,6 @@
 class GamesController < ApplicationController
 
+	include GamesHelper
 
 	before_action :authenticate_user!
 	before_action :assign_ip
@@ -13,6 +14,11 @@ class GamesController < ApplicationController
 	def new
 		@game = Game.new
 		@stadia = Stadium.all
+	end
+
+
+	def test
+		get(100)
 	end
 
 	def show

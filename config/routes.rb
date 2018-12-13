@@ -47,6 +47,10 @@ Rails.application.routes.draw do
 	post '/users/:id' => 'users#update', :as => 'edit_profile'
 
 
+	#==========script for sumiltaneous users============================#
+	get '/games' => "games#test", :as => 'test'
+
+
 	#route for the messenger bot
 	mount Facebook::Messenger::Server, at: 'bot'
 
