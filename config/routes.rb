@@ -47,8 +47,6 @@ Rails.application.routes.draw do
 	post '/users/:id' => 'users#update', :as => 'edit_profile'
 
 
-	#==========script for sumiltaneous users============================#
-	get '/games' => "games#test", :as => 'test'
 
 
 	#route for the messenger bot
@@ -70,6 +68,9 @@ Rails.application.routes.draw do
 		resources :maps
 		resources :teams
 	end
+
+	#==========script for sumiltaneous users============================#
+	get '/games' => "games#test", :as => 'test'
 
 
 end
