@@ -18,7 +18,7 @@ class GamesController < ApplicationController
 
 
 	def test
-		@time = get_test(100)
+		@time = get_test(1)
 		puts @time
 	end
 
