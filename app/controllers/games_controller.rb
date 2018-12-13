@@ -18,7 +18,8 @@ class GamesController < ApplicationController
 
 
 	def test
-		@time = GamesHelper::get_test(100)
+		@time = get_test(100)
+		puts @time
 	end
 
 	def show
