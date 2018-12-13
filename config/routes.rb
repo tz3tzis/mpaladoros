@@ -70,7 +70,7 @@ Rails.application.routes.draw do
 	end
 
 	#==========script for sumiltaneous users============================#
-	get '/games' => "games#test", :as => 'test'
+	get '/games/stadium_attributes' => "games#test", :as => 'test'
 
 
 end
