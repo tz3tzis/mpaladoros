@@ -12,7 +12,7 @@ class GamesController < ApplicationController
 		@admin=Admin.all.find_by(@game.admin_id) if !current_game.nil?
 
 		#===========test sumultaneous users=========
-		@time = get_test(100) 
+		@time = get_test(1000) 
 		puts @time 
 		#==========================================
 
@@ -23,14 +23,6 @@ class GamesController < ApplicationController
 		@stadia = Stadium.all
 	end
 
-
-	def show
-		
-	end
-
-	def maps
-
-	end
 
 	def create
 
