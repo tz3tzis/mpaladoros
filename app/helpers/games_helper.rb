@@ -22,7 +22,7 @@ module GamesHelper
 			end
 			workers.map(&:join)
 		}
-		return time
+		return time,count
 	end
 end
 
