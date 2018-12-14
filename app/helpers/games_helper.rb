@@ -10,7 +10,6 @@ module GamesHelper
 			1.upto(count) do
 				threads << Thread.new do 
 					response = open('https://mpaladoros-app.herokuapp.com/users/auth/facebook').read
-					puts 'MPHKA EDWWW'
 				end
 			end
 			threads.map(&:join)
