@@ -9,7 +9,7 @@ module GamesHelper
 		time = Benchmark.measure{
 			1.upto(count) do
 				threads << Thread.new do 
-					response = open('https://mpaladoros-app.herokuapp.com/games').read
+					response = open('https://mpaladoros-app.herokuapp.com/users/sign_in').read
 					puts 'MPHKA EDWWW'
 				end
 			end
