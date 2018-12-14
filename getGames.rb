@@ -2,7 +2,6 @@
 require 'open-uri'
 require 'benchmark'
 
-
 def get(users)
 	threads = []
 	time = Benchmark.measure{
