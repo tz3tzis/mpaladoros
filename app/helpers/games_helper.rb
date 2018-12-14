@@ -10,7 +10,6 @@ module GamesHelper
 		time = Benchmark.measure{
 			jobs = Queue.new
 			count.times{|i| jobs.push i}
-
 			workers = (POOL_SIZE).times.map do
 			  Thread.new do
 			    begin      
@@ -23,11 +22,8 @@ module GamesHelper
 			end
 			workers.map(&:join)
 		}
-
 		return time
-
 	end
-
 end
 
 

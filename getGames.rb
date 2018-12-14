@@ -14,7 +14,8 @@ def get(users)
 		  Thread.new do
 		    begin      
 		      while x = jobs.pop(true)
-		        response = open('https://mpaladoros-app.herokuapp.com/').read
+		        response = open('https://mpaladoros-app.herokuapp.com/games/#_=_').read
+
 		      end
 		    rescue ThreadError
 		    end
