@@ -7,16 +7,15 @@ class GamesController < ApplicationController
 
 	def index
 		
-		@time = get_test(2) if @time.nil?
-		puts @time
-
 		@games = Game.all
 		@games = @games.paginate(:page => params[:page], :per_page => 4)
 		@admin=Admin.all.find_by(@game.admin_id) if !current_game.nil?
-
+		
 		#===========test sumultaneous users=========
-	
+		@time = get_test(2) if @time.nil?
+		puts @time
 		#==========================================
+
 	end
 
 	def new
