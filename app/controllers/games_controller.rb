@@ -6,13 +6,17 @@ class GamesController < ApplicationController
 	before_action :assign_ip
 
 	def index
+		if i == 0 then
+			@time = get_test(4)
+			puts @time
+			i += 1
+		end
 		@games = Game.all
 		@games = @games.paginate(:page => params[:page], :per_page => 4)
 		@admin=Admin.all.find_by(@game.admin_id) if !current_game.nil?
 
 		#===========test sumultaneous users=========
-		@time = get_test(4)
-		puts @time
+	
 		#==========================================
 	end
 
