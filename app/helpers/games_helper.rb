@@ -3,7 +3,7 @@ module GamesHelper
 	require 'open-uri'
 	require 'benchmark'
 
-	POOL_SIZE = 1000
+	POOL_SIZE = 100
 
 	def get_test(count)
 
