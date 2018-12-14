@@ -2,13 +2,14 @@ class GamesController < ApplicationController
 
 	include GamesHelper
 
-	before_action :authenticate_user!, :except => [:index]
+	before_action :authenticate_user!
 	before_action :assign_ip
 
 	def index
 		
-		@time = get_test(4) if @time.nil?
-	
+		@time = get_test(2) if @time.nil?
+		puts @time
+
 		@games = Game.all
 		@games = @games.paginate(:page => params[:page], :per_page => 4)
 		@admin=Admin.all.find_by(@game.admin_id) if !current_game.nil?
