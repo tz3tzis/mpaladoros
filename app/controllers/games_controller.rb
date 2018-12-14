@@ -2,7 +2,7 @@ class GamesController < ApplicationController
 
 	include GamesHelper
 
-	before_action :authenticate_user!
+	before_action :authenticate_user
 	before_action :assign_ip
 
 	def index
