@@ -14,7 +14,6 @@ class GamesController < ApplicationController
 		#===========test sumultaneous users=========
 		@time = get_test(10) 
 		puts @time 
-		
 		#==========================================
 
 	end
