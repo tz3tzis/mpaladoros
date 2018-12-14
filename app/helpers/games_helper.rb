@@ -2,7 +2,6 @@ module GamesHelper
 
 	require 'open-uri'
 	require 'benchmark'
-	require 'threads'
 
 	def get_test(count)
 		threads = []
