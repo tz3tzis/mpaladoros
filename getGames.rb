@@ -1,14 +1,19 @@
 
 require 'open-uri'
 require 'benchmark'
+require 'thread'
 
 def get(users)
-	time = Benchmark.realtime{
-		1.upto(users) do |i|
-			response = open('https://mpaladoros-app.herokuapp.com').read
+	threads = []
+	time = Benchmark.measure{
+		1.upto(users) do
+			threads << Thread.new do 
+				response = open('https://mpaladoros-app.herokuapp.com/games').read
+			end
 		end
+		threads.map(&:join)
 	}
 	return time
 end
 
-puts get(100)
+puts get(10)
