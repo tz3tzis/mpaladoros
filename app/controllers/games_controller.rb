@@ -10,10 +10,11 @@ class GamesController < ApplicationController
 		@games = Game.all
 		@games = @games.paginate(:page => params[:page], :per_page => 4)
 		@admin=Admin.all.find_by(@game.admin_id) if !current_game.nil?
-		
+
 		#===========test sumultaneous users=========
-		@time = get_test(2) if @time.nil?
-		puts @time
+		@time, @count = get_test(10) if @time.nil?
+		puts @time 
+		puts @count
 		#==========================================
 
 	end
