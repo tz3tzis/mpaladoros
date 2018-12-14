@@ -3,18 +3,31 @@ module GamesHelper
 	require 'open-uri'
 	require 'benchmark'
 
+	POOL_SIZE = 100
+
 	def get_test(count)
-		threads = []
-		
+
 		time = Benchmark.measure{
-			1.upto(count) do
-				threads << Thread.new do 
-					response = open('https://mpaladoros-app.herokuapp.com/users/auth/facebook').read
-				end
+			jobs = Queue.new
+			count.times{|i| jobs.push i}
+
+			workers = (POOL_SIZE).times.map do
+			  Thread.new do
+			    begin      
+			      while x = jobs.pop(true)
+			        response = open('https://mpaladoros-app.herokuapp.com/users/auth/facebook').read
+			      end
+			    rescue ThreadError
+			    end
+			  end
 			end
-			threads.map(&:join)
+			workers.map(&:join)
 		}
-		return time,count
+
+		return time
+
 	end
 
 end
+
+
