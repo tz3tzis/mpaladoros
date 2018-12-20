@@ -12,8 +12,8 @@ class GamesController < ApplicationController
 		@admin=Admin.all.find_by(@game.admin_id) if !current_game.nil?
 
 		#===========test sumultaneous users=========
-		@time = get_test(10) 
-		puts @time 
+		#@time = get_test(10) 
+		#puts @time 
 		#==========================================
 
 	end

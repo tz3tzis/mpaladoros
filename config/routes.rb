@@ -7,7 +7,11 @@ Rails.application.routes.draw do
 
 	#to devise_for mas ftiaxnei kapoia dika tou routes 
 	#analoga me ta paidia poy exoume valei sto modelo mas
-	devise_for :users , :controllers => { :omniauth_callbacks => "users/omniauth_callbacks" },:except => [:destroy]
+
+	
+	devise_for :users , :controllers => 
+	{ :omniauth_callbacks => "users/omniauth_callbacks" },
+	:except => [:destroy]
 	
 
   # log in page with form:
