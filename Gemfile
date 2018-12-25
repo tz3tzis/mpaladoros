@@ -64,6 +64,7 @@ gem 'cancancan', '~> 2.0'
 gem 'carrierwave' 
 gem "fog-aws"
 gem 'mini_magick'
+gem 'sprockets-rails'
 
 gem 'facebook-messenger'
 
