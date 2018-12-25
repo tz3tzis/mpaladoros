@@ -16,14 +16,14 @@ class AvatarUploader < CarrierWave::Uploader::Base
     "uploads/#{model.class.to_s.underscore}/#{mounted_as}/#{model.id}"
   end
 
-  def auto_orient
+  def fix_rotation 
     manipulate! do |img|
-      img = img.auto_orient
+      img.tap(&:auto_orient)
     end
   end
 
-  process :auto_orient
-
+  process :fix_rotation
+  process scale: [300, 300]
 
   # Provide a default URL as a default if there hasn't been a file uploaded:
   # def default_url(*args)
@@ -42,7 +42,7 @@ class AvatarUploader < CarrierWave::Uploader::Base
 
   # Create different versions of your uploaded files:
   version :thumb do
-    process resize_to_fit: [50, 50]
+    process resize_to_fit: [80, 80]
   end
 
   # Add a white list of extensions which are allowed to be uploaded.
