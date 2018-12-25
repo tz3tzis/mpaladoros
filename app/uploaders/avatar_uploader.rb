@@ -3,6 +3,9 @@ class AvatarUploader < CarrierWave::Uploader::Base
   # include CarrierWave::RMagick
   include CarrierWave::MiniMagick
 
+  include Sprockets::Helpers::RailsHelper
+  include Sprockets::Helpers::IsolatedHelper
+
   # Choose what kind of storage to use for this uploader:
   if Rails.env.production?
     storage :fog
@@ -15,6 +18,15 @@ class AvatarUploader < CarrierWave::Uploader::Base
   def store_dir
     "uploads/#{model.class.to_s.underscore}/#{mounted_as}/#{model.id}"
   end
+
+  def fix_exif_rotation #this is my attempted solution
+    manipulate! do |img|
+      img.tap(&:auto_orient)
+    end
+  end
+
+  process :fix_exif_rotation
+
 
   # Provide a default URL as a default if there hasn't been a file uploaded:
   # def default_url(*args)
