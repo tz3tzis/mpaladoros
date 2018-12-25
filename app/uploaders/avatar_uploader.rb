@@ -1,7 +1,11 @@
+  require 'carrierwave/processing/mini_magick'
+
 class AvatarUploader < CarrierWave::Uploader::Base
   # Include RMagick or MiniMagick support:
   # include CarrierWave::RMagick
   include CarrierWave::MiniMagick
+
+
 
   # Choose what kind of storage to use for this uploader:
   if Rails.env.production?
@@ -18,7 +22,7 @@ class AvatarUploader < CarrierWave::Uploader::Base
 
   def fix_rotation 
     manipulate! do |img|
-      img.tap(&:auto_orient)
+      img = img.auto_orient
     end
   end
 
@@ -38,9 +42,7 @@ class AvatarUploader < CarrierWave::Uploader::Base
   #   # do something
   # end
 
-  version :resized do
-    process :resize_to_fit => [300, 300]
-  end
+  process :resize_to_fit => [300, 300]
 
   # Create different versions of your uploaded files:
   version :thumb do
