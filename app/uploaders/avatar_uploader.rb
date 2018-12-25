@@ -1,4 +1,4 @@
-  require 'carrierwave/processing/mini_magick'
+require 'carrierwave/processing/mini_magick'
 
 class AvatarUploader < CarrierWave::Uploader::Base
   # Include RMagick or MiniMagick support:
@@ -20,6 +20,8 @@ class AvatarUploader < CarrierWave::Uploader::Base
     "uploads/#{model.class.to_s.underscore}/#{mounted_as}/#{model.id}"
   end
 
+  process :resize_to_fit => [300, 300]
+
   def fix_rotation 
     manipulate! do |img|
       img = img.auto_orient
@@ -27,13 +29,7 @@ class AvatarUploader < CarrierWave::Uploader::Base
   end
 
   process :fix_rotation
-  # Provide a default URL as a default if there hasn't been a file uploaded:
-  # def default_url(*args)
-  #   # For Rails 3.1+ asset pipeline compatibility:
-  #   # ActionController::Base.helpers.asset_path("fallback/" + [version_name, "default.png"].compact.join('_'))
-  #
-  #   "/images/fallback/" + [version_name, "default.png"].compact.join('_')
-  # end
+
 
   # Process files as they are uploaded:
   # process scale: [200, 300]
@@ -42,7 +38,6 @@ class AvatarUploader < CarrierWave::Uploader::Base
   #   # do something
   # end
 
-  process :resize_to_fit => [300, 300]
 
   # Create different versions of your uploaded files:
   version :thumb do
