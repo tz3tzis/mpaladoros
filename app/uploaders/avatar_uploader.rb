@@ -23,8 +23,6 @@ class AvatarUploader < CarrierWave::Uploader::Base
   end
 
   process :fix_rotation
-  process :scale [300, 300]
-
   # Provide a default URL as a default if there hasn't been a file uploaded:
   # def default_url(*args)
   #   # For Rails 3.1+ asset pipeline compatibility:
@@ -39,6 +37,10 @@ class AvatarUploader < CarrierWave::Uploader::Base
   # def scale(width, height)
   #   # do something
   # end
+
+  version :resized do
+    process :resize_to_fit => [300, 300]
+  end
 
   # Create different versions of your uploaded files:
   version :thumb do
