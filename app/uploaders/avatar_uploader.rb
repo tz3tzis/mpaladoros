@@ -16,13 +16,13 @@ class AvatarUploader < CarrierWave::Uploader::Base
     "uploads/#{model.class.to_s.underscore}/#{mounted_as}/#{model.id}"
   end
 
-  def fix_exif_rotation #this is my attempted solution
+  def auto_orient
     manipulate! do |img|
-      img.tap(&:auto_orient)
+      img = img.auto_orient
     end
   end
 
-  process :fix_exif_rotation
+  process :auto_orient
 
 
   # Provide a default URL as a default if there hasn't been a file uploaded:
