@@ -5,7 +5,9 @@ Rails.application.routes.draw do
 
 	get '/users/sign_out' => 'devise/sessions#destroy'
 
-	get '/users/sign_in' => 'devise/sessions#new'
+	devise_scope :user do
+		get '/users/sign_in' => 'devise/sessions#new'
+	end
 
 	#to devise_for mas ftiaxnei kapoia dika tou routes 
 	#analoga me ta paidia poy exoume valei sto modelo mas
