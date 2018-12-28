@@ -5,10 +5,10 @@ Rails.application.routes.draw do
 
 	get '/users/sign_out' => 'devise/sessions#destroy'
 
+	get '/users/sign_in' => 'devise/sessions#new'
+
 	#to devise_for mas ftiaxnei kapoia dika tou routes 
 	#analoga me ta paidia poy exoume valei sto modelo mas
-
-	
 	devise_for :users , :controllers => 
 	{ :omniauth_callbacks => "users/omniauth_callbacks" },
 	:except => [:destroy]
@@ -49,9 +49,6 @@ Rails.application.routes.draw do
 	#==============================================================
 
 	post '/users/:id' => 'users#update', :as => 'edit_profile'
-
-
-
 
 	#route for the messenger bot
 	mount Facebook::Messenger::Server, at: 'bot'
