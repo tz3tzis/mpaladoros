@@ -3,6 +3,7 @@ class SessionsController < ApplicationController
   def new
     # No need for anything in here, we are just going to render our
     # new.html.erb AKA the login page
+    render 'pages/home'
   end
 
   def show
