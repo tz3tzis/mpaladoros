@@ -5,12 +5,12 @@ include Facebook::Messenger
 #Facebook::Messenger::Subscriptions.subscribe(access_token:ENV["ACCESS_TOKEN"])  
 
 Bot.on :message do |message|
-  message.reply(text: "Καλωσήρθες στο mpaladoros.gr! Αυτή την στιγμή μιλά με το chatbot της εφαρμογής.
+  message.reply(text: "Καλωσήρθες στο mpaladoros.gr! 
+  	Αυτή την στιγμή μιλάς με το chatbot της εφαρμογής.
   	Οι επιλογές σου είναι οι εξής \n
   	(1) Μπές στον ιστότοπο της εφαρμογής \n
   	(2) Δές τα τρέχοντα παιχνίδια που είναι ενεργά\n
   	(3) Προσκάλεσαι έναν φίλο σου.\n ")
-  message.reply(text: ' Για να συνεχίσεις πάτα τον αριθμό που επιθυμείς απο το παρακάτω μενού.')
   message.reply(
 	  attachment: {
 	    type: 'template',
@@ -36,7 +36,7 @@ Bot.on :postback do |postback|
 	if postback.payload == "1"
 		postback.reply(text: "Μπες εδω https://mpaladoros-app.herokuapp.com και ξεκίνα το παιχνίδι! ")
 	elsif postback.payload == '2'
-		postback.reply(text: "Τα ενεργα παιχνίδια είναι : #{Games.all.count.to_s} ")
+		postback.reply(text: " https://mpaladoros-app.herokuapp.com/games")
 	elsif postback.payload =='3' 
 		postback.reply(text:"Η γιαγιά μας η καλή έχει γραφομηχανή!")
 	else
