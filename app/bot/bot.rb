@@ -6,10 +6,10 @@ include Facebook::Messenger
 
 Bot.on :message do |message|
   message.reply(text: "Καλωσήρθες στο mpaladoros.gr! Αυτή την στιγμή μιλά με το chatbot της εφαρμογής.
-  	Οι επιλογές σου είναι οι εξής '\n'
-  	(1) Μπές στον ιστότοπο της εφαρμογής '\n'
-  	(2) Δές τα τρέχοντα παιχνίδια που είναι ενεργά'\n'
-  	(3) Προσκάλεσαι έναν φίλο σου. '\n' ")
+  	Οι επιλογές σου είναι οι εξής \n
+  	(1) Μπές στον ιστότοπο της εφαρμογής \n
+  	(2) Δές τα τρέχοντα παιχνίδια που είναι ενεργά\n
+  	(3) Προσκάλεσαι έναν φίλο σου.\n ")
   message.reply(text: ' Για να συνεχίσεις πάτα τον αριθμό που επιθυμείς απο το παρακάτω μενού.')
   message.reply(
 	  attachment: {
@@ -36,9 +36,9 @@ Bot.on :postback do |postback|
 	if postback.payload == "1"
 		postback.reply(text: "Μπες εδω https://mpaladoros-app.herokuapp.com και ξεκίνα το παιχνίδι! ")
 	elsif postback.payload == '2'
-		postback.reply(text: "Τα ενεργα παιχνίδια είναι : #{Games.all.count} ")
+		postback.reply(text: "Τα ενεργα παιχνίδια είναι : #{Games.all.count.to_s} ")
 	elsif postback.payload =='3' 
-		postback.reply(text:"")
+		postback.reply(text:"Η γιαγιά μας η καλή έχει γραφομηχανή!")
 	else
 		postback.reply(text:'Μη εγκυρή επιλογή. Ξαναπροσπάθησε')
 	end
