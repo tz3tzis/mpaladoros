@@ -11,13 +11,23 @@
 	def datatime
 		time = Benchmark.measure{
 			1.upto(10000) do |i| 
-				game = Game.create(:name => 'Game #{i}', :start_time => "21:00:00", :end_time => "23:00:00",
-					:admin_id => "3", :stadium_id => "1", :hometeam_id => "2", :awayteam_id => "3")
+				game = Game.create(:name => 'Game #{i}', 
+														:start_time => "21:00:00", 
+														:end_time => "23:00:00",
+														:admin_id => "3", 
+														:stadium_id => "1", 
+														:hometeam_id => "2", 
+														:awayteam_id => "3")
 			end	
 		}
 		time_plus = Benchmark.measure{
-				gma = Game.create(:name => 'Game +++', :start_time => "21:00:00", :end_time => "23:00:00",
-					:admin_id => "3", :stadium_id => "1", :hometeam_id => "2", :awayteam_id => "3")
+				gma = Game.create(:name => 'Game +++', 
+													:start_time => "21:00:00", 
+													:end_time => "23:00:00",
+													:admin_id => "3", 
+													:stadium_id => "1", 
+													:hometeam_id => "2", 
+													:awayteam_id => "3")
 		}
 		puts time
 		puts time_plus

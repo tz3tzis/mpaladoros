@@ -1,3 +1,4 @@
+
 module GamesHelper
 
 	require 'open-uri'
