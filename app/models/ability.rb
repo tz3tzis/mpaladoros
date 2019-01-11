@@ -1,8 +1,7 @@
+
 class Ability
   include CanCan::Ability
-
   def initialize(userOrAdmin)
-
   	if userOrAdmin.is_a? User
 	    can :read, User
 	    can [:update, :read], User, id: userOrAdmin.id
@@ -10,10 +9,10 @@ class Ability
 	  	can :read, Admin
 	  	can [:update, :read], Admin, id: userOrAdmin.id
 	  end
-
   end
-
 end
+
+
 
 
 
