@@ -1,7 +1,5 @@
 class Admin < ApplicationRecord
 
-
-
 	has_many :stadia
 
 	before_save { self.email = email.downcase }
@@ -10,9 +8,6 @@ class Admin < ApplicationRecord
 	validates :email , presence: true , length: {maximum: 255 },
 						format: { with: VALID_EMAIL_REGEX },
 						uniqueness: { case_sensitive: true}
-
- 
-
 
 	has_secure_password
 
