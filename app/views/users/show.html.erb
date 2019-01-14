@@ -51,10 +51,10 @@
                   <hr>
 
 
-              <div class="tab-pane active" id="home" style="margin: auto;">
+              <div class="tab-pane active" id="home" style="display:flex;">
 
 
-                <div style="display:inline-block; float:left;" class="col-xs-6" >
+                <div style="flex: 0 0 65%;" class="col-xs-6" >
                   <div class="panel panel-default">
                     <strong><div class="panel-heading">Αγαπημένη θέση<i class="fa fa-link fa-1x"></i></div></strong>
                     <hr style="color:black;">
@@ -71,11 +71,11 @@
                 </div>
 
 
-                 <div class="form-group" style="display: inline-block;margin-left: 15%;">
+                 <div class="form-group" style="flex: 1;">
                       <div style="color:white;" >
                         <ul>
                              <hr>
-                           <li>Ύψος: <%= @user.height %></li>
+                           <li><span> Ύψος: <%= @user.height %></li> </span>
                             <hr>
                            <li>Βάρος: <%= @user.weight %></li>
                             <hr>
