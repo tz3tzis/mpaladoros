@@ -55,27 +55,27 @@
                       <strong><div class="panel-heading">Αγαπημένη θέση</div></strong>
                       <div class="panel-body"> <%= @user.position %></div>
                     </div>
-                  </div>
+                 
                   
-                  <ul class="list-group" >
-                    <li class="list-group-item text-muted"><strong><div class="panel-heading">Αγώνες </strong> <i class="fa fa-dashboard fa-1x"></i></li>
-                    <li class="list-group-item text-right">
-                      <span class="pull-left">Διοργάνωσε</span> 
-                      <span class="badge badge-primary badge-pill">
-                          <% @user.games_played %></span>
-                    </li>
-                    <li class="list-group-item text-right">
-                      <span class="pull-left">Συμμετείχε</span >
-                      <span class="badge badge-primary badge-pill">
-                       <% @user.games_played %></span>
-                    </li>
-                    <li class="list-group-item text-right">
-                      <span class="pull-left">Likes</span> 
-                      <span class="badge badge-primary badge-pill">
-                      <%=  @user.likes   %></span>
-                    </li>
-                 </ul> 
-
+                    <ul class="list-group" >
+                      <li class="list-group-item text-muted"><strong><div class="panel-heading">Αγώνες </strong> <i class="fa fa-dashboard fa-1x"></i></li>
+                      <li class="list-group-item text-right">
+                        <span class="pull-left">Διοργάνωσε</span> 
+                        <span class="badge badge-primary badge-pill">
+                            <% @user.games_played %></span>
+                      </li>
+                      <li class="list-group-item text-right">
+                        <span class="pull-left">Συμμετείχε</span >
+                        <span class="badge badge-primary badge-pill">
+                         <% @user.games_played %></span>
+                      </li>
+                      <li class="list-group-item text-right">
+                        <span class="pull-left">Likes</span> 
+                        <span class="badge badge-primary badge-pill">
+                        <%=  @user.likes   %></span>
+                      </li>
+                    </ul> 
+                  </div>
                   <div style="flex: 1;">
                       <div >
                         <ul class="list-group" >
