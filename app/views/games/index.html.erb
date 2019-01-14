@@ -39,15 +39,15 @@
                 <div class="carousel-inner" role="listbox">
 
                   <div class="item active">
-                      <%=image_tag "#{stadio.stadium_name}/1.jpg" %>
+                      <%=image_tag "#{stadio.stadium_name}/1.jpg" , size: "450x236" %>
                   </div>
 
                   <div class="item">
-                      <%=image_tag "#{stadio.stadium_name}/2.jpg" %>
+                      <%=image_tag "#{stadio.stadium_name}/2.jpg", size: "450x236" %>
                   </div>
 
                   <div class="item">
-                      <%= image_tag "#{stadio.stadium_name}/3.jpg" %>
+                      <%= image_tag "#{stadio.stadium_name}/3.jpg", size: "450x236" %>
                   </div>
 
                 </div>
@@ -68,7 +68,6 @@
 
               <% carouselId += 1 %>
               
-
                   <!-- kapoia stoixeia gia ton agwna -->
                   <li class="text"><%= "Όνομα γηπέδου : " + g.name %></li>
                   <li class="text"><%= "Ημερομηνία αγώνα : " + g.start_time.strftime("%d/%m/%Y") %></li>
