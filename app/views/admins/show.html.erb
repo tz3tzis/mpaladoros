@@ -10,14 +10,16 @@
 		    <div>
 		    <% if game.admin_id == current_admin.id %>
 
-		    		<div style="color: red;font-style: italic;"><%= game.name %></div>
-			      <div style="color: red;font-size:16px;">
-			      	<%= game.start_time.strftime("%I:%M - ") %>
-			      </div>
-			      <% game.end_time = game.start_time + 90.minutes %>
-			      <div style="color: red;font-size:18px;">
-			      	<%= game.end_time.strftime("%I:%M") %>
-			      </div>
+		    		<div style="color: blue;font-style: bold;"><%= game.name %></div>
+		    		<div style="display:flex;">"
+				      <div style="color: blue;font-size:16px;flex: 0 0 50%;">
+				      	<%= game.start_time.strftime("%I:%M - ") %>
+				      </div>
+				      <% game.end_time = game.start_time + 90.minutes %>
+				      <div style="color: blue;font-size:16px;flex: 1;">
+				      	<%= game.end_time.strftime("%I:%M") %>
+				      </div>
+				    </div>
 
 		     <% end %>
 		    </div>
