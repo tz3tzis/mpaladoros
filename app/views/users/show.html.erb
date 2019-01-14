@@ -63,10 +63,20 @@
                   
                   
                   <ul class="list-group" >
-                    <li class="list-group-item text-muted"><strong><div  class="panel-heading">Αγώνες </strong> <i class="fa fa-dashboard fa-1x"></i></li>
-                    <li class="list-group-item text-right"><span class="pull-left">Διοργάνωσε</span> <% @user.games_played %></li>
-                    <li class="list-group-item text-right"><span class="pull-left">Συμμετείχε</span> <% @user.games_played %></li>
-                    <li class="list-group-item text-right"><span class="pull-left">Likes</span> <%=  @user.likes   %></li>
+                    <li class="list-group-item text-muted"><strong><div class="panel-heading">Αγώνες </strong> <i class="fa fa-dashboard fa-1x"></i></li>
+                    <li class="list-group-item text-right">
+                      <span class="pull-left">Διοργάνωσε</span> 
+                      <span class="badge badge-primary badge-pill">
+                          <% @user.games_played %></span>
+                    </li>
+                    <li class="list-group-item text-right">
+                      <span class="pull-left">Συμμετείχε</span >
+                      <span class="badge badge-primary badge-pill">
+                       <% @user.games_played %></li></span>
+                    <li class="list-group-item text-right">
+                      <span class="pull-left">Likes</span> 
+                      <span class="badge badge-primary badge-pill">
+                      <%=  @user.likes   %></li></span>
                   </ul> 
                 </div>
 
@@ -74,19 +84,12 @@
                  <div class="form-group" style="flex: 1;">
                       <div  >
                         <ul class="list-group">
-                             <hr>
                            <li class="list-group-item"> Ύψος: <%= @user.height %></li> 
-                            <hr>
                            <li class="list-group-item">Βάρος: <%= @user.weight %></li>
-                            <hr>
                            <li class="list-group-item" >Ηλικία: <%= @user.age %></li> 
-                            <hr>
                            <li class="list-group-item">Πόλη: <%= @user.location %></li>
-                            <hr>
                           <li class="list-group-item"> Αγαπημένη ομάδα(Ελληνική): <%= @user.teamgr %></li>
-                            <hr>
                           <li class="list-group-item"> Αγαπημένη ομάδα(Ξένη): <%= @user.teameu %></li>
-                            <hr>
                         </ul>
                       </div>
                   </div>
