@@ -54,10 +54,10 @@
               <div class="tab-pane active" id="home">
 
 
-                <div style="display:inline-block; float: left;" class="col-xs-6" >
+                <div style="display:inline-block; float:left;" class="col-xs-6" >
                   <div class="panel panel-default">
-                    <strong><div class="panel-heading">Αγαπημένη θέση <i class="fa fa-link fa-1x"></i></div></strong>
-                    <hr>
+                    <strong><div class="panel-heading">Αγαπημένη θέση<i class="fa fa-link fa-1x"></i></div></strong>
+                    <hr style="color:black;">
                     <div class="panel-body"> <%= @user.position %></div>
                   </div>
                   
@@ -66,7 +66,12 @@
                     <li class="list-group-item text-muted"><strong><div  class="panel-heading">Αγώνες </strong> <i class="fa fa-dashboard fa-1x"></i></li>
                     <li class="list-group-item text-right"><span class="pull-left">Διοργάνωσε</span> 125</li>
                     <li class="list-group-item text-right"><span class="pull-left">Συμμετείχε</span> 13</li>
-                    <li class="list-group-item text-right"><span class="pull-left">Likes</span> <%= @user.likes unless nil?  %></li>
+                    <li class="list-group-item text-right"><span class="pull-left">Likes</span> <%= if @user.likes == nil
+                            puts 0 
+                          elsif 
+                            puts @user.likes
+                          end
+                        %></li>
                   </ul> 
                 </div>
 
