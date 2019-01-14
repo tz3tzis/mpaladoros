@@ -48,15 +48,16 @@
                 
             <div class="tab-content">
                   <hr>
-              <div class="tab-pane active" id="home" style="display:flex;">
-                <div style="flex: 0 0 45%;" class="col-xs-6" >
-                  <div class="panel panel-default" >
-                    <strong><div class="panel-heading">Αγαπημένη θέση</div></strong>
-                    <div class="panel-body"> <%= @user.position %></div>
+              <div class="tab-pane active" id="home" >
+                <div style="display:flex;">
+                  <div style="flex: 0 0 45%;" class="col-xs-6" >
+                    <div class="panel panel-default" >
+                      <strong><div class="panel-heading">Αγαπημένη θέση</div></strong>
+                      <div class="panel-body"> <%= @user.position %></div>
+                    </div>
                   </div>
-                </div>
                   
-                <ul class="list-group" >
+                  <ul class="list-group" >
                     <li class="list-group-item text-muted"><strong><div class="panel-heading">Αγώνες </strong> <i class="fa fa-dashboard fa-1x"></i></li>
                     <li class="list-group-item text-right">
                       <span class="pull-left">Διοργάνωσε</span> 
@@ -73,9 +74,9 @@
                       <span class="badge badge-primary badge-pill">
                       <%=  @user.likes   %></span>
                     </li>
-                </ul> 
+                 </ul> 
 
-                <div style="flex: 1;">
+                  <div style="flex: 1;">
                       <div >
                         <ul class="list-group" >
                            <li class="list-group-item"> Ύψος: <%= @user.height %></li> 
@@ -86,8 +87,8 @@
                           <li class="list-group-item"> Αγαπημένη ομάδα(Ξένη): <%= @user.teameu %></li>
                         </ul>
                       </div>
+                  </div>
                 </div>
-
               </div><!--/tab-pane-->
 
     
