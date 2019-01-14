@@ -10,6 +10,16 @@ ul.nav.nav-tabs li a {
 
 }
 
+.list-group-item {
+    position: relative;
+    display: block;
+    padding: 15px 15px;
+    font-size: 15px;
+    margin-bottom: -1px;
+    background-color: #fff;
+    border: 1.5px solid #333;
+}
+
 div.col-sm-10 h1{
 	font-size: 34px;
 }
@@ -43,6 +53,6 @@ div.col-xs-6{
 }
 
 .col-xs-6{
-	  padding-bottom: 20px;
+	  padding-bottom: 10px;
 
 }
