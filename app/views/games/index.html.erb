@@ -28,7 +28,7 @@
 
 
               <!-- carousel gia tis fwtografies twn ghpedwn -->
-            <div id="<%= carouselId %>" class="carousel slide" data-interval="false" data-ride="carousel" style = "width:450px; height: 250px; ">
+            <div id="<%= carouselId %>" class="carousel slide" data-interval="false" data-ride="carousel"  ">
                 <!-- Indicators -->
                 <ol class="carousel-indicators">
                   <li data-target="#<%= carouselId %>" data-slide-to="0" class="active"></li>
@@ -75,7 +75,7 @@
                   <li class="text"><%= "Τιμή : " + stadio.price.to_s + "ανα άτομο" %></li>
                   <b><li style="color: blue; text-align: center;"><%= button_to "Τοποθεσία" , game_maps_path(g.id) ,method: :get, class: "gps"%></li></b>
                   <b><li style="color: red; text-align: center;"><%= "Άτομα : " + players_joined.to_s + "/" + atoma.to_s %></li></b><br>
-                    <b><li><%= button_to 'Join game' , game_teams_path(g.id),method: :get, class: "btn1"  %></li></b>
+                    <b><li><%= button_to 'Συμμετοχή ' , game_teams_path(g.id),method: :get, class: "btn1"  %></li></b>
 
                   </li>
             </ul>
