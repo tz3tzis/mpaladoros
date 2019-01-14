@@ -8,6 +8,27 @@ ul.nav.nav-tabs li a {
 	cursor: grab;
 
 }
+.list-group-item {
+    padding: 14px 15px;
+    background-color: #d9edf7;
+    border: 1px solid #333;
+    font-size: 15px;
+}
+
+.panel-body {
+    padding: 7px;
+    font-size: 15px;
+}
+
+.panel-default {
+    border-color: #333;
+}
+
+.panel {
+    background-color: #fff;
+    border: 1px solid #333;
+    border-radius: 4px;
+}
 
 div.col-sm-10 h1{
 	font-size: 34px;
