@@ -6,15 +6,15 @@ class AdminsController < ApplicationController
   end
 
  def edit
-		
-		authorize! :update, current_admin
+		@admin = current_admin
+		authorize! :update, @admin 
  end
 
 
  def stadium_attributes
- 
+ 		@admin = current_admin
  		@stadia = Stadium.where("admin_id = #{@admin.id} ")
- 		authorize! :update, current_admin 
+ 		authorize! :update, @admin 
  	
  end
 
