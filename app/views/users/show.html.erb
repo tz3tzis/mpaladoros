@@ -52,13 +52,13 @@
               <div class="tab-pane active" id="home" style="display:flex;">
 
                 <div style="flex: 0 0 45%;" class="col-xs-6" >
-                  <div class="panel panel-default" id="lista">
+                  <div class="panel panel-default" >
                     <strong><div class="panel-heading">Αγαπημένη θέση<i class="fa fa-link fa-1x"></i></div></strong>
                     <hr style="color:black;">
                     <div class="panel-body"> <%= @user.position %></div>
                   </div>
                   
-                  <ul class="list-group" id="lista" >
+                  <ul class="list-group" >
                     <li class="list-group-item text-muted"><strong><div class="panel-heading">Αγώνες </strong> <i class="fa fa-dashboard fa-1x"></i></li>
                     <li class="list-group-item text-right">
                       <span class="pull-left">Διοργάνωσε</span> 
@@ -74,12 +74,12 @@
                       <span class="badge badge-primary badge-pill">
                       <%=  @user.likes   %></li></span>
                   </ul> 
-                </div>
+               
 
 
-                 <div class="tab-pane"  style="flex: 1;">
-                      <div  >
-                        <ul class="list-group" id="lista>
+                 <div style="flex: 1;">
+                      <div >
+                        <ul class="list-group" >
                            <li class="list-group-item"> Ύψος: <%= @user.height %></li> 
                            <li class="list-group-item">Βάρος: <%= @user.weight %></li>
                            <li class="list-group-item" >Ηλικία: <%= @user.age %></li> 
@@ -91,7 +91,7 @@
                   </div>
               </div><!--/tab-pane-->
 
-
+             </div>
 
               <div class="tab-pane" id="stats">
                
