@@ -42,8 +42,8 @@ Rails.application.routes.draw do
 
 	get 'admins/:id/stadium_attributes' => 'admins#stadium_attributes', :as => 'stadium_attributes'
 
-
   post '/stadium_attributes/:id'  => 'stadia#update', :as => "stadium_update"
+
 	#=========================notifications========================
 	post "/push" => "push_notifications#create"
 	#==============================================================

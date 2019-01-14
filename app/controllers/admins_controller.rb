@@ -14,14 +14,12 @@ class AdminsController < ApplicationController
  def stadium_attributes
  		@admin = current_admin
  		@stadia = Stadium.where("admin_id = #{@admin.id} ")
- 		authorize! :update, @admin 
- 	
+ 		authorize! :update, @admin unless @admin == current_admin
  end
 
 	def update
 
 		@admin = current_admin 
-	
 		if params[:admin][:confirm_password] != params[:admin][:new_password ]
 			flash[:notice] = "Οι κωδικοί που έβαλες είναι διαφορετικοί!"
 			redirect_to edit_admin_path
@@ -39,7 +37,6 @@ class AdminsController < ApplicationController
 	end
 
 	private
-
   def admin_params
     # strong parameters - whitelist of allowed fields #=> permit(:name, :email, .sddsd..)
     # that can be submitted by a form to the user model #=> require(:user)
