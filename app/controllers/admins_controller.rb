@@ -13,8 +13,8 @@ class AdminsController < ApplicationController
 
  def stadium_attributes
  		@admin = Admin.find(params[:id])
- 		authorize! :update, @admin
  		@stadia = Stadium.where("admin_id = #{@admin.id} ")
+ 		authorize! :update, @admin
  end
 
 	def update
