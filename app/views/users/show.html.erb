@@ -66,12 +66,7 @@
                     <li class="list-group-item text-muted"><strong><div  class="panel-heading">Αγώνες </strong> <i class="fa fa-dashboard fa-1x"></i></li>
                     <li class="list-group-item text-right"><span class="pull-left">Διοργάνωσε</span> 125</li>
                     <li class="list-group-item text-right"><span class="pull-left">Συμμετείχε</span> 13</li>
-                    <li class="list-group-item text-right"><span class="pull-left">Likes</span> <%= if @user.likes == nil
-                            puts 0 
-                          elsif 
-                            puts @user.likes
-                          end
-                        %></li>
+                    <li class="list-group-item text-right"><span class="pull-left">Likes</span> <%=  @user.likes   %></li>
                   </ul> 
                 </div>
 
