@@ -9,9 +9,9 @@
 
         <% @stadia.each do |t| %>
 
-          <th style = "width:100px; height: 150px;" >
+          <th >
                <h3><%="Γήπεδο : " + t.stadium_name %></h3>
-              <%=image_tag "#{t.stadium_name}/2.jpg" %>
+              <%=image_tag "#{t.stadium_name}/2.jpg", style: "width:100px; height: 150px;" %>
              
               <!--<p><%= t.admin_id.to_s %></p>-->
               <p><%= "Χωρητικότητα : " + t.max_players.to_s %></p>
