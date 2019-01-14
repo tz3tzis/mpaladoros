@@ -7,14 +7,14 @@ class AdminsController < ApplicationController
 
  def edit
 		@admin = Admin.find(params[:id])
-		
+		authorize :update, @admin
  end
 
 
  def stadium_attributes
  		@admin = Admin.find(params[:id])
  		@stadia = Stadium.where("admin_id = #{@admin.id} ")
- 		
+ 		authorize :update, @admin
  end
 
 	def update
