@@ -14,9 +14,8 @@ class AdminsController < ApplicationController
  def stadium_attributes
  		@admin = Admin.find(params[:id])
  		@stadia = Stadium.where("admin_id = #{@admin.id} ")
- 		authorize! :update, @admin 
- 			
- 		end
+ 		authorize! :update, @admin unless current_user.present?
+ 	
  end
 
 	def update
