@@ -5,6 +5,7 @@ class Ability
   	if userOrAdmin.is_a? User
 	    can :read, User
 	    can [:update, :read], User, id: userOrAdmin.id
+	  end
 	  if userOrAdmin.is_a?  Admin
 	  	can :read, Admin
 	  	can [:update, :read], Admin, id: userOrAdmin.id
