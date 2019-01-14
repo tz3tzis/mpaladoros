@@ -32,6 +32,7 @@ class ApplicationController < ActionController::Base
    	 if current_user
    	 		return if current_admin.present?
 	     @current_ability ||= Ability.new(current_user)
+	   end
 	   if current_admin
 	   		return unless current_admin.present?
 	     @current_ability ||= Ability.new(current_admin)
