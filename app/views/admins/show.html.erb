@@ -9,10 +9,9 @@
 
 		    <div>
 		    <% if game.admin_id == current_admin.id %>
-		    		<hr style="color: black">
 		    		<div style="color: blue;font-style: bold;font-size:16px;"><%= game.name %></div>
-		    		<div style="display:flex;">"
-		    			<hr style="color: black">
+		    		<div style="display:flex;">
+		  
 				      <div style="color: blue;font-size:16px;flex: 0 0 50%;">
 				      	<%= game.start_time.strftime("%I:%M")+"-" %>
 				      </div>
@@ -20,7 +19,7 @@
 				      <div style="color: blue;font-size:16px;flex: 1;">
 				      	<%= game.end_time.strftime("%I:%M") %>
 				      </div>
-				      <hr style="color: black">
+				      
 				    </div>
 
 		     <% end %>
