@@ -37,8 +37,7 @@
 
                
           
-        </div><!--/col-3-->
-
+      </div><!--/col-3-->
 
         <div class="col-sm-9">
               <ul class="nav nav-tabs">
@@ -50,11 +49,9 @@
             <div class="tab-content">
                   <hr>
               <div class="tab-pane active" id="home" style="display:flex;">
-
                 <div style="flex: 0 0 45%;" class="col-xs-6" >
                   <div class="panel panel-default" >
                     <strong><div class="panel-heading">Αγαπημένη θέση</div></strong>
-              
                     <div class="panel-body"> <%= @user.position %></div>
                   </div>
                 </div>
@@ -69,11 +66,13 @@
                     <li class="list-group-item text-right">
                       <span class="pull-left">Συμμετείχε</span >
                       <span class="badge badge-primary badge-pill">
-                       <% @user.games_played %></li></span>
+                       <% @user.games_played %></span>
+                    </li>
                     <li class="list-group-item text-right">
                       <span class="pull-left">Likes</span> 
                       <span class="badge badge-primary badge-pill">
-                      <%=  @user.likes   %></li></span>
+                      <%=  @user.likes   %></span>
+                    </li>
                 </ul> 
 
                 <div style="flex: 1;">
@@ -88,6 +87,7 @@
                         </ul>
                       </div>
                 </div>
+
               </div><!--/tab-pane-->
 
     
@@ -100,11 +100,12 @@
                       </div>
                   </div>
               </div><!--/tab-pane-->
-              
+        
             </div><!--/tab-content-->
 
          </div><!--/col-9-->
 
-</div><!--/row-->
+  </div><!--/row-->
 
+</div><!-- container>
                                  
