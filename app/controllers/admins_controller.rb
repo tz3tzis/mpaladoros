@@ -7,7 +7,7 @@ class AdminsController < ApplicationController
 
  def edit
 		@admin = current_admin
-		authorize! :update, @admin 
+		authorize! :update, @admin unless @admin == current_admin
  end
 
 
