@@ -51,7 +51,7 @@
                   <hr>
 
 
-              <div class="tab-pane active" id="home">
+              <div class="tab-pane active" id="home" style="margin: auto;">
 
 
                 <div style="display:inline-block; float:left;" class="col-xs-6" >
@@ -64,14 +64,14 @@
                   
                   <ul class="list-group" >
                     <li class="list-group-item text-muted"><strong><div  class="panel-heading">Αγώνες </strong> <i class="fa fa-dashboard fa-1x"></i></li>
-                    <li class="list-group-item text-right"><span class="pull-left">Διοργάνωσε</span> 125</li>
-                    <li class="list-group-item text-right"><span class="pull-left">Συμμετείχε</span> 13</li>
+                    <li class="list-group-item text-right"><span class="pull-left">Διοργάνωσε</span> <% @user.games_played %></li>
+                    <li class="list-group-item text-right"><span class="pull-left">Συμμετείχε</span> <% @user.games_played %></li>
                     <li class="list-group-item text-right"><span class="pull-left">Likes</span> <%=  @user.likes   %></li>
                   </ul> 
                 </div>
 
 
-                 <div class="form-group" style="display: inline-block;float: right;">
+                 <div class="form-group" style="display: inline-block;margin-left: 15%;">
                       <div style="color:white;" >
                         <ul>
                              <hr>
