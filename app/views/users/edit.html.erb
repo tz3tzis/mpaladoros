@@ -2,7 +2,7 @@
 
 <%= form_for @user do |u| %>
     <div class="form-group">              
-        <div class="col-xs-6">
+        <div class="col-xs-6" id="username">
             <%= u.label :Ονοματεπώνυμο  %>
             <%= u.text_field :name, :required => true %>
         </div>
