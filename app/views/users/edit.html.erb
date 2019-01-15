@@ -42,17 +42,15 @@
     <div class="form-group">              
         <div class="col-xs-6">
             <%= u.label :Πόλη %>
-            <%= u.text_field :location, :required => true %>
+            <%= u.text_field :location %>
         </div>
     </div>
 
     <div class="form-group">              
         <div class="col-xs-6">
-        <div class="mx-1">
             <%= u.label :Αγαπημένη_Ελληνική_ομάδα %>
             <%= u.text_field :teamgr %>
         </div>
-    </div>
     </div>
    
     <div class="form-group">              
@@ -72,10 +70,7 @@
         <div class="koumpia">
             <%= u.submit  "Αλλαγή στοιχείων", method: :post, :class => "btn btn-success" %>
             <button class="btn btn-success" type="reset"><i class="glyphicon glyphicon-repeat"></i> Αναίρεση</button>
-        </div>
+        </div>  
     </div>
-
-
-
 <% end %>
 
