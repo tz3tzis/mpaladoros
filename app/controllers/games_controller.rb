@@ -25,36 +25,36 @@ class GamesController < ApplicationController
 
 
 	def create
-
+		#Αναθέτουμε στον αγώνα το γήπεδο 
+		#που επιλέχθηκε απο τον χρήστη
 		@game = Game.new(game_params)
 		@stadium = Stadium.find_by(stadium_name: "#{@game.name}")
-		
 		@game.stadium_id = @stadium.id
-
-		#get time from clock and concatenate it with date to start_time
+		#Πέρνουμε τον χρόνο και την ημερομηνία 
+		#απο την προβολή τα ένωνουμε και τα περναμε 
+		#στην μεταβλητη start_time
 		date = params['game']['start_time']
 		time = params['game']['time']
 		@game.start_time = Time.parse("#{date} #{time}") 
-
-		#ta paixnidia exoun diarkeia 90 lepta
+		#Οι αγώνες έχουν διάρκεια 90 λεπτά
 		@game.admin_id = @stadium.admin_id 
 		@game.end_time = @game.start_time + 90.minutes
-
-		#dhmiourgountai 2  nees omades me default onomata kai 
-		#xwrhtikothta analogh tou ghpedou
+		# Δημιουργούνται δύο νέες ομάδες με προκαθορισμένα 
+		# ονόματα και χωρητικότητα ανάλογη του γηπέδου
 		@team1 = Team.create(name: 'home')
 		@team1.capacity = (@stadium.max_players) / 2
 		@team1.save
 		@team2 = Team.create(name: 'away')
 		@team2.capacity = (@stadium.max_players) / 2
 		@team2.save
-
-		#tous anathetontai ta antisoixa id
+		# Αναθέτωνται στον αγώνα οι δύο ομάδες 
+		#που δημιουργήσαμε παραπάνω
 		@game.hometeam_id = @team1.id
 		@game.awayteam_id = @team2.id
-
-		#o paikths pou ftiaxnei to paixnidi anatithetai sthn prwth omada
+		#Ο παίκτης που δημιουργεί το παιχνίδι 
+		#ανατίθεται στην πρώτη ομάδα
 		@team1.users << current_user
+
 
 		#save game
 		if @game.save 

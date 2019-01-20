@@ -27,7 +27,7 @@ class AvatarUploader < CarrierWave::Uploader::Base
       img = img.auto_orient
     end
   end
-  
+
   process :fix_rotation
 
   version :thumb do
