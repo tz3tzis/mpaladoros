@@ -82,7 +82,7 @@ GEM
       responders
       warden (~> 1.2.3)
     erubi (1.7.1)
-    excon (0.62.0)
+    excon (0.71.0)
     execjs (2.7.0)
     facebook-messenger (1.1.1)
       httparty (~> 0.13, >= 0.13.7)
