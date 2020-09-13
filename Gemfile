@@ -56,7 +56,7 @@ gem 'simple_form'
 gem 'execjs', '~> 2.7'
 gem 'therubyracer'
 gem 'rails-ujs'
-gem 'geocoder', '~> 1.3', '>= 1.3.7'
+gem 'geocoder', '~> 1.6'
 gem 'jquery-rails', '~> 4.3', '>= 4.3.1'
 
 gem 'cancancan', '~> 2.0'
